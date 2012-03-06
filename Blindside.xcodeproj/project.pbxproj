@@ -171,7 +171,7 @@
 		29997B4B1505EC0B00C12110 /* Blindside-StaticLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blindside-StaticLib-Prefix.pch"; sourceTree = "<group>"; };
 		29997B4C1505EC0B00C12110 /* Blindside_StaticLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blindside_StaticLib.h; sourceTree = "<group>"; };
 		29997B4D1505EC0B00C12110 /* Blindside_StaticLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Blindside_StaticLib.m; sourceTree = "<group>"; };
-		29CAC6E4150292AD00731862 /* blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = blindside.framework; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29CAC6E4150292AD00731862 /* Blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Blindside.framework; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CAC6E7150292AD00731862 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		29CAC6EA150292AD00731862 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		29CAC6EB150292AD00731862 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -274,7 +274,7 @@
 		29CAC6E5150292AD00731862 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29CAC6E4150292AD00731862 /* blindside.framework */,
+				29CAC6E4150292AD00731862 /* Blindside.framework */,
 				29CAC7001502932000731862 /* Specs */,
 				29997B471505EC0B00C12110 /* libBlindside-StaticLib.a */,
 			);
@@ -409,8 +409,8 @@
 			dependencies = (
 			);
 			name = Blindside;
-			productName = blindside;
-			productReference = 29CAC6E4150292AD00731862 /* blindside.framework */;
+			productName = Blindside;
+			productReference = 29CAC6E4150292AD00731862 /* Blindside.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		29CAC6FF1502932000731862 /* Specs */ = {
@@ -787,6 +787,7 @@
 				29997B511505EC0B00C12110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29997B5F1505ED9400C12110 /* Build configuration list for PBXAggregateTarget "Blindside-iOS" */ = {
 			isa = XCConfigurationList;
@@ -795,6 +796,7 @@
 				29997B611505ED9400C12110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29CAC6DD150292AD00731862 /* Build configuration list for PBXProject "Blindside" */ = {
 			isa = XCConfigurationList;
