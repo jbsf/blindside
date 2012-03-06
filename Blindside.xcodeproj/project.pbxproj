@@ -1,0 +1,829 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		29997B5E1505ED9400C12110 /* Blindside-iOS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 29997B5F1505ED9400C12110 /* Build configuration list for PBXAggregateTarget "Blindside-iOS" */;
+			buildPhases = (
+				29997B621505EDC700C12110 /* Build architecture-specific static lib */,
+				29997B631505EDF100C12110 /* Build univiersal static lib */,
+				29997B641505EE1400C12110 /* Copy headers to framework */,
+			);
+			dependencies = (
+			);
+			name = "Blindside-iOS";
+			productName = "Blindside-iOS";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		29997A7E1502C48B00C12110 /* BSInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A771502C48B00C12110 /* BSInjector.m */; };
+		29997A7F1502C48B00C12110 /* BSInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A771502C48B00C12110 /* BSInjector.m */; };
+		29997A811502C48B00C12110 /* BSInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A791502C48B00C12110 /* BSInstanceProvider.m */; };
+		29997A821502C48B00C12110 /* BSInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A791502C48B00C12110 /* BSInstanceProvider.m */; };
+		29997A841502C48B00C12110 /* BSModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A7B1502C48B00C12110 /* BSModule.m */; };
+		29997A851502C48B00C12110 /* BSModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A7B1502C48B00C12110 /* BSModule.m */; };
+		29997AA01503548F00C12110 /* BSInitializerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29997A9F1503548F00C12110 /* BSInitializerSpec.mm */; };
+		29997AB51505D04600C12110 /* Blindside.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997AB41505D04600C12110 /* Blindside.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29997B031505D8A600C12110 /* BSInitializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997AFF1505D8A600C12110 /* BSInitializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29997B041505D8A600C12110 /* BSInitializerProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B001505D8A600C12110 /* BSInitializerProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29997B0A1505D8FE00C12110 /* BSInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B061505D8FE00C12110 /* BSInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29997B0B1505D8FE00C12110 /* BSInstanceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B071505D8FE00C12110 /* BSInstanceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29997B0C1505D8FE00C12110 /* BSModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B081505D8FE00C12110 /* BSModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29997B0D1505D8FE00C12110 /* BSProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B091505D8FE00C12110 /* BSProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29997B111505D94200C12110 /* BSInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997B0E1505D94200C12110 /* BSInitializer.m */; };
+		29997B121505D94200C12110 /* BSInitializerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997B0F1505D94200C12110 /* BSInitializerProvider.m */; };
+		29997B481505EC0B00C12110 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC7021502932000731862 /* Foundation.framework */; };
+		29997B521505EC4500C12110 /* BSInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A771502C48B00C12110 /* BSInjector.m */; };
+		29997B531505EC4500C12110 /* BSInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A791502C48B00C12110 /* BSInstanceProvider.m */; };
+		29997B541505EC4500C12110 /* BSModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A7B1502C48B00C12110 /* BSModule.m */; };
+		29997B551505EC4500C12110 /* BSInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997B0E1505D94200C12110 /* BSInitializer.m */; };
+		29997B561505EC4500C12110 /* BSInitializerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997B0F1505D94200C12110 /* BSInitializerProvider.m */; };
+		29997B571505EC4F00C12110 /* BSInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B061505D8FE00C12110 /* BSInjector.h */; };
+		29997B581505EC4F00C12110 /* BSInstanceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B071505D8FE00C12110 /* BSInstanceProvider.h */; };
+		29997B591505EC4F00C12110 /* BSModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B081505D8FE00C12110 /* BSModule.h */; };
+		29997B5A1505EC4F00C12110 /* BSProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B091505D8FE00C12110 /* BSProvider.h */; };
+		29997B5B1505EC4F00C12110 /* BSInitializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997AFF1505D8A600C12110 /* BSInitializer.h */; };
+		29997B5C1505EC4F00C12110 /* BSInitializerProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B001505D8A600C12110 /* BSInitializerProvider.h */; };
+		29997B5D1505EC4F00C12110 /* Blindside.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997AB41505D04600C12110 /* Blindside.h */; };
+		29997B651505EE2C00C12110 /* BSInjector.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997B061505D8FE00C12110 /* BSInjector.h */; };
+		29997B661505EE2C00C12110 /* BSInstanceProvider.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997B071505D8FE00C12110 /* BSInstanceProvider.h */; };
+		29997B671505EE2C00C12110 /* BSModule.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997B081505D8FE00C12110 /* BSModule.h */; };
+		29997B681505EE2C00C12110 /* BSProvider.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997B091505D8FE00C12110 /* BSProvider.h */; };
+		29997B691505EE2C00C12110 /* BSInitializer.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997AFF1505D8A600C12110 /* BSInitializer.h */; };
+		29997B6A1505EE2C00C12110 /* BSInitializerProvider.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997B001505D8A600C12110 /* BSInitializerProvider.h */; };
+		29997B6B1505EE2C00C12110 /* Blindside.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997AB41505D04600C12110 /* Blindside.h */; };
+		29CAC7031502932000731862 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC7021502932000731862 /* Foundation.framework */; };
+		29CAC7061502932000731862 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC7051502932000731862 /* main.m */; };
+		29CAC77C1502A3B300731862 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC76615029F2900731862 /* Cedar.framework */; };
+		29CAC77F1502AAA400731862 /* BSInjectorSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC77E1502AAA400731862 /* BSInjectorSpec.mm */; };
+		29CAC7831502AB6F00731862 /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC7821502AB6F00731862 /* Fixtures.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29CAC76515029F2900731862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC75915029F2900731862 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE1FB611DC271300029872;
+			remoteInfo = Cedar;
+		};
+		29CAC76715029F2900731862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC75915029F2900731862 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE218611DC28E200029872;
+			remoteInfo = Specs;
+		};
+		29CAC76915029F2900731862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC75915029F2900731862 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A07F0813F276640021974D;
+			remoteInfo = FocusedSpecs;
+		};
+		29CAC76B15029F2900731862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC75915029F2900731862 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE222911DC2B0600029872;
+			remoteInfo = "Cedar-StaticLib";
+		};
+		29CAC76D15029F2900731862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC75915029F2900731862 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE227611DC2CF900029872;
+			remoteInfo = iOSSpecs;
+		};
+		29CAC76F15029F2900731862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC75915029F2900731862 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5F9F6144A81A7000A6A5D;
+			remoteInfo = OCUnitApp;
+		};
+		29CAC77115029F2900731862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC75915029F2900731862 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5FA11144A81A8000A6A5D;
+			remoteInfo = OCUnitAppTests;
+		};
+		29CAC77315029F2900731862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC75915029F2900731862 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96158A86144A915E005895CE;
+			remoteInfo = OCUnitAppLogicTests;
+		};
+		29CAC77A1502A35400731862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC75915029F2900731862 /* Cedar.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEEE1FB511DC271300029872;
+			remoteInfo = Cedar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		29997B641505EE1400C12110 /* Copy headers to framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Headers";
+			dstSubfolderSpec = 0;
+			files = (
+				29997B651505EE2C00C12110 /* BSInjector.h in Copy headers to framework */,
+				29997B661505EE2C00C12110 /* BSInstanceProvider.h in Copy headers to framework */,
+				29997B671505EE2C00C12110 /* BSModule.h in Copy headers to framework */,
+				29997B681505EE2C00C12110 /* BSProvider.h in Copy headers to framework */,
+				29997B691505EE2C00C12110 /* BSInitializer.h in Copy headers to framework */,
+				29997B6A1505EE2C00C12110 /* BSInitializerProvider.h in Copy headers to framework */,
+				29997B6B1505EE2C00C12110 /* Blindside.h in Copy headers to framework */,
+			);
+			name = "Copy headers to framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		29997A771502C48B00C12110 /* BSInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSInjector.m; path = Source/BSInjector.m; sourceTree = "<group>"; };
+		29997A791502C48B00C12110 /* BSInstanceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSInstanceProvider.m; path = Source/BSInstanceProvider.m; sourceTree = "<group>"; };
+		29997A7B1502C48B00C12110 /* BSModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSModule.m; path = Source/BSModule.m; sourceTree = "<group>"; };
+		29997A9F1503548F00C12110 /* BSInitializerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSInitializerSpec.mm; sourceTree = "<group>"; };
+		29997AB41505D04600C12110 /* Blindside.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blindside.h; sourceTree = "<group>"; };
+		29997ABA1505D2B600C12110 /* Blindside-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Blindside-Info.plist"; sourceTree = "<group>"; };
+		29997AFF1505D8A600C12110 /* BSInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSInitializer.h; sourceTree = "<group>"; };
+		29997B001505D8A600C12110 /* BSInitializerProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSInitializerProvider.h; sourceTree = "<group>"; };
+		29997B061505D8FE00C12110 /* BSInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSInjector.h; sourceTree = "<group>"; };
+		29997B071505D8FE00C12110 /* BSInstanceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSInstanceProvider.h; sourceTree = "<group>"; };
+		29997B081505D8FE00C12110 /* BSModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSModule.h; sourceTree = "<group>"; };
+		29997B091505D8FE00C12110 /* BSProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSProvider.h; sourceTree = "<group>"; };
+		29997B0E1505D94200C12110 /* BSInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSInitializer.m; path = Source/BSInitializer.m; sourceTree = "<group>"; };
+		29997B0F1505D94200C12110 /* BSInitializerProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSInitializerProvider.m; path = Source/BSInitializerProvider.m; sourceTree = "<group>"; };
+		29997B471505EC0B00C12110 /* libBlindside-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libBlindside-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29997B4B1505EC0B00C12110 /* Blindside-StaticLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blindside-StaticLib-Prefix.pch"; sourceTree = "<group>"; };
+		29997B4C1505EC0B00C12110 /* Blindside_StaticLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blindside_StaticLib.h; sourceTree = "<group>"; };
+		29997B4D1505EC0B00C12110 /* Blindside_StaticLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Blindside_StaticLib.m; sourceTree = "<group>"; };
+		29CAC6E4150292AD00731862 /* blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = blindside.framework; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29CAC6E7150292AD00731862 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		29CAC6EA150292AD00731862 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		29CAC6EB150292AD00731862 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		29CAC6EC150292AD00731862 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		29CAC7001502932000731862 /* Specs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Specs; sourceTree = BUILT_PRODUCTS_DIR; };
+		29CAC7021502932000731862 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		29CAC7051502932000731862 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29CAC75915029F2900731862 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Externals/Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
+		29CAC77E1502AAA400731862 /* BSInjectorSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSInjectorSpec.mm; sourceTree = "<group>"; };
+		29CAC7811502AB6F00731862 /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
+		29CAC7821502AB6F00731862 /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29997B441505EC0B00C12110 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29997B481505EC0B00C12110 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29CAC6E0150292AD00731862 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29CAC6FD1502932000731862 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29CAC77C1502A3B300731862 /* Cedar.framework in Frameworks */,
+				29CAC7031502932000731862 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		29997A751502C38400C12110 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				29997A771502C48B00C12110 /* BSInjector.m */,
+				29997A791502C48B00C12110 /* BSInstanceProvider.m */,
+				29997A7B1502C48B00C12110 /* BSModule.m */,
+				29997B0E1505D94200C12110 /* BSInitializer.m */,
+				29997B0F1505D94200C12110 /* BSInitializerProvider.m */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		29997AB31505CE7800C12110 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				29997B061505D8FE00C12110 /* BSInjector.h */,
+				29997B071505D8FE00C12110 /* BSInstanceProvider.h */,
+				29997B081505D8FE00C12110 /* BSModule.h */,
+				29997B091505D8FE00C12110 /* BSProvider.h */,
+				29997AFF1505D8A600C12110 /* BSInitializer.h */,
+				29997B001505D8A600C12110 /* BSInitializerProvider.h */,
+				29997AB41505D04600C12110 /* Blindside.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		29997B491505EC0B00C12110 /* Blindside-StaticLib */ = {
+			isa = PBXGroup;
+			children = (
+				29997B4C1505EC0B00C12110 /* Blindside_StaticLib.h */,
+				29997B4D1505EC0B00C12110 /* Blindside_StaticLib.m */,
+				29997B4A1505EC0B00C12110 /* Supporting Files */,
+			);
+			path = "Blindside-StaticLib";
+			sourceTree = "<group>";
+		};
+		29997B4A1505EC0B00C12110 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29997B4B1505EC0B00C12110 /* Blindside-StaticLib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29CAC6D8150292AD00731862 = {
+			isa = PBXGroup;
+			children = (
+				29997A751502C38400C12110 /* Source */,
+				29997AB31505CE7800C12110 /* Headers */,
+				29CAC7041502932000731862 /* Specs */,
+				29CAC77515029F3B00731862 /* Externals */,
+				29997B491505EC0B00C12110 /* Blindside-StaticLib */,
+				29CAC6E6150292AD00731862 /* Frameworks */,
+				29CAC6E5150292AD00731862 /* Products */,
+				29997ABA1505D2B600C12110 /* Blindside-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		29CAC6E5150292AD00731862 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29CAC6E4150292AD00731862 /* blindside.framework */,
+				29CAC7001502932000731862 /* Specs */,
+				29997B471505EC0B00C12110 /* libBlindside-StaticLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29CAC6E6150292AD00731862 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29CAC6E7150292AD00731862 /* Cocoa.framework */,
+				29CAC7021502932000731862 /* Foundation.framework */,
+				29CAC6E9150292AD00731862 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29CAC6E9150292AD00731862 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29CAC6EA150292AD00731862 /* AppKit.framework */,
+				29CAC6EB150292AD00731862 /* CoreData.framework */,
+				29CAC6EC150292AD00731862 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		29CAC7041502932000731862 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				29CAC77E1502AAA400731862 /* BSInjectorSpec.mm */,
+				29CAC7801502AB4200731862 /* Fixtures */,
+				29CAC7051502932000731862 /* main.m */,
+				29997A9F1503548F00C12110 /* BSInitializerSpec.mm */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		29CAC75A15029F2900731862 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29CAC76615029F2900731862 /* Cedar.framework */,
+				29CAC76815029F2900731862 /* Specs */,
+				29CAC76A15029F2900731862 /* FocusedSpecs */,
+				29CAC76C15029F2900731862 /* libCedar-StaticLib.a */,
+				29CAC76E15029F2900731862 /* iOSSpecs.app */,
+				29CAC77015029F2900731862 /* OCUnitApp.app */,
+				29CAC77215029F2900731862 /* OCUnitAppTests.octest */,
+				29CAC77415029F2900731862 /* OCUnitAppLogicTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29CAC77515029F3B00731862 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				29CAC75915029F2900731862 /* Cedar.xcodeproj */,
+			);
+			name = Externals;
+			sourceTree = "<group>";
+		};
+		29CAC7801502AB4200731862 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				29CAC7811502AB6F00731862 /* Fixtures.h */,
+				29CAC7821502AB6F00731862 /* Fixtures.m */,
+			);
+			name = Fixtures;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		29997B451505EC0B00C12110 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29997B571505EC4F00C12110 /* BSInjector.h in Headers */,
+				29997B581505EC4F00C12110 /* BSInstanceProvider.h in Headers */,
+				29997B591505EC4F00C12110 /* BSModule.h in Headers */,
+				29997B5A1505EC4F00C12110 /* BSProvider.h in Headers */,
+				29997B5B1505EC4F00C12110 /* BSInitializer.h in Headers */,
+				29997B5C1505EC4F00C12110 /* BSInitializerProvider.h in Headers */,
+				29997B5D1505EC4F00C12110 /* Blindside.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29CAC6E1150292AD00731862 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29997AB51505D04600C12110 /* Blindside.h in Headers */,
+				29997B031505D8A600C12110 /* BSInitializer.h in Headers */,
+				29997B041505D8A600C12110 /* BSInitializerProvider.h in Headers */,
+				29997B0A1505D8FE00C12110 /* BSInjector.h in Headers */,
+				29997B0B1505D8FE00C12110 /* BSInstanceProvider.h in Headers */,
+				29997B0C1505D8FE00C12110 /* BSModule.h in Headers */,
+				29997B0D1505D8FE00C12110 /* BSProvider.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		29997B461505EC0B00C12110 /* Blindside-StaticLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29997B4F1505EC0B00C12110 /* Build configuration list for PBXNativeTarget "Blindside-StaticLib" */;
+			buildPhases = (
+				29997B431505EC0B00C12110 /* Sources */,
+				29997B441505EC0B00C12110 /* Frameworks */,
+				29997B451505EC0B00C12110 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Blindside-StaticLib";
+			productName = "Blindside-StaticLib";
+			productReference = 29997B471505EC0B00C12110 /* libBlindside-StaticLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		29CAC6E3150292AD00731862 /* Blindside */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29CAC6F9150292AD00731862 /* Build configuration list for PBXNativeTarget "Blindside" */;
+			buildPhases = (
+				29CAC6E1150292AD00731862 /* Headers */,
+				29CAC6DF150292AD00731862 /* Sources */,
+				29CAC6E0150292AD00731862 /* Frameworks */,
+				29CAC6E2150292AD00731862 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Blindside;
+			productName = blindside;
+			productReference = 29CAC6E4150292AD00731862 /* blindside.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		29CAC6FF1502932000731862 /* Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29CAC70B1502932000731862 /* Build configuration list for PBXNativeTarget "Specs" */;
+			buildPhases = (
+				29CAC6FC1502932000731862 /* Sources */,
+				29CAC6FD1502932000731862 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29CAC77B1502A35400731862 /* PBXTargetDependency */,
+			);
+			name = Specs;
+			productName = Specs;
+			productReference = 29CAC7001502932000731862 /* Specs */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29CAC6DA150292AD00731862 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = self;
+			};
+			buildConfigurationList = 29CAC6DD150292AD00731862 /* Build configuration list for PBXProject "Blindside" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 29CAC6D8150292AD00731862;
+			productRefGroup = 29CAC6E5150292AD00731862 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 29CAC75A15029F2900731862 /* Products */;
+					ProjectRef = 29CAC75915029F2900731862 /* Cedar.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				29CAC6E3150292AD00731862 /* Blindside */,
+				29CAC6FF1502932000731862 /* Specs */,
+				29997B461505EC0B00C12110 /* Blindside-StaticLib */,
+				29997B5E1505ED9400C12110 /* Blindside-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		29CAC76615029F2900731862 /* Cedar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cedar.framework;
+			remoteRef = 29CAC76515029F2900731862 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29CAC76815029F2900731862 /* Specs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Specs;
+			remoteRef = 29CAC76715029F2900731862 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29CAC76A15029F2900731862 /* FocusedSpecs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = FocusedSpecs;
+			remoteRef = 29CAC76915029F2900731862 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29CAC76C15029F2900731862 /* libCedar-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCedar-StaticLib.a";
+			remoteRef = 29CAC76B15029F2900731862 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29CAC76E15029F2900731862 /* iOSSpecs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = iOSSpecs.app;
+			remoteRef = 29CAC76D15029F2900731862 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29CAC77015029F2900731862 /* OCUnitApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OCUnitApp.app;
+			remoteRef = 29CAC76F15029F2900731862 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29CAC77215029F2900731862 /* OCUnitAppTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCUnitAppTests.octest;
+			remoteRef = 29CAC77115029F2900731862 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29CAC77415029F2900731862 /* OCUnitAppLogicTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCUnitAppLogicTests.octest;
+			remoteRef = 29CAC77315029F2900731862 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29CAC6E2150292AD00731862 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29997B621505EDC700C12110 /* Build architecture-specific static lib */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build architecture-specific static lib";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphonesimulator -target ${PROJECT_NAME}-StaticLib -configuration ${CONFIGURATION} clean build SYMROOT=${SYMROOT}\nxcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphoneos -target ${PROJECT_NAME}-StaticLib -configuration ${CONFIGURATION} clean build SYMROOT=${SYMROOT}";
+		};
+		29997B631505EDF100C12110 /* Build univiersal static lib */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build univiersal static lib";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}-StaticLib.a\" &&\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}-StaticLib.a\" &&\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\" &&\nUNIVERSAL_LIBRARY_PATH=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}\" &&\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}.framework\" &&\n\n# Create framework directory structure.\nrm -rf \"${FRAMEWORK}\" &&\nmkdir -p \"${UNIVERSAL_LIBRARY_DIR}\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Headers\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Resources\" &&\n\n# Generate universal binary from desktop, device, and simulator builds.\nlipo \"${SIMULATOR_LIBRARY_PATH}\" \"${DEVICE_LIBRARY_PATH}\" -create -output \"${UNIVERSAL_LIBRARY_PATH}\" &&\n\n# Move files to appropriate locations in framework paths.\ncp \"${UNIVERSAL_LIBRARY_PATH}\" \"${FRAMEWORK}/Versions/A\" &&\ncd \"${FRAMEWORK}/Versions\" &&\nln -s \"A\" \"Current\" &&\ncd \"${FRAMEWORK}\" &&\nln -s \"Versions/Current/Headers\" \"Headers\" &&\nln -s \"Versions/Current/Resources\" \"Resources\" &&\nln -s \"Versions/Current/${PRODUCT_NAME}\" \"${PRODUCT_NAME}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29997B431505EC0B00C12110 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29997B521505EC4500C12110 /* BSInjector.m in Sources */,
+				29997B531505EC4500C12110 /* BSInstanceProvider.m in Sources */,
+				29997B541505EC4500C12110 /* BSModule.m in Sources */,
+				29997B551505EC4500C12110 /* BSInitializer.m in Sources */,
+				29997B561505EC4500C12110 /* BSInitializerProvider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29CAC6DF150292AD00731862 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29997A7E1502C48B00C12110 /* BSInjector.m in Sources */,
+				29997A811502C48B00C12110 /* BSInstanceProvider.m in Sources */,
+				29997A841502C48B00C12110 /* BSModule.m in Sources */,
+				29997B111505D94200C12110 /* BSInitializer.m in Sources */,
+				29997B121505D94200C12110 /* BSInitializerProvider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29CAC6FC1502932000731862 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29CAC7061502932000731862 /* main.m in Sources */,
+				29CAC77F1502AAA400731862 /* BSInjectorSpec.mm in Sources */,
+				29CAC7831502AB6F00731862 /* Fixtures.m in Sources */,
+				29997A7F1502C48B00C12110 /* BSInjector.m in Sources */,
+				29997A821502C48B00C12110 /* BSInstanceProvider.m in Sources */,
+				29997A851502C48B00C12110 /* BSModule.m in Sources */,
+				29997AA01503548F00C12110 /* BSInitializerSpec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29CAC77B1502A35400731862 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cedar;
+			targetProxy = 29CAC77A1502A35400731862 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		29997B501505EC0B00C12110 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/Blindside_StaticLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Blindside-StaticLib/Blindside-StaticLib-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		29997B511505EC0B00C12110 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/Blindside_StaticLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Blindside-StaticLib/Blindside-StaticLib-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29997B601505ED9400C12110 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		29997B611505ED9400C12110 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		29CAC6F7150292AD00731862 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		29CAC6F8150292AD00731862 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		29CAC6FA150292AD00731862 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "Blindside-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		29CAC6FB150292AD00731862 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "Blindside-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		29CAC70C1502932000731862 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		29CAC70D1502932000731862 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				"HEADER_SEARCH_PATHS[arch=*]" = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29997B4F1505EC0B00C12110 /* Build configuration list for PBXNativeTarget "Blindside-StaticLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29997B501505EC0B00C12110 /* Debug */,
+				29997B511505EC0B00C12110 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		29997B5F1505ED9400C12110 /* Build configuration list for PBXAggregateTarget "Blindside-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29997B601505ED9400C12110 /* Debug */,
+				29997B611505ED9400C12110 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		29CAC6DD150292AD00731862 /* Build configuration list for PBXProject "Blindside" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29CAC6F7150292AD00731862 /* Debug */,
+				29CAC6F8150292AD00731862 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29CAC6F9150292AD00731862 /* Build configuration list for PBXNativeTarget "Blindside" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29CAC6FA150292AD00731862 /* Debug */,
+				29CAC6FB150292AD00731862 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29CAC70B1502932000731862 /* Build configuration list for PBXNativeTarget "Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29CAC70C1502932000731862 /* Debug */,
+				29CAC70D1502932000731862 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29CAC6DA150292AD00731862 /* Project object */;
+}
