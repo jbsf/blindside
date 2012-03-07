@@ -5,7 +5,7 @@
 
 @interface BSInitializerProvider ()
 
-@property (nonatomic, assign) BSInitializer *initializer;
+@property (nonatomic, retain) BSInitializer *initializer;
 @property (nonatomic, assign) BSInjector *injector;
 
 - (void)injectProperties:(id)instance;
@@ -28,17 +28,23 @@
     return self;
 }
 
+- (void)dealloc {
+    self.initializer = nil;
+    [super dealloc];
+}
+
 - (id)provide {
-    if (self.initializer.numberOfArguments == 0) {
-        return [self.initializer perform];        
-    } else if (self.initializer.numberOfArguments == 1) {
-        id argKey = [self.initializer keyForArgumentAtIndex:0];
+    NSMutableArray *argValues = [NSMutableArray array];
+    
+    for (id argKey in self.initializer.argumentKeys) {
         id argValue = [self.injector getInstance:argKey];
-        id newInstance = [self.initializer performWithObject:argValue];
-        [self injectProperties:newInstance];
-        return newInstance;
+        [argValues addObject:argValue];
     }
-    return nil;
+    
+    id newInstance = [self.initializer perform:argValues];    
+    [self injectProperties:newInstance];
+    
+    return newInstance;
 }
 
 - (void)injectProperties:(id)instance {

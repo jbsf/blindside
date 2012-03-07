@@ -1,13 +1,49 @@
 #import "Fixtures.h"
 #import "BSInitializer.h"
 
-@implementation Garage : NSObject 
+@implementation State
 @end
 
-@implementation Driveway : NSObject 
+@implementation City 
 @end
 
-@implementation Address : NSObject 
+@implementation Garage 
+@end
+
+@implementation Driveway 
+@end
+
+@implementation Address : NSObject
+
+@synthesize 
+street = street_,
+city = city_,
+state = state_,
+zip = zip_;
+
++ (BSInitializer *)blindsideInitializer {
+    return [BSInitializer initializerWithClass:self selector:@selector(initWithStreet:city:state:zip:) 
+                                  argumentKeys:@"street", @"city", @"state", @"zip", nil];
+}
+
+- (id)initWithStreet:(NSString *)street city:(City *)city state:(State *)state zip:(NSString *)zip {
+    if (self = [super init]) {
+        self.street = street;
+        self.city = city;
+        self.state = state;
+        self.zip = zip;
+    }
+    return self;
+}
+
+- (void)dealloc {
+    self.street = nil;
+    self.city = nil;
+    self.state = nil;
+    self.zip = nil;
+    [super dealloc];
+}
+
 @end
 
 @implementation House : NSObject
@@ -37,6 +73,8 @@ driveway = driveway_;
 
 - (void)dealloc {
     self.address = nil;
+    self.garage = nil;
+    self.driveway = nil;
     [super dealloc];
 }
 

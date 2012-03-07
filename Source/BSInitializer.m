@@ -3,13 +3,12 @@
 @interface BSInitializer ()
 @property (nonatomic, assign) Class type;
 @property (nonatomic, assign) SEL selector;
-@property (nonatomic, retain) NSArray *argKeys;
 @property (nonatomic, retain) NSMethodSignature *signature;
 @end
 
 @implementation BSInitializer
 
-@synthesize type = type_, selector = selector_, argKeys = argKeys_, signature = signature_;
+@synthesize type = type_, selector = selector_, argumentKeys = argumentKeys_, signature = signature_;
 
 + (BSInitializer *)initializerWithClass:(Class)type selector:(SEL)selector argumentKeys:(id)firstKey, ... {
     NSMutableArray *argKeys = [NSMutableArray array];
@@ -32,34 +31,52 @@
     if (self = [super init]) {
         self.type = type;
         self.selector = selector;
-        self.argKeys = argumentKeys;    
+        self.argumentKeys = argumentKeys;    
         self.signature = [self.type instanceMethodSignatureForSelector:self.selector];
     }
     return self;
 }
                           
 - (void)dealloc {
-    self.argKeys = nil;
+    self.argumentKeys = nil;
     self.signature = nil;
     [super dealloc];
 }
 
 - (id)keyForArgumentAtIndex:(NSUInteger)index {
-    return [self.argKeys objectAtIndex:index];
+    return [self.argumentKeys objectAtIndex:index];
 }
 
 - (NSUInteger)numberOfArguments {
     return self.signature.numberOfArguments - 2;
 }
 
-- (id)perform {
+- (id)perform:(NSArray *)argValues {
     id instance = [self.type alloc];
-    return [instance performSelector:self.selector];
-}
+    
+    if (self.numberOfArguments == 0) {
+        [instance performSelector:self.selector];        
+    } else if (self.numberOfArguments == 1) {
+        id argValue = [argValues objectAtIndex:0];
+        [instance performSelector:self.selector withObject:argValue];        
+    } else if (self.numberOfArguments == 2) {
+        id arg0Value = [argValues objectAtIndex:0];
+        id arg1Value = [argValues objectAtIndex:1];
+        [instance performSelector:self.selector withObject:arg0Value withObject:arg1Value];                
+    } else {
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:self.signature];
+        [invocation setTarget:instance];
+        [invocation setSelector:self.selector];
 
-- (id)performWithObject:(id)object {
-    id instance = [self.type alloc];
-    return [instance performSelector:self.selector withObject:object];    
+        for (int i = 0; i < self.numberOfArguments; i++) {
+            id argValue = [argValues objectAtIndex:i];
+            [invocation setArgument:&argValue atIndex:(i + 2)];
+        }
+        
+        [invocation invoke];
+    }
+    
+    return instance;
 }
 
 @end

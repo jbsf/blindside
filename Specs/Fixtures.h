@@ -2,6 +2,12 @@
 
 @class BSInitializer;
 
+@interface State : NSObject
+@end
+
+@interface City : NSObject
+@end
+
 @interface Garage : NSObject
 @end
 
@@ -9,6 +15,13 @@
 @end
 
 @interface Address : NSObject 
+@property (nonatomic, retain) NSString *street;
+@property (nonatomic, retain) City *city;
+@property (nonatomic, retain) State *state;
+@property (nonatomic, retain) NSString *zip;
+
++ (BSInitializer *)blindsideInitializer;
+- (id)initWithStreet:(NSString *)street city:(City *)city state:(State *)state zip:(NSString *)zip;
 
 @end
 

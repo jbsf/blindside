@@ -3,9 +3,11 @@
 @interface BSInitializer : NSObject {
     Class type_;
     SEL selector_;
-    NSArray *argKeys_;
+    NSArray *argumentKeys_;
     NSMethodSignature *signature_;
 }
+
+@property (nonatomic, retain) NSArray *argumentKeys;
 
 + (BSInitializer *)initializerWithClass:(Class)type selector:(SEL)selector argumentKeys:(id)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
 
@@ -14,6 +16,6 @@
 - (NSUInteger)numberOfArguments;
 - (id)keyForArgumentAtIndex:(NSUInteger)index;
 
-- (id)perform;
-- (id)performWithObject:(id)object;
+- (id)perform:(NSArray *)argValues;
+
 @end
