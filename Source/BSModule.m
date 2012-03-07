@@ -35,12 +35,7 @@
 }
 
 - (id<BSProvider>)providerForKey:(id)key {
-    id<BSProvider> provider = [self.providers objectForKey:key];
-    if (provider == nil) {
-        BSInitializer *initializer = [key performSelector:@selector(defaultBSInitializer)];
-        provider = [BSInitializerProvider providerWithInitializer:initializer module:self];
-    }
-    return provider;
+    return [self.providers objectForKey:key];
 }
 
 @end

@@ -1,6 +1,8 @@
 #import "BSInjector.h"
 #import "BSModule.h"
 #import "BSProvider.h"
+#import "BSInitializerProvider.h"
+#import "BSInitializer.h"
 
 @implementation BSInjector
 
@@ -20,6 +22,10 @@
 
 - (id)getInstance:(id)key {
     id<BSProvider> provider = [self.module providerForKey:key];
+    if (provider == nil && [key respondsToSelector:@selector(blindsideInitializer)]) {
+        BSInitializer *initializer = [key performSelector:@selector(blindsideInitializer)];
+        provider = [BSInitializerProvider providerWithInitializer:initializer injector:self];
+    }
     return [provider provide];
 }
 

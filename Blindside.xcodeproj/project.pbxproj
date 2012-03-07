@@ -59,6 +59,8 @@
 		29997B691505EE2C00C12110 /* BSInitializer.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997AFF1505D8A600C12110 /* BSInitializer.h */; };
 		29997B6A1505EE2C00C12110 /* BSInitializerProvider.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997B001505D8A600C12110 /* BSInitializerProvider.h */; };
 		29997B6B1505EE2C00C12110 /* Blindside.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997AB41505D04600C12110 /* Blindside.h */; };
+		29C9673F15072C4C00356446 /* BSInitializerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997B0F1505D94200C12110 /* BSInitializerProvider.m */; };
+		29C9674915072C5300356446 /* BSInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997B0E1505D94200C12110 /* BSInitializer.m */; };
 		29CAC7031502932000731862 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC7021502932000731862 /* Foundation.framework */; };
 		29CAC7061502932000731862 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC7051502932000731862 /* main.m */; };
 		29CAC77C1502A3B300731862 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC76615029F2900731862 /* Cedar.framework */; };
@@ -171,7 +173,7 @@
 		29997B4B1505EC0B00C12110 /* Blindside-StaticLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blindside-StaticLib-Prefix.pch"; sourceTree = "<group>"; };
 		29997B4C1505EC0B00C12110 /* Blindside_StaticLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blindside_StaticLib.h; sourceTree = "<group>"; };
 		29997B4D1505EC0B00C12110 /* Blindside_StaticLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Blindside_StaticLib.m; sourceTree = "<group>"; };
-		29CAC6E4150292AD00731862 /* Blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Blindside.framework; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29CAC6E4150292AD00731862 /* Blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CAC6E7150292AD00731862 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		29CAC6EA150292AD00731862 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		29CAC6EB150292AD00731862 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -601,6 +603,8 @@
 				29997A821502C48B00C12110 /* BSInstanceProvider.m in Sources */,
 				29997A851502C48B00C12110 /* BSModule.m in Sources */,
 				29997AA01503548F00C12110 /* BSInitializerSpec.mm in Sources */,
+				29C9673F15072C4C00356446 /* BSInitializerProvider.m in Sources */,
+				29C9674915072C5300356446 /* BSInitializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

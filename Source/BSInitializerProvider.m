@@ -4,22 +4,26 @@
 #import "BSInitializer.h"
 
 @interface BSInitializerProvider ()
+
 @property (nonatomic, assign) BSInitializer *initializer;
-@property (nonatomic, assign) BSModule *module;
+@property (nonatomic, assign) BSInjector *injector;
+
+- (void)injectProperties:(id)instance;
+
 @end
 
 @implementation BSInitializerProvider
 
-@synthesize initializer = initializer_, module = module_;
+@synthesize initializer = initializer_, injector = injector_;
 
-+ (BSInitializerProvider *)providerWithInitializer:(BSInitializer *)initializer module:(BSModule *)module {
-    return [[[BSInitializerProvider alloc] initWithInitializer:initializer module:module] autorelease];
++ (BSInitializerProvider *)providerWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector {
+    return [[[BSInitializerProvider alloc] initWithInitializer:initializer injector:injector] autorelease];
 }
 
-- (id)initWithInitializer:(BSInitializer *)initializer module:(BSModule *)module{
+- (id)initWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector{
     if (self = [super init]) {
         self.initializer = initializer;
-        self.module      = module;
+        self.injector    = injector;
     }
     return self;
 }
@@ -29,11 +33,23 @@
         return [self.initializer perform];        
     } else if (self.initializer.numberOfArguments == 1) {
         id argKey = [self.initializer keyForArgumentAtIndex:0];
-        id<BSProvider> provider = [self.module providerForKey:argKey];
-        id argValue = [provider provide];
-        return [self.initializer performWithObject:argValue];        
+        id argValue = [self.injector getInstance:argKey];
+        id newInstance = [self.initializer performWithObject:argValue];
+        [self injectProperties:newInstance];
+        return newInstance;
     }
     return nil;
+}
+
+- (void)injectProperties:(id)instance {
+    if ([[instance class] respondsToSelector:@selector(blindsideProperties)]) {
+        NSDictionary *properties = [[instance class] performSelector:@selector(blindsideProperties)];
+        for (id propertyName in properties) {
+            id argKey = [properties objectForKey:propertyName];
+            id argValue = [self.injector getInstance:argKey];
+            [instance setValue:argValue forKey:propertyName];
+        }
+    }
 }
 
 @end
