@@ -8,9 +8,14 @@
 
 @synthesize module = module_;
 
++ (BSInjector *)injectorWithModule:(BSModule *)module {
+    return [[[BSInjector alloc] initWithModule:module] autorelease];
+}
+
 - (id)initWithModule:(BSModule *)module {
     if (self = [super init]) {
         self.module = module;
+        [module configure];
     }
     return self;
 }
@@ -28,7 +33,9 @@
         provider = [BSInitializerProvider providerWithInitializer:initializer injector:self];
     }
     
-    return [provider provide];
+    id instance = [provider provide];
+    
+    return instance ? instance : [NSNull null];
 }
 
 @end

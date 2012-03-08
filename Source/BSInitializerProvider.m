@@ -12,6 +12,7 @@
 
 @end
 
+
 @implementation BSInitializerProvider
 
 @synthesize initializer = initializer_, injector = injector_;

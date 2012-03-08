@@ -57,6 +57,23 @@ describe(@"BSInjector", ^{
                 expect(address.state  == state).to(equal(YES));
                 expect(address.zip    == zip).to(equal(YES));
             });
+            
+            context(@"when some argument keys have no bound values", ^{
+                it(@"injects nil", ^{
+                    NSString *street = @"123 Market St.";
+                    City *city = [[[City alloc] init] autorelease];
+                    
+                    [module bind:@"street" toInstance:street];
+                    [module bind:@"city"   toInstance:city];
+                    
+                    Address *address = [injector getInstance:[Address class]];
+                    
+                    expect(address.street == street).to(equal(YES));
+                    expect(address.city   == city).to(equal(YES));
+                    expect(address.state).to(be_nil);
+                    expect(address.zip).to(be_nil);                    
+                });
+            });
         });
 
         context(@"when the class also has blindsideProperties", ^{
@@ -73,7 +90,7 @@ describe(@"BSInjector", ^{
                 House *house = [injector getInstance:[House class]];
                 expect(house.garage == garage).to(equal(YES));
                 expect(house.driveway == driveway).to(equal(YES));
-            });
+            });            
         });
     });
 });

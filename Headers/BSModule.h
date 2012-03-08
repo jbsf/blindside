@@ -12,4 +12,6 @@
 
 - (id<BSProvider>)providerForKey:(id)key;
 
+- (void)configure;
+
 @end

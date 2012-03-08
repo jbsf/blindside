@@ -38,5 +38,8 @@
     return [self.providers objectForKey:key];
 }
 
+- (void)configure {
+}
+
 @end
  

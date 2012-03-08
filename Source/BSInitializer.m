@@ -4,6 +4,9 @@
 @property (nonatomic, assign) Class type;
 @property (nonatomic, assign) SEL selector;
 @property (nonatomic, retain) NSMethodSignature *signature;
+
+- (id)nullify:(id)value;
+
 @end
 
 @implementation BSInitializer
@@ -57,11 +60,11 @@
     if (self.numberOfArguments == 0) {
         [instance performSelector:self.selector];        
     } else if (self.numberOfArguments == 1) {
-        id argValue = [argValues objectAtIndex:0];
+        id argValue = [self nullify:[argValues objectAtIndex:0]];
         [instance performSelector:self.selector withObject:argValue];        
     } else if (self.numberOfArguments == 2) {
-        id arg0Value = [argValues objectAtIndex:0];
-        id arg1Value = [argValues objectAtIndex:1];
+        id arg0Value = [self nullify:[argValues objectAtIndex:0]];
+        id arg1Value = [self nullify:[argValues objectAtIndex:1]];
         [instance performSelector:self.selector withObject:arg0Value withObject:arg1Value];                
     } else {
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:self.signature];
@@ -69,7 +72,7 @@
         [invocation setSelector:self.selector];
 
         for (int i = 0; i < self.numberOfArguments; i++) {
-            id argValue = [argValues objectAtIndex:i];
+            id argValue = [self nullify:[argValues objectAtIndex:i]];
             [invocation setArgument:&argValue atIndex:(i + 2)];
         }
         
@@ -77,6 +80,14 @@
     }
     
     return instance;
+}
+
+- (id)nullify:(id)value {
+    if (value == [NSNull null]) {
+        return nil;
+    }
+    
+    return value;
 }
 
 @end
