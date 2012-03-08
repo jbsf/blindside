@@ -33,9 +33,7 @@
         provider = [BSInitializerProvider providerWithInitializer:initializer injector:self];
     }
     
-    id instance = [provider provide];
-    
-    return instance ? instance : [NSNull null];
+    return [provider provide];
 }
 
 @end

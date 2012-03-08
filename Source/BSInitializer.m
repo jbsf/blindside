@@ -1,4 +1,5 @@
 #import "BSInitializer.h"
+#import "BSNull.h"
 
 @interface BSInitializer ()
 @property (nonatomic, assign) Class type;
@@ -83,10 +84,9 @@
 }
 
 - (id)nullify:(id)value {
-    if (value == [NSNull null]) {
+    if (value == [BSNull null]) {
         return nil;
     }
-    
     return value;
 }
 

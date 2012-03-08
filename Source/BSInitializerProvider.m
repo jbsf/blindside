@@ -2,6 +2,7 @@
 #import "BSInjector.h"
 #import "BSModule.h"
 #import "BSInitializer.h"
+#import "BSNull.h"
 
 @interface BSInitializerProvider ()
 
@@ -39,6 +40,9 @@
     
     for (id argKey in self.initializer.argumentKeys) {
         id argValue = [self.injector getInstance:argKey];
+        if (argValue == nil) {
+            argValue = [BSNull null];
+        }
         [argValues addObject:argValue];
     }
     

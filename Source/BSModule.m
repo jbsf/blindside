@@ -34,6 +34,10 @@
     [self.providers setObject:provider forKey:key];
 }
 
+- (void)bind:(id)key withScope:(BSScope)scope {
+    
+}
+
 - (id<BSProvider>)providerForKey:(id)key {
     return [self.providers objectForKey:key];
 }

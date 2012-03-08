@@ -93,5 +93,16 @@ describe(@"BSInjector", ^{
             });            
         });
     });
+    
+    describe(@"scoping", ^{
+        describe(@"singleton", ^{
+            it(@"uses the same instance for all injection points", ^{
+                [module bind:[House class] withScope:bsScopeSingleton];
+                House *house1 = [injector getInstance:[House class]];
+                House *house2 = [injector getInstance:[House class]];
+                expect(house1 == house2).to(equal(YES));
+            });
+        });
+    });
 });
 SPEC_END
