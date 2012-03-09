@@ -2,6 +2,7 @@
 #import "BSModule.h"
 #import "BSInjector.h"
 #import "Fixtures.h"
+#import "BSSingleton.h"
 
 using namespace Cedar::Matchers;
 
@@ -97,10 +98,18 @@ describe(@"BSInjector", ^{
     describe(@"scoping", ^{
         describe(@"singleton", ^{
             it(@"uses the same instance for all injection points", ^{
-                [module bind:[House class] withScope:bsScopeSingleton];
+                [module bind:[House class] withScope:[BSSingleton scope]];
                 House *house1 = [injector getInstance:[House class]];
                 House *house2 = [injector getInstance:[House class]];
                 expect(house1 == house2).to(equal(YES));
+            });
+        });
+
+        describe(@"unscoped", ^{
+            it(@"uses a different instance for each injection point", ^{
+                House *house1 = [injector getInstance:[House class]];
+                House *house2 = [injector getInstance:[House class]];
+                expect(house1 == house2).to(equal(NO));
             });
         });
     });
