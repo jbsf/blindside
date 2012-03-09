@@ -71,20 +71,20 @@
 		29C967671508919400356446 /* BSScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967661508919300356446 /* BSScope.h */; };
 		29C967681508919400356446 /* BSScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967661508919300356446 /* BSScope.h */; };
 		29C967691508919400356446 /* BSScope.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967661508919300356446 /* BSScope.h */; };
-		29C9679C1508A76500356446 /* BSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C9679A1508A76400356446 /* BSNull.h */; };
-		29C9679D1508A76500356446 /* BSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C9679A1508A76400356446 /* BSNull.h */; };
-		29C9679E1508A76500356446 /* BSNull.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C9679A1508A76400356446 /* BSNull.h */; };
-		29C9679F1508A76500356446 /* BSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C9679B1508A76500356446 /* BSNull.m */; };
-		29C967A01508A76500356446 /* BSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C9679B1508A76500356446 /* BSNull.m */; };
-		29C967A11508A76500356446 /* BSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C9679B1508A76500356446 /* BSNull.m */; };
-		29C967A21508A76500356446 /* BSNull.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C9679B1508A76500356446 /* BSNull.m */; };
-		29C967A51509092B00356446 /* BSSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967A31509092B00356446 /* BSSingleton.h */; };
-		29C967A61509092B00356446 /* BSSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967A31509092B00356446 /* BSSingleton.h */; };
-		29C967A71509092B00356446 /* BSSingleton.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967A31509092B00356446 /* BSSingleton.h */; };
-		29C967A81509092B00356446 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967A41509092B00356446 /* BSSingleton.m */; };
-		29C967A91509092B00356446 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967A41509092B00356446 /* BSSingleton.m */; };
-		29C967AA1509092B00356446 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967A41509092B00356446 /* BSSingleton.m */; };
-		29C967AB1509092B00356446 /* BSSingleton.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967A41509092B00356446 /* BSSingleton.m */; };
+		29C967D11509BF1100356446 /* BSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967CF1509BF1100356446 /* BSNull.h */; };
+		29C967D21509BF1100356446 /* BSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967CF1509BF1100356446 /* BSNull.h */; };
+		29C967D31509BF1100356446 /* BSNull.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967CF1509BF1100356446 /* BSNull.h */; };
+		29C967D41509BF1100356446 /* BSSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967D01509BF1100356446 /* BSSingleton.h */; };
+		29C967D51509BF1100356446 /* BSSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967D01509BF1100356446 /* BSSingleton.h */; };
+		29C967D61509BF1100356446 /* BSSingleton.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967D01509BF1100356446 /* BSSingleton.h */; };
+		29C967D91509BF2100356446 /* BSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D71509BF2100356446 /* BSNull.m */; };
+		29C967DA1509BF2100356446 /* BSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D71509BF2100356446 /* BSNull.m */; };
+		29C967DB1509BF2100356446 /* BSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D71509BF2100356446 /* BSNull.m */; };
+		29C967DC1509BF2100356446 /* BSNull.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967D71509BF2100356446 /* BSNull.m */; };
+		29C967DD1509BF2100356446 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; };
+		29C967DE1509BF2100356446 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; };
+		29C967DF1509BF2100356446 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; };
+		29C967E01509BF2100356446 /* BSSingleton.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; };
 		29CAC7031502932000731862 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC7021502932000731862 /* Foundation.framework */; };
 		29CAC7061502932000731862 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC7051502932000731862 /* main.m */; };
 		29CAC77C1502A3B300731862 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC76615029F2900731862 /* Cedar.framework */; };
@@ -175,10 +175,10 @@
 				29C9675C1508744900356446 /* NSObject+Blindside.h in Copy headers to framework */,
 				29C967601508744900356446 /* NSObject+Blindside.m in Copy headers to framework */,
 				29C967691508919400356446 /* BSScope.h in Copy headers to framework */,
-				29C9679E1508A76500356446 /* BSNull.h in Copy headers to framework */,
-				29C967A21508A76500356446 /* BSNull.m in Copy headers to framework */,
-				29C967A71509092B00356446 /* BSSingleton.h in Copy headers to framework */,
-				29C967AB1509092B00356446 /* BSSingleton.m in Copy headers to framework */,
+				29C967D31509BF1100356446 /* BSNull.h in Copy headers to framework */,
+				29C967D61509BF1100356446 /* BSSingleton.h in Copy headers to framework */,
+				29C967DC1509BF2100356446 /* BSNull.m in Copy headers to framework */,
+				29C967E01509BF2100356446 /* BSSingleton.m in Copy headers to framework */,
 			);
 			name = "Copy headers to framework";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,10 +207,10 @@
 		29C967581508744900356446 /* NSObject+Blindside.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Blindside.h"; sourceTree = "<group>"; };
 		29C967591508744900356446 /* NSObject+Blindside.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Blindside.m"; path = "Headers/NSObject+Blindside.m"; sourceTree = "<group>"; };
 		29C967661508919300356446 /* BSScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSScope.h; sourceTree = "<group>"; };
-		29C9679A1508A76400356446 /* BSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSNull.h; path = ../BSNull.h; sourceTree = "<group>"; };
-		29C9679B1508A76500356446 /* BSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSNull.m; sourceTree = "<group>"; };
-		29C967A31509092B00356446 /* BSSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSSingleton.h; path = ../BSSingleton.h; sourceTree = "<group>"; };
-		29C967A41509092B00356446 /* BSSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSingleton.m; sourceTree = "<group>"; };
+		29C967CF1509BF1100356446 /* BSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSNull.h; sourceTree = "<group>"; };
+		29C967D01509BF1100356446 /* BSSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSingleton.h; sourceTree = "<group>"; };
+		29C967D71509BF2100356446 /* BSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSNull.m; path = Source/BSNull.m; sourceTree = "<group>"; };
+		29C967D81509BF2100356446 /* BSSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSSingleton.m; path = Source/BSSingleton.m; sourceTree = "<group>"; };
 		29CAC6E4150292AD00731862 /* Blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CAC6E7150292AD00731862 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		29CAC6EA150292AD00731862 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -256,14 +256,14 @@
 		29997A751502C38400C12110 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				29C967D71509BF2100356446 /* BSNull.m */,
+				29C967D81509BF2100356446 /* BSSingleton.m */,
 				29C967591508744900356446 /* NSObject+Blindside.m */,
 				29997A771502C48B00C12110 /* BSInjector.m */,
 				29997A791502C48B00C12110 /* BSInstanceProvider.m */,
 				29997A7B1502C48B00C12110 /* BSModule.m */,
-				29C9679B1508A76500356446 /* BSNull.m */,
 				29997B0E1505D94200C12110 /* BSInitializer.m */,
 				29997B0F1505D94200C12110 /* BSInitializerProvider.m */,
-				29C967A41509092B00356446 /* BSSingleton.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -271,17 +271,17 @@
 		29997AB31505CE7800C12110 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				29C967CF1509BF1100356446 /* BSNull.h */,
+				29C967D01509BF1100356446 /* BSSingleton.h */,
 				29997B061505D8FE00C12110 /* BSInjector.h */,
 				29997B071505D8FE00C12110 /* BSInstanceProvider.h */,
 				29997B081505D8FE00C12110 /* BSModule.h */,
-				29C9679A1508A76400356446 /* BSNull.h */,
 				29997B091505D8FE00C12110 /* BSProvider.h */,
 				29997AFF1505D8A600C12110 /* BSInitializer.h */,
 				29997B001505D8A600C12110 /* BSInitializerProvider.h */,
 				29997AB41505D04600C12110 /* Blindside.h */,
 				29C967581508744900356446 /* NSObject+Blindside.h */,
 				29C967661508919300356446 /* BSScope.h */,
-				29C967A31509092B00356446 /* BSSingleton.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -407,8 +407,8 @@
 				29997B5D1505EC4F00C12110 /* Blindside.h in Headers */,
 				29C9675B1508744900356446 /* NSObject+Blindside.h in Headers */,
 				29C967681508919400356446 /* BSScope.h in Headers */,
-				29C9679D1508A76500356446 /* BSNull.h in Headers */,
-				29C967A61509092B00356446 /* BSSingleton.h in Headers */,
+				29C967D21509BF1100356446 /* BSNull.h in Headers */,
+				29C967D51509BF1100356446 /* BSSingleton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,8 +425,8 @@
 				29997B0D1505D8FE00C12110 /* BSProvider.h in Headers */,
 				29C9675A1508744900356446 /* NSObject+Blindside.h in Headers */,
 				29C967671508919400356446 /* BSScope.h in Headers */,
-				29C9679C1508A76500356446 /* BSNull.h in Headers */,
-				29C967A51509092B00356446 /* BSSingleton.h in Headers */,
+				29C967D11509BF1100356446 /* BSNull.h in Headers */,
+				29C967D41509BF1100356446 /* BSSingleton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,8 +631,8 @@
 				29997B551505EC4500C12110 /* BSInitializer.m in Sources */,
 				29997B561505EC4500C12110 /* BSInitializerProvider.m in Sources */,
 				29C9675F1508744900356446 /* NSObject+Blindside.m in Sources */,
-				29C967A11508A76500356446 /* BSNull.m in Sources */,
-				29C967AA1509092B00356446 /* BSSingleton.m in Sources */,
+				29C967DB1509BF2100356446 /* BSNull.m in Sources */,
+				29C967DF1509BF2100356446 /* BSSingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,8 +646,8 @@
 				29997B111505D94200C12110 /* BSInitializer.m in Sources */,
 				29997B121505D94200C12110 /* BSInitializerProvider.m in Sources */,
 				29C9675D1508744900356446 /* NSObject+Blindside.m in Sources */,
-				29C9679F1508A76500356446 /* BSNull.m in Sources */,
-				29C967A81509092B00356446 /* BSSingleton.m in Sources */,
+				29C967D91509BF2100356446 /* BSNull.m in Sources */,
+				29C967DD1509BF2100356446 /* BSSingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,8 +665,8 @@
 				29C9673F15072C4C00356446 /* BSInitializerProvider.m in Sources */,
 				29C9674915072C5300356446 /* BSInitializer.m in Sources */,
 				29C9675E1508744900356446 /* NSObject+Blindside.m in Sources */,
-				29C967A01508A76500356446 /* BSNull.m in Sources */,
-				29C967A91509092B00356446 /* BSSingleton.m in Sources */,
+				29C967DA1509BF2100356446 /* BSNull.m in Sources */,
+				29C967DE1509BF2100356446 /* BSSingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
