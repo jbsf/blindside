@@ -10,3 +10,5 @@
 #import "BSInstanceProvider.h"
 #import "BSModule.h"
 #import "BSProvider.h"
+#import "NSObject+Blindside.h"
+#import "BSSingleton.h"

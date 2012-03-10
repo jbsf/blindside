@@ -12,7 +12,7 @@
 
 @implementation BSModule
 
-@synthesize injector = injector_, providers = providers_, scopes = scopes_;
+@synthesize providers = providers_, scopes = scopes_;
 
 + (BSModule *)module {
     return [[[BSModule alloc] init] autorelease];
@@ -46,18 +46,11 @@
 }
 
 - (id<BSProvider>)providerForKey:(id)key {
-    id<BSProvider> provider = [self.providers objectForKey:key];
-    id<BSScope> scope = [self.scopes objectForKey:key];
-    
-    if (provider == nil && [key respondsToSelector:@selector(blindsideInitializer)]) {
-        BSInitializer *initializer = [key performSelector:@selector(blindsideInitializer)];
-        provider = [BSInitializerProvider providerWithInitializer:initializer injector:self.injector];
-    }
-    
-    if (provider && scope) {
-        return [scope scope:provider];
-    }
-    return provider;
+    return [self.providers objectForKey:key];
+}
+
+- (id<BSScope>)scopeForKey:(id)key {
+    return [self.scopes objectForKey:key];    
 }
 
 - (void)configure {

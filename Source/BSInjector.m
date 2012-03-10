@@ -14,9 +14,7 @@
 
 - (id)initWithModule:(BSModule *)module {
     if (self = [super init]) {
-        // unfortunate bi-directional dependency. injector does not really do much as is.
         self.module = module;
-        module.injector = self;
         [module configure];
     }
     return self;
@@ -29,6 +27,17 @@
 
 - (id)getInstance:(id)key {
     id<BSProvider> provider = [self.module providerForKey:key];
+    id<BSScope> scope = [self.module scopeForKey:key];
+    
+    if (provider == nil && [key respondsToSelector:@selector(blindsideInitializer)]) {
+        BSInitializer *initializer = [key performSelector:@selector(blindsideInitializer)];
+        provider = [BSInitializerProvider providerWithInitializer:initializer injector:self];
+    }
+    
+    if (provider && scope) {
+        return [[scope scope:provider] provide];
+    }
+
     return [provider provide];
 }
 

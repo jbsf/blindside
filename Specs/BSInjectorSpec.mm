@@ -79,6 +79,7 @@ describe(@"BSInjector", ^{
 
         context(@"when the class also has blindsideProperties", ^{
             it(@"injects the properties", ^{
+                [Address blindsideInitializer];
                 Address *address = [[[Address alloc] init] autorelease];
                 [module bind:[Address class] toInstance:address];
 

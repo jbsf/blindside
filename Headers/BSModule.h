@@ -2,15 +2,11 @@
 
 #import "BSScope.h"
 
-@class BSInjector;
 @protocol BSProvider;
 
 @interface BSModule : NSObject {
-    BSInjector *injector_;
     NSMutableDictionary *providers_;
 }
-
-@property (nonatomic, assign) BSInjector *injector;
 
 + (BSModule *)module;
 
@@ -19,6 +15,7 @@
 - (void)bind:(id)key withScope:(id<BSScope>)scope;
 
 - (id<BSProvider>)providerForKey:(id)key;
+- (id<BSScope>)scopeForKey:(id)key;
 
 - (void)configure;
 

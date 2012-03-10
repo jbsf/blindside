@@ -1,6 +1,8 @@
 #import "Fixtures.h"
 #import "BSInitializer.h"
 
+#import <objc/runtime.h>
+
 @implementation State
 @end
 
@@ -22,8 +24,9 @@ state = state_,
 zip = zip_;
 
 + (BSInitializer *)blindsideInitializer {
-    return [BSInitializer initializerWithClass:self selector:@selector(initWithStreet:city:state:zip:) 
+    BSInitializer *initializer = [BSInitializer initializerWithClass:self selector:@selector(initWithStreet:city:state:zip:) 
                                   argumentKeys:@"street", @"city", @"state", @"zip", nil];
+    return initializer;
 }
 
 - (id)initWithStreet:(NSString *)street city:(City *)city state:(State *)state zip:(NSString *)zip {

@@ -1,6 +1,8 @@
 #import "BSInitializer.h"
 #import "BSNull.h"
 
+#import <objc/runtime.h>
+
 @interface BSInitializer ()
 @property (nonatomic, assign) Class type;
 @property (nonatomic, assign) SEL selector;
