@@ -78,21 +78,32 @@ describe(@"BSInjector", ^{
         });
 
         context(@"when the class also has blindsideProperties", ^{
-            it(@"injects the properties", ^{
-                [Address blindsideInitializer];
-                Address *address = [[[Address alloc] init] autorelease];
-                [module bind:[Address class] toInstance:address];
+            __block Garage *garage;
+            __block Driveway *driveway;
 
-                Garage *garage = [[[Garage alloc] init] autorelease];
+            beforeEach(^{
+                garage = [[[Garage alloc] init] autorelease];
                 [module bind:[Garage class] toInstance:garage];
 
-                Driveway *driveway = [[[Driveway alloc] init] autorelease];
+                driveway = [[[Driveway alloc] init] autorelease];
                 [module bind:@"theDriveway" toInstance:driveway];
+            });
 
+            it(@"injects the properties", ^{
                 House *house = [injector getInstance:[House class]];
                 expect(house.garage == garage).to(equal(YES));
                 expect(house.driveway == driveway).to(equal(YES));
-            });            
+            });
+
+            xit(@"injects superclass properties too", ^{
+                TennisCourt *tennisCourt = [[[TennisCourt alloc] init] autorelease];
+                [module bind:[TennisCourt class] toInstance:tennisCourt];
+
+                Mansion *mansion = [injector getInstance:[Mansion class]];
+                expect(mansion.tennisCourt == tennisCourt).to(equal(YES));
+                expect(mansion.garage == garage).to(equal(YES));
+                expect(mansion.driveway == driveway).to(equal(YES));
+            });
         });
     });
     

@@ -3,12 +3,11 @@
 #import <Foundation/NSEnumerator.h>
 
 @interface BSPropertySet : NSObject<NSFastEnumeration> {
-    NSArray *properties_;
+    Class owningClass_;
+    NSMutableArray *properties_;
 }
 
 + (BSPropertySet *)propertySetWithClass:(Class)owningClass propertyNames:(NSString *)property1, ... NS_REQUIRES_NIL_TERMINATION;
-
-- (id)initWithProperties:(NSArray *)properties;
 
 - (void)bindProperty:(NSString *)propertyName toKey:(id)key;
 

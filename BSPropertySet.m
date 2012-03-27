@@ -2,12 +2,16 @@
 #import "BSProperty.h"
 
 @interface BSPropertySet ()
-@property (nonatomic, retain) NSArray *properties;
+@property (nonatomic, assign) Class owningClass;
+@property (nonatomic, retain) NSMutableArray *properties;
+
+- (id)initWithClass:(Class)owningClass properties:(NSMutableArray *)properties;
+
 @end
 
 @implementation BSPropertySet
 
-@synthesize properties = properties_;
+@synthesize owningClass = owningClass_, properties = properties_;
 
 + (BSPropertySet *)propertySetWithClass:(Class)owningClass propertyNames:(NSString *)property1, ... {
     NSMutableArray *bsProperties = [NSMutableArray array];
@@ -22,14 +26,20 @@
         [bsProperties addObject:[BSProperty propertyWithClass:owningClass propertyName:propertyName]];
     }
     va_end(argList);
-    return [[[BSPropertySet alloc] initWithProperties:bsProperties] autorelease];
+    return [[[BSPropertySet alloc] initWithClass:owningClass properties:bsProperties] autorelease];
 };
 
-- (id)initWithProperties:(NSArray *)properties {
+- (id)initWithClass:(Class)owningClass properties:(NSMutableArray *)properties {
     if (self = [super init]) {
+        self.owningClass = owningClass;
         self.properties = properties;
     }
     return self;
+}
+
+- (void)dealloc {
+    self.properties = nil;
+    [super dealloc];
 }
 
 - (void)bindProperty:(NSString *)propertyName toKey:(id)key {

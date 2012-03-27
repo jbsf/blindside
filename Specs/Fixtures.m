@@ -84,3 +84,16 @@ driveway = driveway_;
 
 @end
 
+@implementation TennisCourt
+@end
+
+@implementation Mansion
+
+@synthesize tennisCourt = tennisCourt_;
+
++ (BSPropertySet *)blindsideProperties {
+    return [BSPropertySet propertySetWithClass:self propertyNames:@"tennisCourt", nil];
+}
+
+@end
+

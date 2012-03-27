@@ -82,7 +82,7 @@
         [invocation invoke];
     }
     
-    return instance;
+    return [instance autorelease];
 }
 
 - (id)nullify:(id)value {

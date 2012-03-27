@@ -38,3 +38,10 @@
 - (id)initWithAddress:(Address *)address;
 @end
 
+@interface TennisCourt : NSObject
+@end
+
+@interface Mansion : House
+@property (nonatomic, retain) TennisCourt *tennisCourt;
+@end
+
