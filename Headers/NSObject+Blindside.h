@@ -1,10 +1,12 @@
 #import <Foundation/Foundation.h>
 
-@class BSInitializer;
+@class BSInitializer, BSPropertySet;
+@protocol BSScope;
 
 @interface NSObject(Blindside)
 
 + (BSInitializer *)blinsideInitializer;
-+ (NSDictionary *)blinsideProperties;
++ (BSPropertySet *)blinsideProperties;
++ (id<BSScope>)blindsideScope;
 
 @end

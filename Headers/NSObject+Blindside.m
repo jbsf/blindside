@@ -6,7 +6,11 @@
     return nil;
 }
 
-+ (NSDictionary *)blinsideProperties {
++ (BSPropertySet *)blinsideProperties {
+    return nil;
+}
+
++ (id<BSScope>)blindsideScope {
     return nil;
 }
 

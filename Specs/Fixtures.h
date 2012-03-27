@@ -6,6 +6,7 @@
 @end
 
 @interface City : NSObject
+@property NSUInteger population;
 @end
 
 @interface Garage : NSObject

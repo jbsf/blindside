@@ -1,5 +1,6 @@
 #import "Fixtures.h"
 #import "BSInitializer.h"
+#import "BSPropertySet.h"
 
 #import <objc/runtime.h>
 
@@ -7,6 +8,7 @@
 @end
 
 @implementation City 
+@synthesize population = population_;
 @end
 
 @implementation Garage 
@@ -60,11 +62,10 @@ driveway = driveway_;
     return [BSInitializer initializerWithClass:self selector:@selector(initWithAddress:) argumentKeys:[Address class], nil];
 }
 
-+ (NSDictionary *)blindsideProperties {
-    return [NSDictionary dictionaryWithObjectsAndKeys:
-            [Garage class], @"garage", 
-            [Driveway class], @"driveway", 
-            nil];
++ (BSPropertySet *)blindsideProperties {
+    BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"garage", @"driveway", nil];
+    [propertySet bindProperty:@"driveway" toKey:@"theDriveway"];
+    return propertySet;
 }
 
 - (id)initWithAddress:(Address *)address {

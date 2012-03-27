@@ -87,7 +87,7 @@ describe(@"BSInjector", ^{
                 [module bind:[Garage class] toInstance:garage];
 
                 Driveway *driveway = [[[Driveway alloc] init] autorelease];
-                [module bind:[Driveway class] toInstance:driveway];
+                [module bind:@"theDriveway" toInstance:driveway];
 
                 House *house = [injector getInstance:[House class]];
                 expect(house.garage == garage).to(equal(YES));

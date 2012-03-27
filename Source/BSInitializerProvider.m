@@ -3,6 +3,8 @@
 #import "BSModule.h"
 #import "BSInitializer.h"
 #import "BSNull.h"
+#import "BSPropertySet.h"
+#import "BSProperty.h"
 
 @interface BSInitializerProvider ()
 
@@ -54,11 +56,10 @@
 
 - (void)injectProperties:(id)instance {
     if ([[instance class] respondsToSelector:@selector(blindsideProperties)]) {
-        NSDictionary *properties = [[instance class] performSelector:@selector(blindsideProperties)];
-        for (id propertyName in properties) {
-            id argKey = [properties objectForKey:propertyName];
-            id argValue = [self.injector getInstance:argKey];
-            [instance setValue:argValue forKey:propertyName];
+        BSPropertySet *propertySet = [[instance class] performSelector:@selector(blindsideProperties)];
+        for (BSProperty *property in propertySet) {
+            id value = [self.injector getInstance:property.injectionKey];
+            [instance setValue:value forKey:property.propertyName];
         }
     }
 }
