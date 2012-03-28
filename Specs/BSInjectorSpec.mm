@@ -107,6 +107,18 @@ describe(@"BSInjector", ^{
         });
     });
     
+    it(@"binds to blocks", ^{
+        __block Garage *garage;
+
+        garage = [[[Garage alloc] init] autorelease];
+        [module bind:[Garage class] toBlock:^{
+            return garage;
+        }];
+
+        House *house = [injector getInstance:[House class]];
+        expect(house.garage == garage).to(equal(YES));
+    });
+
     describe(@"scoping", ^{
         describe(@"singleton", ^{
             it(@"uses the same instance for all injection points", ^{

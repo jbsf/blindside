@@ -3,6 +3,7 @@
 #import "BSProvider.h"
 #import "BSInitializerProvider.h"
 #import "BSInitializer.h"
+#import "BSScope.h"
 
 @implementation BSInjector
 
@@ -35,7 +36,7 @@
     }
     
     if (provider && scope) {
-        return [[scope scope:provider] provide];
+        provider = [scope scope:provider];
     }
 
     return [provider provide];

@@ -3,6 +3,7 @@
 #import "BSModule.h"
 #import "BSInstanceProvider.h"
 #import "BSInitializerProvider.h"
+#import "BSBlockProvider.h"
 #import "BSInitializer.h"
 
 @interface BSModule ()
@@ -38,6 +39,11 @@
 }
 
 - (void)bind:(id)key toProvider:(id<BSProvider>)provider {
+    [self.providers setObject:provider forKey:key];
+}
+
+- (void)bind:(id)key toBlock:(id(^)())block {
+    BSBlockProvider *provider = [BSBlockProvider provider:block];
     [self.providers setObject:provider forKey:key];
 }
 
