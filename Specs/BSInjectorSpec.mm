@@ -118,7 +118,29 @@ describe(@"BSInjector", ^{
         House *house = [injector getInstance:[House class]];
         expect(house.garage == garage).to(equal(YES));
     });
+    
+    describe(@"binding to classes", ^{
+        context(@"when the class has a blindside initializer", ^{
+            it(@"builds the class with the blindside initializer", ^{
+                [module bind:@"expensivePurchase" toClass:[House class]];
+                id expensivePurchase = [injector getInstance:@"expensivePurchase"];
+                expect([expensivePurchase class]).to(equal([House class]));
+            });
+        });
 
+        context(@"when the class has a default initializer but no blindside initializer", ^{
+            xit(@"builds the class with the default initializer", ^{
+
+            });
+        });
+
+        context(@"when the class has no blindside initializer nor default initializer", ^{
+            xit(@"raises", ^{
+
+            });
+        });
+    });
+    
     describe(@"scoping", ^{
         describe(@"singleton", ^{
             it(@"uses the same instance for all injection points", ^{

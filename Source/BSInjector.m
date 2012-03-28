@@ -30,8 +30,8 @@
     id<BSProvider> provider = [self.module providerForKey:key];
     id<BSScope> scope = [self.module scopeForKey:key];
     
-    if (provider == nil && [key respondsToSelector:@selector(blindsideInitializer)]) {
-        BSInitializer *initializer = [key performSelector:@selector(blindsideInitializer)];
+    if (provider == nil) {
+        BSInitializer *initializer = [key blindsideInitializer];
         provider = [BSInitializerProvider providerWithInitializer:initializer injector:self];
     }
     

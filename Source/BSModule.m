@@ -47,6 +47,15 @@
     [self.providers setObject:provider forKey:key];
 }
 
+- (void)bind:(id)key toClass:(Class)type {
+    
+}
+
+- (void)bind:(id)key toClass:(Class)type withScope:(id<BSScope>)scope {
+    
+}
+
+
 - (void)bind:(id)key withScope:(id<BSScope>)scope {
     [self.scopes setObject:scope forKey:key];
 }
