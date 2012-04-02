@@ -1,5 +1,4 @@
 #import <Cedar/SpecHelper.h>
-#import "BSModule.h"
 #import "BSInjector.h"
 #import "Fixtures.h"
 #import "BSSingleton.h"
@@ -8,24 +7,22 @@ using namespace Cedar::Matchers;
 
 SPEC_BEGIN(BSInjectorSpec)
 describe(@"BSInjector", ^{
-    __block BSModule *module;
     __block BSInjector *injector;
 
     beforeEach(^{
-        module = [BSModule module];
-        injector = [[[BSInjector alloc] initWithModule:module] autorelease];
+        injector = [[[BSInjector alloc] init] autorelease];
     }); 
 
     it(@"can bind an instance to a class", ^{
         NSString *instance = @"foo";
-        [module bind:[NSObject class] toInstance:instance];
+        [injector bind:[NSObject class] toInstance:instance];
         id object = [injector getInstance:[NSObject class]];
         expect(object == instance).to(equal(YES));
     });
 
     it(@"can bind an instance to a string", ^{
         NSString *instance = @"foo";
-        [module bind:@"key" toInstance:instance];
+        [injector bind:@"key" toInstance:instance];
         id object = [injector getInstance:@"key"];
         expect(object == instance).to(equal(YES));
     });
@@ -33,7 +30,7 @@ describe(@"BSInjector", ^{
     describe(@"building an object whose class has a blindsideInitializer", ^{
         it(@"resolves first-order dependencies", ^{
             Address *address = [[[Address alloc] init] autorelease];
-            [module bind:[Address class] toInstance:address];
+            [injector bind:[Address class] toInstance:address];
             House *house = [injector getInstance:[House class]];
             expect(house).to_not(be_nil());
             expect(house.address).to_not(be_nil());
@@ -46,10 +43,10 @@ describe(@"BSInjector", ^{
                 State *state = [[[State alloc] init] autorelease];
                 NSString *zip = @"94110";
                 
-                [module bind:@"street" toInstance:street];
-                [module bind:@"city"   toInstance:city];
-                [module bind:@"state"  toInstance:state];
-                [module bind:@"zip"    toInstance:zip];
+                [injector bind:@"street" toInstance:street];
+                [injector bind:@"city"   toInstance:city];
+                [injector bind:@"state"  toInstance:state];
+                [injector bind:@"zip"    toInstance:zip];
                 
                 Address *address = [injector getInstance:[Address class]];
                 
@@ -64,8 +61,8 @@ describe(@"BSInjector", ^{
                     NSString *street = @"123 Market St.";
                     City *city = [[[City alloc] init] autorelease];
                     
-                    [module bind:@"street" toInstance:street];
-                    [module bind:@"city"   toInstance:city];
+                    [injector bind:@"street" toInstance:street];
+                    [injector bind:@"city"   toInstance:city];
                     
                     Address *address = [injector getInstance:[Address class]];
                     
@@ -83,10 +80,10 @@ describe(@"BSInjector", ^{
 
             beforeEach(^{
                 garage = [[[Garage alloc] init] autorelease];
-                [module bind:[Garage class] toInstance:garage];
+                [injector bind:[Garage class] toInstance:garage];
 
                 driveway = [[[Driveway alloc] init] autorelease];
-                [module bind:@"theDriveway" toInstance:driveway];
+                [injector bind:@"theDriveway" toInstance:driveway];
             });
 
             it(@"injects the properties", ^{
@@ -97,7 +94,7 @@ describe(@"BSInjector", ^{
 
             xit(@"injects superclass properties too", ^{
                 TennisCourt *tennisCourt = [[[TennisCourt alloc] init] autorelease];
-                [module bind:[TennisCourt class] toInstance:tennisCourt];
+                [injector bind:[TennisCourt class] toInstance:tennisCourt];
 
                 Mansion *mansion = [injector getInstance:[Mansion class]];
                 expect(mansion.tennisCourt == tennisCourt).to(equal(YES));
@@ -111,7 +108,7 @@ describe(@"BSInjector", ^{
         __block Garage *garage;
 
         garage = [[[Garage alloc] init] autorelease];
-        [module bind:[Garage class] toBlock:^{
+        [injector bind:[Garage class] toBlock:^{
             return garage;
         }];
 
@@ -122,15 +119,17 @@ describe(@"BSInjector", ^{
     describe(@"binding to classes", ^{
         context(@"when the class has a blindside initializer", ^{
             it(@"builds the class with the blindside initializer", ^{
-                [module bind:@"expensivePurchase" toClass:[House class]];
+                [injector bind:@"expensivePurchase" toClass:[House class]];
                 id expensivePurchase = [injector getInstance:@"expensivePurchase"];
                 expect([expensivePurchase class]).to(equal([House class]));
             });
         });
 
-        context(@"when the class has a default initializer but no blindside initializer", ^{
+        context(@"when the class does not explictly declare a blindside initializer", ^{
             xit(@"builds the class with the default initializer", ^{
-
+                [injector bind:@"recreationalFacility" toClass:[TennisCourt class]];
+                id recreationalFacility = [injector getInstance:@"recreationalFacility"];
+                expect([recreationalFacility class]).to_not(be_nil);
             });
         });
 
@@ -144,7 +143,7 @@ describe(@"BSInjector", ^{
     describe(@"scoping", ^{
         describe(@"singleton", ^{
             it(@"uses the same instance for all injection points", ^{
-                [module bind:[House class] withScope:[BSSingleton scope]];
+                [injector bind:[House class] withScope:[BSSingleton scope]];
                 House *house1 = [injector getInstance:[House class]];
                 House *house2 = [injector getInstance:[House class]];
                 expect(house1 == house2).to(equal(YES));

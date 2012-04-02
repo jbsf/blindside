@@ -1,26 +1,7 @@
 #import <Foundation/Foundation.h>
 
-#import "BSBlockProvider.h"
+@protocol BSBinder;
 
-@protocol BSProvider, BSScope;
-
-@interface BSModule : NSObject {
-    NSMutableDictionary *providers_;
-}
-
-+ (BSModule *)module;
-
-- (void)bind:(id)key toInstance:(id)instance;
-- (void)bind:(id)key toProvider:(id<BSProvider>)provider;
-- (void)bind:(id)key toBlock:(BSBlock)block;
-- (void)bind:(id)key toClass:(Class)type;
-- (void)bind:(id)key toClass:(Class)type withScope:(id<BSScope>)scope;
-
-- (void)bind:(id)key withScope:(id<BSScope>)scope;
-
-- (id<BSProvider>)providerForKey:(id)key;
-- (id<BSScope>)scopeForKey:(id)key;
-
-- (void)configure;
-
+@protocol BSModule
+- (void)configure:(id<BSBinder>)binder;
 @end

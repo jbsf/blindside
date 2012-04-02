@@ -21,7 +21,6 @@
 @property (nonatomic, retain) State *state;
 @property (nonatomic, retain) NSString *zip;
 
-+ (BSInitializer *)blindsideInitializer;
 - (id)initWithStreet:(NSString *)street city:(City *)city state:(State *)state zip:(NSString *)zip;
 
 @end
@@ -31,9 +30,6 @@
 @property (nonatomic, retain) Address *address;
 @property (nonatomic, retain) Garage *garage;
 @property (nonatomic, retain) Driveway *driveway;
-
-+ (BSInitializer *)blindsideInitializer;
-+ (NSDictionary *)blindsideProperties;
 
 - (id)initWithAddress:(Address *)address;
 @end
