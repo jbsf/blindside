@@ -309,15 +309,15 @@
 			isa = PBXGroup;
 			children = (
 				294B3C3E1522CB4C001A69D3 /* BSBlockProvider.m */,
-				29C967D71509BF2100356446 /* BSNull.m */,
-				29C967D81509BF2100356446 /* BSSingleton.m */,
-				29C967591508744900356446 /* NSObject+Blindside.m */,
-				29997A771502C48B00C12110 /* BSInjector.m */,
-				29997A791502C48B00C12110 /* BSInstanceProvider.m */,
 				29997B0E1505D94200C12110 /* BSInitializer.m */,
 				29997B0F1505D94200C12110 /* BSInitializerProvider.m */,
-				29C967E5150C4F3800356446 /* BSPropertySet.m */,
+				29997A771502C48B00C12110 /* BSInjector.m */,
+				29997A791502C48B00C12110 /* BSInstanceProvider.m */,
+				29C967D71509BF2100356446 /* BSNull.m */,
 				29C967EE150C512000356446 /* BSProperty.m */,
+				29C967E5150C4F3800356446 /* BSPropertySet.m */,
+				29C967D81509BF2100356446 /* BSSingleton.m */,
+				29C967591508744900356446 /* NSObject+Blindside.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -325,21 +325,21 @@
 		29997AB31505CE7800C12110 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				29997AB41505D04600C12110 /* Blindside.h */,
 				29B50683152583840035D197 /* BSBinder.h */,
 				294B3C311522C84E001A69D3 /* BSBlockProvider.h */,
-				29C967CF1509BF1100356446 /* BSNull.h */,
-				29C967D01509BF1100356446 /* BSSingleton.h */,
+				29997AFF1505D8A600C12110 /* BSInitializer.h */,
+				29997B001505D8A600C12110 /* BSInitializerProvider.h */,
 				29997B061505D8FE00C12110 /* BSInjector.h */,
 				29997B071505D8FE00C12110 /* BSInstanceProvider.h */,
 				29997B081505D8FE00C12110 /* BSModule.h */,
-				29997B091505D8FE00C12110 /* BSProvider.h */,
-				29997AFF1505D8A600C12110 /* BSInitializer.h */,
-				29997B001505D8A600C12110 /* BSInitializerProvider.h */,
-				29997AB41505D04600C12110 /* Blindside.h */,
-				29C967581508744900356446 /* NSObject+Blindside.h */,
-				29C967661508919300356446 /* BSScope.h */,
-				29C967E1150C4E1900356446 /* BSPropertySet.h */,
+				29C967CF1509BF1100356446 /* BSNull.h */,
 				29C967EA150C50ED00356446 /* BSProperty.h */,
+				29997B091505D8FE00C12110 /* BSProvider.h */,
+				29C967E1150C4E1900356446 /* BSPropertySet.h */,
+				29C967661508919300356446 /* BSScope.h */,
+				29C967D01509BF1100356446 /* BSSingleton.h */,
+				29C967581508744900356446 /* NSObject+Blindside.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
