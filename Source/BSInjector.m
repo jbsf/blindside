@@ -24,6 +24,7 @@
 + (BSInjector *)injectorWithModule:(id<BSModule>)module {
     BSInjector *injector = [[[BSInjector alloc] init] autorelease];
     [module configure:injector];
+    [injector bind:@"bsInjector" toInstance:injector];
     return injector;
 }
 
