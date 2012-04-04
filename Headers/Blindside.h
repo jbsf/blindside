@@ -12,7 +12,3 @@
 #import "BSProvider.h"
 #import "NSObject+Blindside.h"
 #import "BSSingleton.h"
-
-@interface Blindside : NSObject
-+ (BSInjector *)injector:(BSModule *)module;
-@end

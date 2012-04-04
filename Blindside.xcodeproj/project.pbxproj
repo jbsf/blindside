@@ -109,14 +109,7 @@
 		29C967EF150C512000356446 /* BSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967EE150C512000356446 /* BSProperty.m */; };
 		29C967F0150C512000356446 /* BSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967EE150C512000356446 /* BSProperty.m */; };
 		29C967F1150C512000356446 /* BSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967EE150C512000356446 /* BSProperty.m */; };
-		29C967F4150D2C8800356446 /* BSPropertySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29C967F3150D2C8800356446 /* BSPropertySpec.mm */; };
 		29C967F5150D2C8800356446 /* BSPropertySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29C967F3150D2C8800356446 /* BSPropertySpec.mm */; };
-		29C967F6150D2C8800356446 /* BSPropertySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29C967F3150D2C8800356446 /* BSPropertySpec.mm */; };
-		29C967F7150D2C8800356446 /* BSPropertySpec.mm in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967F3150D2C8800356446 /* BSPropertySpec.mm */; };
-		29C967F9150D37E700356446 /* BSPropertySetSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29C967F8150D37E700356446 /* BSPropertySetSpec.mm */; };
-		29C967FA150D37E700356446 /* BSPropertySetSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29C967F8150D37E700356446 /* BSPropertySetSpec.mm */; };
-		29C967FB150D37E700356446 /* BSPropertySetSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29C967F8150D37E700356446 /* BSPropertySetSpec.mm */; };
-		29C967FC150D37E700356446 /* BSPropertySetSpec.mm in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967F8150D37E700356446 /* BSPropertySetSpec.mm */; };
 		29CAC7031502932000731862 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC7021502932000731862 /* Foundation.framework */; };
 		29CAC7061502932000731862 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC7051502932000731862 /* main.m */; };
 		29CAC77C1502A3B300731862 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC76615029F2900731862 /* Cedar.framework */; };
@@ -213,8 +206,6 @@
 				29C967E01509BF2100356446 /* BSSingleton.m in Copy headers to framework */,
 				29C967E4150C4E1A00356446 /* BSPropertySet.h in Copy headers to framework */,
 				29C967ED150C50EE00356446 /* BSProperty.h in Copy headers to framework */,
-				29C967F7150D2C8800356446 /* BSPropertySpec.mm in Copy headers to framework */,
-				29C967FC150D37E700356446 /* BSPropertySetSpec.mm in Copy headers to framework */,
 				294B3C3D1522C85E001A69D3 /* BSBlockProvider.h in Copy headers to framework */,
 				29B5065F1522CEA20035D197 /* BSBlockProvider.m in Copy headers to framework */,
 				29B506601522DA960035D197 /* BSInjector.m in Copy headers to framework */,
@@ -701,8 +692,6 @@
 				29C967DF1509BF2100356446 /* BSSingleton.m in Sources */,
 				29C967E8150C4F3800356446 /* BSPropertySet.m in Sources */,
 				29C967F1150C512000356446 /* BSProperty.m in Sources */,
-				29C967F6150D2C8800356446 /* BSPropertySpec.mm in Sources */,
-				29C967FB150D37E700356446 /* BSPropertySetSpec.mm in Sources */,
 				29B5065E1522CEA10035D197 /* BSBlockProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -720,8 +709,6 @@
 				29C967DD1509BF2100356446 /* BSSingleton.m in Sources */,
 				29C967E6150C4F3800356446 /* BSPropertySet.m in Sources */,
 				29C967EF150C512000356446 /* BSProperty.m in Sources */,
-				29C967F4150D2C8800356446 /* BSPropertySpec.mm in Sources */,
-				29C967F9150D37E700356446 /* BSPropertySetSpec.mm in Sources */,
 				294B3C3F1522CB4C001A69D3 /* BSBlockProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -743,7 +730,6 @@
 				29C967E7150C4F3800356446 /* BSPropertySet.m in Sources */,
 				29C967F0150C512000356446 /* BSProperty.m in Sources */,
 				29C967F5150D2C8800356446 /* BSPropertySpec.mm in Sources */,
-				29C967FA150D37E700356446 /* BSPropertySetSpec.mm in Sources */,
 				29B506541522CEA10035D197 /* BSBlockProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
