@@ -5,8 +5,8 @@
 
 @interface NSObject(Blindside)
 
-+ (BSInitializer *)blinsideInitializer;
-+ (BSPropertySet *)blinsideProperties;
++ (BSInitializer *)blindsideInitializer;
++ (BSPropertySet *)blindsideProperties;
 + (id<BSScope>)blindsideScope;
 
 @end

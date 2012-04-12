@@ -1,12 +1,14 @@
 #import "NSObject+Blindside.h"
+#import "BSInitializer.h"
 
 @implementation NSObject(Blindside)
 
-+ (BSInitializer *)blinsideInitializer {
-    return nil;
++ (BSInitializer *)blindsideInitializer {
+    SEL selector = @selector(init);
+    return [BSInitializer initializerWithClass:self selector:selector argumentKeys:nil];
 }
 
-+ (BSPropertySet *)blinsideProperties {
++ (BSPropertySet *)blindsideProperties {
     return nil;
 }
 

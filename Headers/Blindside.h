@@ -12,3 +12,5 @@
 #import "BSProvider.h"
 #import "NSObject+Blindside.h"
 #import "BSSingleton.h"
+#import "BSPropertySet.h"
+#import "BSProperty.h"

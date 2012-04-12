@@ -126,7 +126,7 @@ describe(@"BSInjector", ^{
         });
 
         context(@"when the class does not explictly declare a blindside initializer", ^{
-            xit(@"builds the class with the default initializer", ^{
+            it(@"builds the class with the default initializer", ^{
                 [injector bind:@"recreationalFacility" toClass:[TennisCourt class]];
                 id recreationalFacility = [injector getInstance:@"recreationalFacility"];
                 expect([recreationalFacility class]).to_not(be_nil);
