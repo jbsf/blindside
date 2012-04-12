@@ -13,10 +13,10 @@ static NSString *const BSInvalidPropertyException = @"BSInvalidPropertyException
 @implementation BSProperty
 
 @synthesize
-owningClass  = owningClass_,
-propertyName = propertyName_,
-returnType   = returnType_,
-injectionKey = injectionKey_;
+owningClass  = _owningClass,
+propertyName = _propertyName,
+returnType   = _returnType,
+injectionKey = _injectionKey;
 
 + (BSProperty *)propertyWithClass:(Class)owningClass propertyName:(NSString *)propertyName {
     return [[[BSProperty alloc] initWithClass:owningClass propertyName:propertyName] autorelease];
@@ -33,8 +33,8 @@ injectionKey = injectionKey_;
 }
 
 - (id)injectionKey {
-    if (injectionKey_) {
-        return injectionKey_;
+    if (_injectionKey) {
+        return _injectionKey;
     };
     return self.returnType;
 }
@@ -47,6 +47,7 @@ injectionKey = injectionKey_;
                     format:@"Property %@ not found on class %@", self.propertyName, self.owningClass, nil];
     }
     const char *attributes = property_getAttributes(objc_property);
+    // a valid attributes string for an object property will look something like this: T@"Address",&,N,V_address
 //    NSLog(@"================> %s", attributes);
     NSString *attrStr = [NSString stringWithCString:attributes encoding:NSUTF8StringEncoding];
     NSRange startRange = [attrStr rangeOfString:@"T@\""];

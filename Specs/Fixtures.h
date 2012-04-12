@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@class BSInitializer;
+@class BSInitializer, BSInjector;
 
 @interface State : NSObject
 @end
@@ -30,6 +30,7 @@
 @property (nonatomic, retain) Address *address;
 @property (nonatomic, retain) Garage *garage;
 @property (nonatomic, retain) Driveway *driveway;
+@property (nonatomic, assign) BSInjector *injector;
 
 - (id)initWithAddress:(Address *)address;
 @end

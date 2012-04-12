@@ -6,6 +6,9 @@
 #import "BSInstanceProvider.h"
 #import "BSInitializer.h"
 #import "BSScope.h"
+#import "BSProperty.h"
+
+#import <objc/runtime.h>
 
 @interface BSInjector () {
     NSMutableDictionary *providers_;
@@ -14,7 +17,7 @@
 
 @property(nonatomic, retain) NSMutableDictionary *providers;
 @property(nonatomic, retain) NSMutableDictionary *scopes;
-
+- (void)injectInjector:(id)object;
 @end
 
 @implementation BSInjector
@@ -71,6 +74,21 @@
     [self.scopes setObject:scope forKey:key];
 }
 
+- (void)injectInjector:(id)object {
+    objc_property_t objc_property = class_getProperty([object class], "injector");
+    if (objc_property == NULL) {
+        return;
+    }
+
+    const char *attributes = property_getAttributes(objc_property);
+    NSString *attrStr = [NSString stringWithCString:attributes encoding:NSUTF8StringEncoding];
+    NSRange startRange = [attrStr rangeOfString:@"T@\"BSInjector\""];
+
+    if (startRange.location != NSNotFound) {
+        [object setValue:self forKey:@"injector"];
+    }
+}
+
 - (id)getInstance:(id)key {
     id<BSProvider> provider = [self.providers objectForKey:key];
     id<BSScope> scope = [self.scopes objectForKey:key];
@@ -84,8 +102,10 @@
         provider = [scope scope:provider];
     }
 
-    return [provider provide];
-}
+    id instance = [provider provide];
+    [self injectInjector:instance];
 
+    return instance;
+}
 
 @end

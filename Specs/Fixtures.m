@@ -53,10 +53,7 @@ zip = zip_;
 
 @implementation House : NSObject
 
-@synthesize 
-address = address_, 
-garage = garage_,
-driveway = driveway_;
+@synthesize address = _address, garage = _garage, driveway = _driveway, injector = _injector;
 
 + (BSInitializer *)blindsideInitializer {
     return [BSInitializer initializerWithClass:self selector:@selector(initWithAddress:) argumentKeys:[Address class], nil];

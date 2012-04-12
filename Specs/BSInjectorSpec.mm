@@ -158,5 +158,12 @@ describe(@"BSInjector", ^{
             });
         });
     });
+
+    context(@"when the object being retrieved has a writable blindsideInjector property", ^{
+        it(@"injects itself as the property value", ^{
+            House *house = [injector getInstance:[House class]];
+            house.injector should equal(injector);
+        });
+    });
 });
 SPEC_END
