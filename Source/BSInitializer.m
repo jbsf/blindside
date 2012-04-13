@@ -20,15 +20,14 @@
     NSMutableArray *argKeys = [NSMutableArray array];
     if (firstKey) {
         [argKeys addObject:firstKey];
+        va_list argList;
+        id argKey = nil;
+        va_start(argList, firstKey);
+        while ((argKey = va_arg(argList, id))) {
+            [argKeys addObject:argKey];
+        }
+        va_end(argList);
     }
-    
-    va_list argList;
-    id argKey = nil;
-    va_start(argList, firstKey);
-    while ((argKey = va_arg(argList, id))) {
-        [argKeys addObject:argKey];
-    }
-    va_end(argList);
     
     return [[[BSInitializer alloc] initWithClass:type selector:selector argumentKeys:argKeys] autorelease]; 
 }
