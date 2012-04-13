@@ -11,6 +11,8 @@
 @property (nonatomic, retain) BSInitializer *initializer;
 @property (nonatomic, assign) BSInjector *injector;
 
+- (id)initWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector;
+
 - (void)injectProperties:(id)instance;
 
 @end
@@ -18,13 +20,13 @@
 
 @implementation BSInitializerProvider
 
-@synthesize initializer = initializer_, injector = injector_;
+@synthesize initializer = _initializer, injector = _injector;
 
 + (BSInitializerProvider *)providerWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector {
     return [[[BSInitializerProvider alloc] initWithInitializer:initializer injector:injector] autorelease];
 }
 
-- (id)initWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector{
+- (id)initWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector {
     if (self = [super init]) {
         self.initializer = initializer;
         self.injector    = injector;
@@ -37,20 +39,26 @@
     [super dealloc];
 }
 
-- (id)provide {
-    NSMutableArray *argValues = [NSMutableArray array];
-    
+- (id)provide:(NSArray *)args {
+    NSMutableArray *mergedArgValues = [NSMutableArray array];
+    NSUInteger argIndex = 0;
     for (id argKey in self.initializer.argumentKeys) {
         id argValue = [self.injector getInstance:argKey];
+
+        if (argValue == nil && argIndex < args.count) {
+            argValue = [args objectAtIndex:argIndex];
+            argIndex++;
+        }
         if (argValue == nil) {
             argValue = [BSNull null];
         }
-        [argValues addObject:argValue];
+
+        [mergedArgValues addObject:argValue];
     }
-    
-    id newInstance = [self.initializer perform:argValues];    
+
+    id newInstance = [self.initializer perform:mergedArgValues];
     [self injectProperties:newInstance];
-    
+
     return newInstance;
 }
 

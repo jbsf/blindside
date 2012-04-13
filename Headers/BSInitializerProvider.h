@@ -5,11 +5,10 @@
 @class BSInjector, BSInitializer;
 
 @interface BSInitializerProvider : NSObject<BSProvider> {
-    BSInitializer *initializer_;
-    BSInjector    *injector_;
+    BSInitializer *_initializer;
+    BSInjector    *_injector;
 }
 
 + (BSInitializerProvider *)providerWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector;
 
-- (id)initWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector;
 @end

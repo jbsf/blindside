@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol BSProvider <NSObject>
-- (id)provide;
+
+- (id)provide:(NSArray *)args;
+
 @end

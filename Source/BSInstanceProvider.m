@@ -20,7 +20,7 @@
     [super dealloc];
 }
 
-- (id)provide {
+- (id)provide:(NSArray *)args {
     return self.instance;
 }
 

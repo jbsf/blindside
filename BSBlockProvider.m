@@ -30,8 +30,8 @@
     [super dealloc];
 }
 
-- (id)provide {
-    return self.block();
+- (id)provide:(NSArray *)args {
+    return self.block(args);
 }
 
 @end

@@ -18,11 +18,12 @@
 @property(nonatomic, retain) NSMutableDictionary *providers;
 @property(nonatomic, retain) NSMutableDictionary *scopes;
 - (void)injectInjector:(id)object;
+- (id)getInstance:(id)key withArgArray:(NSArray *)args;
 @end
 
 @implementation BSInjector
 
-@synthesize providers = providers_, scopes = scopes_;
+@synthesize providers = _providers, scopes = _scopes;
 
 + (BSInjector *)injectorWithModule:(id<BSModule>)module {
     BSInjector *injector = [[[BSInjector alloc] init] autorelease];
@@ -90,6 +91,27 @@
 }
 
 - (id)getInstance:(id)key {
+    return [self getInstance:key withArgs:nil];
+}
+
+- (id)getInstance:(id)key withArgs:(id)arg1, ... {
+    NSMutableArray *args = [NSMutableArray array];
+    if (arg1) {
+        [args addObject:arg1];
+
+        va_list argList;
+        id arg = nil;
+        va_start(argList, arg1);
+        while ((arg = va_arg(argList, id))) {
+            [args addObject:arg];
+        }
+        va_end(argList);
+    }
+
+    return [self getInstance:key withArgArray:args];
+}
+
+- (id)getInstance:(id)key withArgArray:(NSArray *)args {
     id<BSProvider> provider = [self.providers objectForKey:key];
     id<BSScope> scope = [self.scopes objectForKey:key];
     
@@ -102,10 +124,9 @@
         provider = [scope scope:provider];
     }
 
-    id instance = [provider provide];
+    id instance = [provider provide:args];
     [self injectInjector:instance];
 
     return instance;
 }
-
 @end

@@ -2,7 +2,7 @@
 
 #import "BSProvider.h"
 
-typedef id(^BSBlock)();
+typedef id(^BSBlock)(NSArray *args);
 
 @interface BSBlockProvider : NSObject<BSProvider> {
     BSBlock block_;

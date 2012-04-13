@@ -67,7 +67,7 @@ describe(@"BSInjector", ^{
                     Address *address = [injector getInstance:[Address class]];
                     
                     expect(address.street == street).to(equal(YES));
-                    expect(address.city   == city).to(equal(YES));
+                    expect(address.city == city).to(equal(YES));
                     expect(address.state).to(be_nil);
                     expect(address.zip).to(be_nil);                    
                 });
@@ -108,7 +108,7 @@ describe(@"BSInjector", ^{
         __block Garage *garage;
 
         garage = [[[Garage alloc] init] autorelease];
-        [injector bind:[Garage class] toBlock:^{
+        [injector bind:[Garage class] toBlock:^(NSArray *args){
             return garage;
         }];
 
@@ -163,6 +163,32 @@ describe(@"BSInjector", ^{
         it(@"injects itself as the property value", ^{
             House *house = [injector getInstance:[House class]];
             house.injector should equal(injector);
+        });
+    });
+
+    describe(@"getInstance:withArgs:", ^{
+        context(@"when the are too many args", ^{
+
+        });
+
+        context(@"when there are too few args", ^{
+
+        });
+
+        context(@"with the correct number of args", ^{
+            it(@"injects the provided args along with existing bindings", ^{
+                NSString *street = @"Guerrero";
+                NSString *zip = @"Guerrero";
+                State *state = [[[State alloc] init] autorelease];
+                City *city = [[[City alloc] init] autorelease];
+                [injector bind:@"street" toInstance:street];
+                [injector bind:@"state"  toInstance:state];
+                Address *address = [injector getInstance:[Address class] withArgs:city, zip, nil];
+                address.street should equal(street);
+                address.state should equal(state);
+                address.city should equal(city);
+                address.zip should equal(zip);
+            });
         });
     });
 });

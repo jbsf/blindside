@@ -9,5 +9,6 @@
 + (BSInjector *)injectorWithModule:(id<BSModule>)module;
 
 - (id)getInstance:(id)key;
+- (id)getInstance:(id)key withArgs:(id)arg1, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end
