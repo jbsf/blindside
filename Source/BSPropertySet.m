@@ -17,15 +17,16 @@
     NSMutableArray *bsProperties = [NSMutableArray array];
     if (property1) {
         [bsProperties addObject:[BSProperty propertyWithClass:owningClass propertyName:property1]];
+
+        va_list argList;
+        id propertyName = nil;
+        va_start(argList, property1);
+        while ((propertyName = va_arg(argList, id))) {
+            [bsProperties addObject:[BSProperty propertyWithClass:owningClass propertyName:propertyName]];
+        }
+        va_end(argList);
     }
 
-    va_list argList;
-    id propertyName = nil;
-    va_start(argList, property1);
-    while ((propertyName = va_arg(argList, id))) {
-        [bsProperties addObject:[BSProperty propertyWithClass:owningClass propertyName:propertyName]];
-    }
-    va_end(argList);
     return [[[BSPropertySet alloc] initWithClass:owningClass properties:bsProperties] autorelease];
 };
 

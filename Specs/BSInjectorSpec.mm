@@ -92,7 +92,7 @@ describe(@"BSInjector", ^{
                 expect(house.driveway == driveway).to(equal(YES));
             });
 
-            xit(@"injects superclass properties too", ^{
+            it(@"injects superclass properties too", ^{
                 TennisCourt *tennisCourt = [[[TennisCourt alloc] init] autorelease];
                 [injector bind:[TennisCourt class] toInstance:tennisCourt];
 

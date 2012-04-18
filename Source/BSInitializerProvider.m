@@ -17,7 +17,6 @@
 
 @end
 
-
 @implementation BSInitializerProvider
 
 @synthesize initializer = _initializer, injector = _injector;
@@ -29,7 +28,7 @@
 - (id)initWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector {
     if (self = [super init]) {
         self.initializer = initializer;
-        self.injector    = injector;
+        self.injector = injector;
     }
     return self;
 }

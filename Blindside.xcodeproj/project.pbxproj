@@ -26,7 +26,6 @@
 		294B3C321522C84E001A69D3 /* BSBlockProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 294B3C311522C84E001A69D3 /* BSBlockProvider.h */; };
 		294B3C3C1522C85E001A69D3 /* BSBlockProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 294B3C311522C84E001A69D3 /* BSBlockProvider.h */; };
 		294B3C3D1522C85E001A69D3 /* BSBlockProvider.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 294B3C311522C84E001A69D3 /* BSBlockProvider.h */; };
-		294B3C3F1522CB4C001A69D3 /* BSBlockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3C3E1522CB4C001A69D3 /* BSBlockProvider.m */; };
 		29997A7E1502C48B00C12110 /* BSInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A771502C48B00C12110 /* BSInjector.m */; };
 		29997A7F1502C48B00C12110 /* BSInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A771502C48B00C12110 /* BSInjector.m */; };
 		29997A811502C48B00C12110 /* BSInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A791502C48B00C12110 /* BSInstanceProvider.m */; };
@@ -59,15 +58,6 @@
 		29997B691505EE2C00C12110 /* BSInitializer.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997AFF1505D8A600C12110 /* BSInitializer.h */; };
 		29997B6A1505EE2C00C12110 /* BSInitializerProvider.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997B001505D8A600C12110 /* BSInitializerProvider.h */; };
 		29997B6B1505EE2C00C12110 /* Blindside.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997AB41505D04600C12110 /* Blindside.h */; };
-		29B506541522CEA10035D197 /* BSBlockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3C3E1522CB4C001A69D3 /* BSBlockProvider.m */; };
-		29B5065E1522CEA10035D197 /* BSBlockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3C3E1522CB4C001A69D3 /* BSBlockProvider.m */; };
-		29B5065F1522CEA20035D197 /* BSBlockProvider.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 294B3C3E1522CB4C001A69D3 /* BSBlockProvider.m */; };
-		29B506601522DA960035D197 /* BSInjector.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997A771502C48B00C12110 /* BSInjector.m */; };
-		29B506611522DA9E0035D197 /* BSInstanceProvider.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997A791502C48B00C12110 /* BSInstanceProvider.m */; };
-		29B506651522DAA80035D197 /* BSInitializer.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997B0E1505D94200C12110 /* BSInitializer.m */; };
-		29B506661522DAA80035D197 /* BSInitializerProvider.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29997B0F1505D94200C12110 /* BSInitializerProvider.m */; };
-		29B506671522DAA80035D197 /* BSPropertySet.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967E5150C4F3800356446 /* BSPropertySet.m */; };
-		29B506681522DAA80035D197 /* BSProperty.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967EE150C512000356446 /* BSProperty.m */; };
 		29B50684152583840035D197 /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; };
 		29B5068A15276D630035D197 /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; };
 		29B5068B15276D640035D197 /* BSBinder.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; };
@@ -79,7 +69,6 @@
 		29C9675D1508744900356446 /* NSObject+Blindside.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967591508744900356446 /* NSObject+Blindside.m */; };
 		29C9675E1508744900356446 /* NSObject+Blindside.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967591508744900356446 /* NSObject+Blindside.m */; };
 		29C9675F1508744900356446 /* NSObject+Blindside.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967591508744900356446 /* NSObject+Blindside.m */; };
-		29C967601508744900356446 /* NSObject+Blindside.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967591508744900356446 /* NSObject+Blindside.m */; };
 		29C967671508919400356446 /* BSScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967661508919300356446 /* BSScope.h */; };
 		29C967681508919400356446 /* BSScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967661508919300356446 /* BSScope.h */; };
 		29C967691508919400356446 /* BSScope.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967661508919300356446 /* BSScope.h */; };
@@ -92,29 +81,33 @@
 		29C967D91509BF2100356446 /* BSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D71509BF2100356446 /* BSNull.m */; };
 		29C967DA1509BF2100356446 /* BSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D71509BF2100356446 /* BSNull.m */; };
 		29C967DB1509BF2100356446 /* BSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D71509BF2100356446 /* BSNull.m */; };
-		29C967DC1509BF2100356446 /* BSNull.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967D71509BF2100356446 /* BSNull.m */; };
 		29C967DD1509BF2100356446 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; };
 		29C967DE1509BF2100356446 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; };
 		29C967DF1509BF2100356446 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; };
-		29C967E01509BF2100356446 /* BSSingleton.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; };
 		29C967E2150C4E1A00356446 /* BSPropertySet.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967E1150C4E1900356446 /* BSPropertySet.h */; };
 		29C967E3150C4E1A00356446 /* BSPropertySet.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967E1150C4E1900356446 /* BSPropertySet.h */; };
 		29C967E4150C4E1A00356446 /* BSPropertySet.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967E1150C4E1900356446 /* BSPropertySet.h */; };
-		29C967E6150C4F3800356446 /* BSPropertySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967E5150C4F3800356446 /* BSPropertySet.m */; };
-		29C967E7150C4F3800356446 /* BSPropertySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967E5150C4F3800356446 /* BSPropertySet.m */; };
-		29C967E8150C4F3800356446 /* BSPropertySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967E5150C4F3800356446 /* BSPropertySet.m */; };
 		29C967EB150C50EE00356446 /* BSProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; };
 		29C967EC150C50EE00356446 /* BSProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; };
 		29C967ED150C50EE00356446 /* BSProperty.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; };
-		29C967EF150C512000356446 /* BSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967EE150C512000356446 /* BSProperty.m */; };
-		29C967F0150C512000356446 /* BSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967EE150C512000356446 /* BSProperty.m */; };
-		29C967F1150C512000356446 /* BSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967EE150C512000356446 /* BSProperty.m */; };
 		29C967F5150D2C8800356446 /* BSPropertySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29C967F3150D2C8800356446 /* BSPropertySpec.mm */; };
 		29CAC7031502932000731862 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC7021502932000731862 /* Foundation.framework */; };
 		29CAC7061502932000731862 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC7051502932000731862 /* main.m */; };
 		29CAC77C1502A3B300731862 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC76615029F2900731862 /* Cedar.framework */; };
 		29CAC77F1502AAA400731862 /* BSInjectorSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC77E1502AAA400731862 /* BSInjectorSpec.mm */; };
 		29CAC7831502AB6F00731862 /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC7821502AB6F00731862 /* Fixtures.m */; };
+		29D7FE87153EAEF000C8C4E7 /* BSBlockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */; };
+		29D7FE88153EAEF000C8C4E7 /* BSBlockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */; };
+		29D7FE89153EAEF000C8C4E7 /* BSBlockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */; };
+		29D7FE8A153EAEF000C8C4E7 /* BSBlockProvider.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */; };
+		29D7FE8B153EAEF000C8C4E7 /* BSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE85153EAEF000C8C4E7 /* BSProperty.m */; };
+		29D7FE8C153EAEF000C8C4E7 /* BSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE85153EAEF000C8C4E7 /* BSProperty.m */; };
+		29D7FE8D153EAEF000C8C4E7 /* BSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE85153EAEF000C8C4E7 /* BSProperty.m */; };
+		29D7FE8E153EAEF000C8C4E7 /* BSProperty.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29D7FE85153EAEF000C8C4E7 /* BSProperty.m */; };
+		29D7FE8F153EAEF000C8C4E7 /* BSPropertySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */; };
+		29D7FE90153EAEF000C8C4E7 /* BSPropertySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */; };
+		29D7FE91153EAEF000C8C4E7 /* BSPropertySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */; };
+		29D7FE92153EAEF000C8C4E7 /* BSPropertySet.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,23 +191,16 @@
 				29997B6A1505EE2C00C12110 /* BSInitializerProvider.h in Copy headers to framework */,
 				29997B6B1505EE2C00C12110 /* Blindside.h in Copy headers to framework */,
 				29C9675C1508744900356446 /* NSObject+Blindside.h in Copy headers to framework */,
-				29C967601508744900356446 /* NSObject+Blindside.m in Copy headers to framework */,
 				29C967691508919400356446 /* BSScope.h in Copy headers to framework */,
 				29C967D31509BF1100356446 /* BSNull.h in Copy headers to framework */,
 				29C967D61509BF1100356446 /* BSSingleton.h in Copy headers to framework */,
-				29C967DC1509BF2100356446 /* BSNull.m in Copy headers to framework */,
-				29C967E01509BF2100356446 /* BSSingleton.m in Copy headers to framework */,
 				29C967E4150C4E1A00356446 /* BSPropertySet.h in Copy headers to framework */,
 				29C967ED150C50EE00356446 /* BSProperty.h in Copy headers to framework */,
 				294B3C3D1522C85E001A69D3 /* BSBlockProvider.h in Copy headers to framework */,
-				29B5065F1522CEA20035D197 /* BSBlockProvider.m in Copy headers to framework */,
-				29B506601522DA960035D197 /* BSInjector.m in Copy headers to framework */,
-				29B506611522DA9E0035D197 /* BSInstanceProvider.m in Copy headers to framework */,
-				29B506651522DAA80035D197 /* BSInitializer.m in Copy headers to framework */,
-				29B506661522DAA80035D197 /* BSInitializerProvider.m in Copy headers to framework */,
-				29B506671522DAA80035D197 /* BSPropertySet.m in Copy headers to framework */,
-				29B506681522DAA80035D197 /* BSProperty.m in Copy headers to framework */,
 				29B5068B15276D640035D197 /* BSBinder.h in Copy headers to framework */,
+				29D7FE8A153EAEF000C8C4E7 /* BSBlockProvider.m in Copy headers to framework */,
+				29D7FE8E153EAEF000C8C4E7 /* BSProperty.m in Copy headers to framework */,
+				29D7FE92153EAEF000C8C4E7 /* BSPropertySet.m in Copy headers to framework */,
 			);
 			name = "Copy headers to framework";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,7 +209,6 @@
 
 /* Begin PBXFileReference section */
 		294B3C311522C84E001A69D3 /* BSBlockProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBlockProvider.h; sourceTree = "<group>"; };
-		294B3C3E1522CB4C001A69D3 /* BSBlockProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBlockProvider.m; sourceTree = "<group>"; };
 		29997A771502C48B00C12110 /* BSInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSInjector.m; path = Source/BSInjector.m; sourceTree = "<group>"; };
 		29997A791502C48B00C12110 /* BSInstanceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSInstanceProvider.m; path = Source/BSInstanceProvider.m; sourceTree = "<group>"; };
 		29997AB41505D04600C12110 /* Blindside.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blindside.h; sourceTree = "<group>"; };
@@ -249,9 +234,7 @@
 		29C967D71509BF2100356446 /* BSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSNull.m; path = Source/BSNull.m; sourceTree = "<group>"; };
 		29C967D81509BF2100356446 /* BSSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSSingleton.m; path = Source/BSSingleton.m; sourceTree = "<group>"; };
 		29C967E1150C4E1900356446 /* BSPropertySet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPropertySet.h; sourceTree = "<group>"; };
-		29C967E5150C4F3800356446 /* BSPropertySet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPropertySet.m; sourceTree = "<group>"; };
 		29C967EA150C50ED00356446 /* BSProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSProperty.h; sourceTree = "<group>"; };
-		29C967EE150C512000356446 /* BSProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSProperty.m; sourceTree = "<group>"; };
 		29C967F3150D2C8800356446 /* BSPropertySpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSPropertySpec.mm; sourceTree = "<group>"; };
 		29C967F8150D37E700356446 /* BSPropertySetSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSPropertySetSpec.mm; sourceTree = "<group>"; };
 		29CAC6E4150292AD00731862 /* Blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -266,6 +249,9 @@
 		29CAC77E1502AAA400731862 /* BSInjectorSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSInjectorSpec.mm; sourceTree = "<group>"; };
 		29CAC7811502AB6F00731862 /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
 		29CAC7821502AB6F00731862 /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixtures.m; sourceTree = "<group>"; };
+		29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSBlockProvider.m; path = Source/BSBlockProvider.m; sourceTree = "<group>"; };
+		29D7FE85153EAEF000C8C4E7 /* BSProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSProperty.m; path = Source/BSProperty.m; sourceTree = "<group>"; };
+		29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSPropertySet.m; path = Source/BSPropertySet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,14 +285,14 @@
 		29997A751502C38400C12110 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				294B3C3E1522CB4C001A69D3 /* BSBlockProvider.m */,
+				29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */,
+				29D7FE85153EAEF000C8C4E7 /* BSProperty.m */,
+				29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */,
 				29997B0E1505D94200C12110 /* BSInitializer.m */,
 				29997B0F1505D94200C12110 /* BSInitializerProvider.m */,
 				29997A771502C48B00C12110 /* BSInjector.m */,
 				29997A791502C48B00C12110 /* BSInstanceProvider.m */,
 				29C967D71509BF2100356446 /* BSNull.m */,
-				29C967EE150C512000356446 /* BSProperty.m */,
-				29C967E5150C4F3800356446 /* BSPropertySet.m */,
 				29C967D81509BF2100356446 /* BSSingleton.m */,
 				29C967591508744900356446 /* NSObject+Blindside.m */,
 			);
@@ -690,9 +676,9 @@
 				29C9675F1508744900356446 /* NSObject+Blindside.m in Sources */,
 				29C967DB1509BF2100356446 /* BSNull.m in Sources */,
 				29C967DF1509BF2100356446 /* BSSingleton.m in Sources */,
-				29C967E8150C4F3800356446 /* BSPropertySet.m in Sources */,
-				29C967F1150C512000356446 /* BSProperty.m in Sources */,
-				29B5065E1522CEA10035D197 /* BSBlockProvider.m in Sources */,
+				29D7FE89153EAEF000C8C4E7 /* BSBlockProvider.m in Sources */,
+				29D7FE8D153EAEF000C8C4E7 /* BSProperty.m in Sources */,
+				29D7FE91153EAEF000C8C4E7 /* BSPropertySet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,9 +693,9 @@
 				29C9675D1508744900356446 /* NSObject+Blindside.m in Sources */,
 				29C967D91509BF2100356446 /* BSNull.m in Sources */,
 				29C967DD1509BF2100356446 /* BSSingleton.m in Sources */,
-				29C967E6150C4F3800356446 /* BSPropertySet.m in Sources */,
-				29C967EF150C512000356446 /* BSProperty.m in Sources */,
-				294B3C3F1522CB4C001A69D3 /* BSBlockProvider.m in Sources */,
+				29D7FE87153EAEF000C8C4E7 /* BSBlockProvider.m in Sources */,
+				29D7FE8B153EAEF000C8C4E7 /* BSProperty.m in Sources */,
+				29D7FE8F153EAEF000C8C4E7 /* BSPropertySet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,10 +713,10 @@
 				29C9675E1508744900356446 /* NSObject+Blindside.m in Sources */,
 				29C967DA1509BF2100356446 /* BSNull.m in Sources */,
 				29C967DE1509BF2100356446 /* BSSingleton.m in Sources */,
-				29C967E7150C4F3800356446 /* BSPropertySet.m in Sources */,
-				29C967F0150C512000356446 /* BSProperty.m in Sources */,
 				29C967F5150D2C8800356446 /* BSPropertySpec.mm in Sources */,
-				29B506541522CEA10035D197 /* BSBlockProvider.m in Sources */,
+				29D7FE88153EAEF000C8C4E7 /* BSBlockProvider.m in Sources */,
+				29D7FE8C153EAEF000C8C4E7 /* BSProperty.m in Sources */,
+				29D7FE90153EAEF000C8C4E7 /* BSPropertySet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,14 +766,14 @@
 		29997B601505ED9400C12110 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Blindside;
 			};
 			name = Debug;
 		};
 		29997B611505ED9400C12110 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Blindside;
 			};
 			name = Release;
 		};
