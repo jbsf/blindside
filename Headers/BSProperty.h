@@ -1,10 +1,11 @@
 #import <Foundation/Foundation.h>
 
+
 @interface BSProperty : NSObject {
-    Class     owningClass_;
-    NSString *propertyName_;
-    Class     returnType;
-    id        injectionKey_;
+//    Class     owningClass_;
+//    NSString *propertyName_;
+//    Class     returnType;
+//    id        injectionKey_;
 }
 
 @property (nonatomic, retain) NSString *propertyName;
