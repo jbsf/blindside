@@ -1,5 +1,4 @@
 #import "BSBlockProvider.h"
-#import "BSInjector.h"
 #import "BSModule.h"
 #import "BSInitializer.h"
 #import "BSNull.h"

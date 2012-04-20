@@ -2,13 +2,14 @@
 
 #import "BSProvider.h"
 
-@class BSInjector, BSInitializer;
+@protocol BSInjector;
+@class BSInitializer;
 
 @interface BSInitializerProvider : NSObject<BSProvider> {
     BSInitializer *_initializer;
-    BSInjector    *_injector;
+    id<BSInjector> _injector;
 }
 
-+ (BSInitializerProvider *)providerWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector;
++ (BSInitializerProvider *)providerWithInitializer:(BSInitializer *)initializer injector:(id<BSInjector>)injector;
 
 @end

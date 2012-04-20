@@ -9,9 +9,9 @@
 @interface BSInitializerProvider ()
 
 @property (nonatomic, retain) BSInitializer *initializer;
-@property (nonatomic, assign) BSInjector *injector;
+@property (nonatomic, assign) id<BSInjector> injector;
 
-- (id)initWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector;
+- (id)initWithInitializer:(BSInitializer *)initializer injector:(id<BSInjector>)injector;
 
 - (void)injectProperties:(id)instance;
 
@@ -21,11 +21,11 @@
 
 @synthesize initializer = _initializer, injector = _injector;
 
-+ (BSInitializerProvider *)providerWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector {
++ (BSInitializerProvider *)providerWithInitializer:(BSInitializer *)initializer injector:(id<BSInjector>)injector {
     return [[[BSInitializerProvider alloc] initWithInitializer:initializer injector:injector] autorelease];
 }
 
-- (id)initWithInitializer:(BSInitializer *)initializer injector:(BSInjector *)injector {
+- (id)initWithInitializer:(BSInitializer *)initializer injector:(id<BSInjector>)injector {
     if (self = [super init]) {
         self.initializer = initializer;
         self.injector = injector;

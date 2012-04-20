@@ -1,4 +1,4 @@
-#import "BSInjector.h"
+#import "BSInjectorImpl.h"
 #import "BSBinder.h"
 #import "BSModule.h"
 #import "BSProvider.h"
@@ -10,7 +10,7 @@
 
 #import <objc/runtime.h>
 
-@interface BSInjector () {
+@interface BSInjectorImpl () {
     NSMutableDictionary *providers_;
     NSMutableDictionary *scopes_;
 }
@@ -21,16 +21,10 @@
 - (id)getInstance:(id)key withArgArray:(NSArray *)args;
 @end
 
-@implementation BSInjector
+@implementation BSInjectorImpl
 
 @synthesize providers = _providers, scopes = _scopes;
 
-+ (BSInjector *)injectorWithModule:(id<BSModule>)module {
-    BSInjector *injector = [[[BSInjector alloc] init] autorelease];
-    [module configure:injector];
-    [injector bind:@"bsInjector" toInstance:injector];
-    return injector;
-}
 
 - (id)init {
     if (self = [super init]) {
@@ -83,7 +77,7 @@
 
     const char *attributes = property_getAttributes(objc_property);
     NSString *attrStr = [NSString stringWithCString:attributes encoding:NSUTF8StringEncoding];
-    NSRange startRange = [attrStr rangeOfString:@"T@\"BSInjector\""];
+    NSRange startRange = [attrStr rangeOfString:@"T@\"<BSInjector>\""];
 
     if (startRange.location != NSNotFound) {
         [object setValue:self forKey:@"injector"];

@@ -14,3 +14,7 @@
 #import "BSSingleton.h"
 #import "BSPropertySet.h"
 #import "BSProperty.h"
+
+@interface Blindside
++ (id<BSInjector>)injectorWithModule:(id<BSModule>)module;
+@end
