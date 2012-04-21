@@ -91,15 +91,29 @@ describe(@"BSInjector", ^{
                 expect(house.garage == garage).to(equal(YES));
                 expect(house.driveway == driveway).to(equal(YES));
             });
+            
+            context(@"when the superclass has properties", ^{
+                it(@"injects superclass properties too", ^{
+                    TennisCourt *tennisCourt = [[[TennisCourt alloc] init] autorelease];
+                    [injector bind:[TennisCourt class] toInstance:tennisCourt];
 
-            xit(@"injects superclass properties too", ^{
-                TennisCourt *tennisCourt = [[[TennisCourt alloc] init] autorelease];
-                [injector bind:[TennisCourt class] toInstance:tennisCourt];
-
-                Mansion *mansion = [injector getInstance:[Mansion class]];
-                expect(mansion.tennisCourt == tennisCourt).to(equal(YES));
-                expect(mansion.garage == garage).to(equal(YES));
-                expect(mansion.driveway == driveway).to(equal(YES));
+                    Mansion *mansion = [injector getInstance:[Mansion class]];                    
+                    expect(mansion.tennisCourt == tennisCourt).to(equal(YES));
+                    expect(mansion.garage == garage).to(equal(YES));
+                });
+                
+                context(@"when the subclass binds a shared property", ^{
+                    it(@"does not affect the superclass binding", ^{
+                        Driveway *tenCarDriveway = [[Driveway alloc] init];
+                        [injector bind:@"10 car driveway" toInstance:tenCarDriveway];
+                        
+                        Mansion *mansion = [injector getInstance:[Mansion class]];
+                        House *house = [injector getInstance:[House class]];
+                        
+                        expect(mansion.driveway == tenCarDriveway).to(equal(YES));
+                        expect(house.driveway == driveway).to(equal(YES));
+                    }); 
+                });
             });
         });
     });

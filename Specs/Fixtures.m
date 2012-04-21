@@ -89,7 +89,10 @@ zip = zip_;
 @synthesize tennisCourt = tennisCourt_;
 
 + (BSPropertySet *)blindsideProperties {
-    return [BSPropertySet propertySetWithClass:self propertyNames:@"tennisCourt", nil];
+    BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"tennisCourt", nil];
+    [propertySet bindProperty:@"driveway" toKey:@"10 car driveway"];
+    
+    return propertySet;
 }
 
 @end
