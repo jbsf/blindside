@@ -146,12 +146,6 @@ describe(@"BSInjector", ^{
                 expect([recreationalFacility class]).to_not(be_nil);
             });
         });
-
-        context(@"when the class has no blindside initializer nor default initializer", ^{
-            xit(@"raises", ^{
-
-            });
-        });
     });
     
     describe(@"scoping", ^{

@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 
-
+/**
+ * A representation of an Objective-C property
+ */
 @interface BSProperty : NSObject {
 //    Class     owningClass_;
 //    NSString *propertyName_;

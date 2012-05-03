@@ -8,6 +8,7 @@
 @property (nonatomic, assign) SEL selector;
 @property (nonatomic, retain) NSMethodSignature *signature;
 
+- (id)initWithClass:(Class)type selector:(SEL)selector argumentKeys:(NSArray *)argumentKeys;
 - (id)nullify:(id)value;
 
 @end
