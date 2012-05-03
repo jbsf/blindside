@@ -2,7 +2,7 @@
 
 /**
  * A BSInitializer describes an initializer method that Blindside will use when constructing
- * an object of a given class. 
+ * objects of a given class. 
  */
 @interface BSInitializer : NSObject {
     Class type_;
@@ -16,7 +16,7 @@
 
 /**
  * Creates a BSInitializer representing the given class and selector. This is an important method
- * for users of Blindside. Within their implementations of the blindsideInitializer, Blindside
+ * for users of Blindside. Within their implementations of blindsideInitializer, Blindside
  * users will create BSInitializers using this method. 
  *
  * @param type The class to which the initializer belongs. The BSInitializer returned by this method
@@ -37,18 +37,52 @@
  * \endcode
  * 
  * Depending on their needs, there are a number of ways a Blindside user could describe this initializer.
+ * Here is the most basic:
  * 
- *                    
+ * \code
+ * + (BSInitializer *)blindsideInitializer {
+ *     SEL selector = @selector(initWithFoo:bar:);
+ *     return [BSInitializer initializerWithClass:self selector:selector argumentKeys:[Foo class], [Bar class], nil];
+ * }
+ * \endcode
+ * 
+ * In the example above, our argumentKeys indicate that the initializer needs an instance of Foo and an instance of Bar.
+ * If there are Blindside bindings for [Foo class] and [Bar class], those bindings will be used and the results
+ * injected when this initializer is invoked. If there are no such bindings, Blindide will use the 
+ * blindsideInitializer of Foo and Bar to create Foo and Bar instances.
+ * 
+ * argument keys can be any valid id - they need not represent the argument type. Suppose that our class needs 
+ * the uberFoo - the most powerful Foo imaginable. We could describe the initializer like this:
+ *
+ * \code
+ * + (BSInitializer *)blindsideInitializer {
+ *     SEL selector = @selector(initWithFoo:bar:);
+ *     return [BSInitializer initializerWithClass:self selector:selector argumentKeys:@"uberFoo", [Bar class], nil];
+ * }
+ * \endcode
+ *
+ * To support this initializer, we would need to have defined a binding to @"uberFoo" within our BSModule. Here's 
+ * an example:
+ * 
+ * \code
+ * - (void)configure:(BSBinder *)binder {
+ *
+ *     Foo *uberFoo = [[Foo alloc] init];
+ *     [binder bind:@"uberFoo" toInstance:uberFoo];
+ * 
+ * }
+ * \endcode
+ * 
  */
 + (BSInitializer *)initializerWithClass:(Class)type selector:(SEL)selector argumentKeys:(id)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
 
-- (NSUInteger)numberOfArguments;
-- (id)keyForArgumentAtIndex:(NSUInteger)index;
-
 /**
- * Used internally by Blindside to create an object using the initializer described by 
- * this BSInitializer.
+ * Creates an object using the initializer and the passed-in argument values. The number of argument values
+ * must match the number of arguments expected by the initializer. Arguments are passed to the initializer 
+ * in order.
+ *
+ * This method is used internally by Blindside when it needs to create instances of a class.
  */
-- (id)perform:(NSArray *)argValues;
+- (id)perform:(NSArray *)argumentValues;
 
 @end

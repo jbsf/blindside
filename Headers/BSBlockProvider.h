@@ -2,6 +2,10 @@
 
 #import "BSProvider.h"
 
+/**
+ * Typedef for blocks used by Blindside. Such blocks take an NSArray * of args and return
+ * an id. Blocks that don't need arguments may ignore the args array.
+ */
 typedef id(^BSBlock)(NSArray *args);
 
 /**
@@ -12,6 +16,9 @@ typedef id(^BSBlock)(NSArray *args);
     BSBlock block_;
 }
 
+/**
+ * Returns a BSBlockProvider that wraps the block
+ */
 + (BSBlockProvider *)provider:(BSBlock)block;
 
 @end

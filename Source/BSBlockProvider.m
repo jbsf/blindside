@@ -7,6 +7,9 @@
 
 @interface BSBlockProvider ()
 @property (nonatomic, retain) BSBlock block;
+
+- (id)initWithBlock:(BSBlock)block;
+
 @end
 
 @implementation BSBlockProvider

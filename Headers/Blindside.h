@@ -18,7 +18,7 @@
 @interface Blindside
 
 /**
- * Creates and returns a BSInjector configured with the module.
+ * Returns a BSInjector configured with the module.
  */
 + (id<BSInjector>)injectorWithModule:(id<BSModule>)module;
 
