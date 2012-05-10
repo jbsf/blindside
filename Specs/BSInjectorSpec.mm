@@ -156,6 +156,18 @@ describe(@"BSInjector", ^{
                 House *house2 = [injector getInstance:[House class]];
                 expect(house1 == house2).to(equal(YES));
             });
+            
+            context(@"when a class is bound to a non-class key", ^{
+                it(@"uses the same instance for all injection points", ^{
+                    [injector bind:@"house" toClass:[House class]];
+                    [injector bind:[House class] withScope:[BSSingleton scope]];
+                    House *house1 = [injector getInstance:@"house"];
+                    House *house2 = [injector getInstance:@"house"];
+                    House *house3 = [injector getInstance:[House class]];
+                    House *house4 = [injector getInstance:[House class]];
+                    expect(house1 == house2 && house2 == house3 && house3 == house4).to(equal(YES));
+                });                
+            });
         });
 
         describe(@"unscoped", ^{

@@ -7,6 +7,7 @@
 #import "BSInitializer.h"
 #import "BSScope.h"
 #import "BSProperty.h"
+#import "BSClassProvider.h"
 
 #import <objc/runtime.h>
 
@@ -55,8 +56,7 @@
 }
 
 - (void)bind:(id)key toClass:(Class)class {
-    BSInitializer *initializer = [class performSelector:@selector(blindsideInitializer)];
-    id<BSProvider> provider = [BSInitializerProvider providerWithInitializer:initializer injector:self];
+    BSClassProvider *provider = [BSClassProvider providerWithClass:class injector:self];
     [self bind:key toProvider:provider];
 }
 
