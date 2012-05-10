@@ -122,7 +122,7 @@ describe(@"BSInjector", ^{
         __block Garage *garage;
 
         garage = [[[Garage alloc] init] autorelease];
-        [injector bind:[Garage class] toBlock:^(NSArray *args){
+        [injector bind:[Garage class] toBlock:^(NSArray *args, id<BSInjector> injector){
             return garage;
         }];
 

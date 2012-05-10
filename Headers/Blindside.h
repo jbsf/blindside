@@ -15,6 +15,8 @@
 #import "BSPropertySet.h"
 #import "BSProperty.h"
 
+#define BS_DYNAMIC @"bs_dynamic"
+
 @interface Blindside
 
 /**

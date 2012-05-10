@@ -50,7 +50,7 @@
 }
 
 - (void)bind:(id)key toBlock:(BSBlock)block {
-    BSBlockProvider *provider = [BSBlockProvider provider:block];
+    BSBlockProvider *provider = [BSBlockProvider providerWithBlock:block injector:self];
     [self.providers setObject:provider forKey:key];
 }
 
