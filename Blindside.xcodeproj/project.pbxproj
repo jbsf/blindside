@@ -108,6 +108,13 @@
 		29D7FE90153EAEF000C8C4E7 /* BSPropertySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */; };
 		29D7FE91153EAEF000C8C4E7 /* BSPropertySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */; };
 		29D7FE92153EAEF000C8C4E7 /* BSPropertySet.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */; };
+		6172C023155B98D100348C4E /* BSClassProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6172C022155B98D100348C4E /* BSClassProvider.m */; };
+		6172C024155B98D100348C4E /* BSClassProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6172C022155B98D100348C4E /* BSClassProvider.m */; };
+		6172C025155B98D100348C4E /* BSClassProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6172C022155B98D100348C4E /* BSClassProvider.m */; };
+		6172C026155B98D100348C4E /* BSClassProvider.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 6172C022155B98D100348C4E /* BSClassProvider.m */; };
+		6172C028155B98FF00348C4E /* BSClassProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6172C027155B98E900348C4E /* BSClassProvider.h */; };
+		6172C029155B990000348C4E /* BSClassProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6172C027155B98E900348C4E /* BSClassProvider.h */; };
+		6172C02A155B990100348C4E /* BSClassProvider.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 6172C027155B98E900348C4E /* BSClassProvider.h */; };
 		61DC9F781541FA8D009DDFA6 /* BSInjectorImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */; };
 		61DC9F791541FA8E009DDFA6 /* BSInjectorImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */; };
 		61DC9F7A1541FA8F009DDFA6 /* BSInjectorImpl.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */; };
@@ -210,6 +217,8 @@
 				29D7FE92153EAEF000C8C4E7 /* BSPropertySet.m in Copy headers to framework */,
 				61DC9F7A1541FA8F009DDFA6 /* BSInjectorImpl.h in Copy headers to framework */,
 				61DC9F7F1541FB45009DDFA6 /* Blindside.m in Copy headers to framework */,
+				6172C026155B98D100348C4E /* BSClassProvider.m in Copy headers to framework */,
+				6172C02A155B990100348C4E /* BSClassProvider.h in Copy headers to framework */,
 			);
 			name = "Copy headers to framework";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +270,8 @@
 		29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSBlockProvider.m; path = Source/BSBlockProvider.m; sourceTree = "<group>"; };
 		29D7FE85153EAEF000C8C4E7 /* BSProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSProperty.m; path = Source/BSProperty.m; sourceTree = "<group>"; };
 		29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSPropertySet.m; path = Source/BSPropertySet.m; sourceTree = "<group>"; };
+		6172C022155B98D100348C4E /* BSClassProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSClassProvider.m; sourceTree = "<group>"; };
+		6172C027155B98E900348C4E /* BSClassProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSClassProvider.h; sourceTree = "<group>"; };
 		61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSInjectorImpl.h; sourceTree = "<group>"; };
 		61DC9F7B1541FB45009DDFA6 /* Blindside.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blindside.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -298,6 +309,7 @@
 			children = (
 				61DC9F7B1541FB45009DDFA6 /* Blindside.m */,
 				29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */,
+				6172C022155B98D100348C4E /* BSClassProvider.m */,
 				29D7FE85153EAEF000C8C4E7 /* BSProperty.m */,
 				29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */,
 				29997B0E1505D94200C12110 /* BSInitializer.m */,
@@ -317,6 +329,7 @@
 				29997AB41505D04600C12110 /* Blindside.h */,
 				29B50683152583840035D197 /* BSBinder.h */,
 				294B3C311522C84E001A69D3 /* BSBlockProvider.h */,
+				6172C027155B98E900348C4E /* BSClassProvider.h */,
 				29997AFF1505D8A600C12110 /* BSInitializer.h */,
 				29997B001505D8A600C12110 /* BSInitializerProvider.h */,
 				29997B061505D8FE00C12110 /* BSInjector.h */,
@@ -463,6 +476,7 @@
 				294B3C3C1522C85E001A69D3 /* BSBlockProvider.h in Headers */,
 				29B5068A15276D630035D197 /* BSBinder.h in Headers */,
 				61DC9F791541FA8E009DDFA6 /* BSInjectorImpl.h in Headers */,
+				6172C029155B990000348C4E /* BSClassProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +500,7 @@
 				294B3C321522C84E001A69D3 /* BSBlockProvider.h in Headers */,
 				29B50684152583840035D197 /* BSBinder.h in Headers */,
 				61DC9F781541FA8D009DDFA6 /* BSInjectorImpl.h in Headers */,
+				6172C028155B98FF00348C4E /* BSClassProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +710,7 @@
 				29D7FE8D153EAEF000C8C4E7 /* BSProperty.m in Sources */,
 				29D7FE91153EAEF000C8C4E7 /* BSPropertySet.m in Sources */,
 				61DC9F7E1541FB45009DDFA6 /* Blindside.m in Sources */,
+				6172C025155B98D100348C4E /* BSClassProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +729,7 @@
 				29D7FE8B153EAEF000C8C4E7 /* BSProperty.m in Sources */,
 				29D7FE8F153EAEF000C8C4E7 /* BSPropertySet.m in Sources */,
 				61DC9F7C1541FB45009DDFA6 /* Blindside.m in Sources */,
+				6172C023155B98D100348C4E /* BSClassProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +752,7 @@
 				29D7FE8C153EAEF000C8C4E7 /* BSProperty.m in Sources */,
 				29D7FE90153EAEF000C8C4E7 /* BSPropertySet.m in Sources */,
 				61DC9F7D1541FB45009DDFA6 /* Blindside.m in Sources */,
+				6172C024155B98D100348C4E /* BSClassProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

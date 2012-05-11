@@ -122,7 +122,7 @@ describe(@"BSInjector", ^{
         __block Garage *garage;
 
         garage = [[[Garage alloc] init] autorelease];
-        [injector bind:[Garage class] toBlock:^(NSArray *args){
+        [injector bind:[Garage class] toBlock:^(NSArray *args, id<BSInjector> injector){
             return garage;
         }];
 
@@ -155,6 +155,18 @@ describe(@"BSInjector", ^{
                 House *house1 = [injector getInstance:[House class]];
                 House *house2 = [injector getInstance:[House class]];
                 expect(house1 == house2).to(equal(YES));
+            });
+            
+            context(@"when a class is bound to a non-class key", ^{
+                it(@"uses the same instance for all injection points", ^{
+                    [injector bind:@"house" toClass:[House class]];
+                    [injector bind:[House class] withScope:[BSSingleton scope]];
+                    House *house1 = [injector getInstance:@"house"];
+                    House *house2 = [injector getInstance:@"house"];
+                    House *house3 = [injector getInstance:[House class]];
+                    House *house4 = [injector getInstance:[House class]];
+                    expect(house1 == house2 && house2 == house3 && house3 == house4).to(equal(YES));
+                });                
             });
         });
 
