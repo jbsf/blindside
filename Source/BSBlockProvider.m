@@ -24,6 +24,7 @@
 - (id)initWithBlock:(BSBlock)block injector:(id<BSInjector>)injector {
     if (self = [super init]) {
         self.block = [block copy];
+        self.injector = injector;
     }
     return self;
 }
