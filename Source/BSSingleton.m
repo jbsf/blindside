@@ -2,7 +2,7 @@
 #import "BSProvider.h"
 
 @interface BSSingleton ()
-@property (nonatomic, assign) id<BSProvider> source;
+@property (nonatomic, retain) id<BSProvider> source;
 @property (nonatomic, retain) id instance;
 @end
 
@@ -22,12 +22,14 @@
 - (id)provide:(NSArray *)args {
     if (self.instance == nil) {
         self.instance = [self.source provide:args];
+        self.source = nil;
     }
     return self.instance;
 }
 
 - (void)dealloc {
     self.instance = nil;
+    self.source = nil;
     [super dealloc];
 }
 

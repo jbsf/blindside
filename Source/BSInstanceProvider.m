@@ -2,7 +2,7 @@
 
 @implementation BSInstanceProvider
 
-@synthesize instance = instance_;
+@synthesize instance = _instance;
 
 + (BSInstanceProvider *)provider:(id)instance {
     return [[[BSInstanceProvider alloc] initWithInstance:instance] autorelease];
