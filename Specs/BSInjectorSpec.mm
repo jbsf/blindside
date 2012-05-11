@@ -104,7 +104,7 @@ describe(@"BSInjector", ^{
                 
                 context(@"when the subclass binds a shared property", ^{
                     it(@"does not affect the superclass binding", ^{
-                        Driveway *tenCarDriveway = [[Driveway alloc] init];
+                        Driveway *tenCarDriveway = [[[Driveway alloc] init] autorelease];
                         [injector bind:@"10 car driveway" toInstance:tenCarDriveway];
                         
                         Mansion *mansion = [injector getInstance:[Mansion class]];
