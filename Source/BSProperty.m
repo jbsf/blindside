@@ -4,8 +4,11 @@
 static NSString *const BSInvalidPropertyException = @"BSInvalidPropertyException";
 
 @interface BSProperty ()
-@property (nonatomic, assign) Class owningClass;
+@property (nonatomic, weak) Class owningClass;
+@property (nonatomic, weak, readwrite) Class returnType;
+@property (nonatomic, strong, readwrite) NSString *propertyName;
 
+- (id)initWithClass:(Class)owningClass propertyName:(NSString *)propertyName;
 - (void)determineReturnType;
 
 @end
@@ -19,7 +22,7 @@ returnType   = _returnType,
 injectionKey = _injectionKey;
 
 + (BSProperty *)propertyWithClass:(Class)owningClass propertyName:(NSString *)propertyName {
-    return [[[BSProperty alloc] initWithClass:owningClass propertyName:propertyName] autorelease];
+    return [[BSProperty alloc] initWithClass:owningClass propertyName:propertyName];
 }
 
 - (id)initWithClass:(Class)owningClass propertyName:(NSString *)propertyName {

@@ -8,8 +8,8 @@
 
 @interface BSInitializerProvider ()
 
-@property (nonatomic, retain) BSInitializer *initializer;
-@property (nonatomic, assign) id<BSInjector> injector;
+@property (nonatomic, strong) BSInitializer *initializer;
+@property (nonatomic, weak) id<BSInjector> injector;
 
 - (id)initWithInitializer:(BSInitializer *)initializer injector:(id<BSInjector>)injector;
 
@@ -22,7 +22,7 @@
 @synthesize initializer = _initializer, injector = _injector;
 
 + (BSInitializerProvider *)providerWithInitializer:(BSInitializer *)initializer injector:(id<BSInjector>)injector {
-    return [[[BSInitializerProvider alloc] initWithInitializer:initializer injector:injector] autorelease];
+    return [[BSInitializerProvider alloc] initWithInitializer:initializer injector:injector];
 }
 
 - (id)initWithInitializer:(BSInitializer *)initializer injector:(id<BSInjector>)injector {
@@ -31,11 +31,6 @@
         self.injector = injector;
     }
     return self;
-}
-
-- (void)dealloc {
-    self.initializer = nil;
-    [super dealloc];
 }
 
 - (id)provide:(NSArray *)args {

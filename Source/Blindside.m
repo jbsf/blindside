@@ -4,7 +4,7 @@
 @implementation Blindside
 
 + (id<BSInjector>)injectorWithModule:(id<BSModule>)module {
-    BSInjectorImpl *injector = [[[BSInjectorImpl alloc] init] autorelease];
+    BSInjectorImpl *injector = [[BSInjectorImpl alloc] init];
     [module configure:injector];
     [injector bind:@"injector" toInstance:injector];
     return injector;

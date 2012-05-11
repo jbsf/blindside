@@ -12,7 +12,7 @@ describe(@"BSProperty", ^{
         context(@"when the class does not have a property with the given name", ^{
             it(@"raises an exception", ^{
                 [[^{
-                    [[[BSProperty alloc] initWithClass:[House class] propertyName:@"foo"] autorelease];
+                    [BSProperty propertyWithClass:[House class] propertyName:@"foo"];
                 } copy] autorelease] should raise_exception();
             });
         });
@@ -20,14 +20,14 @@ describe(@"BSProperty", ^{
         context(@"when the property has a non-object return type", ^{
             it(@"raises an exception", ^{
                 [[^{
-                    [[[BSProperty alloc] initWithClass:[City class] propertyName:@"population"] autorelease];
+                    [BSProperty propertyWithClass:[City class] propertyName:@"population"];
                 } copy] autorelease] should raise_exception();
             });
         });
 
         context(@"when the return type is an objective-c class", ^{
             it(@"determines the class", ^{
-                property = [[[BSProperty alloc] initWithClass:[House class] propertyName:@"address"] autorelease];
+                property = [BSProperty propertyWithClass:[House class] propertyName:@"address"];
                 expect(property.returnType == [Address class]).to(equal(YES));
             });
         });

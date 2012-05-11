@@ -41,14 +41,6 @@ zip = zip_;
     return self;
 }
 
-- (void)dealloc {
-    self.street = nil;
-    self.city = nil;
-    self.state = nil;
-    self.zip = nil;
-    [super dealloc];
-}
-
 @end
 
 @implementation House : NSObject
@@ -70,13 +62,6 @@ zip = zip_;
         self.address = address;
     }
     return self;
-}
-
-- (void)dealloc {
-    self.address = nil;
-    self.garage = nil;
-    self.driveway = nil;
-    [super dealloc];
 }
 
 @end

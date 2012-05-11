@@ -4,9 +4,10 @@
 #import <objc/runtime.h>
 
 @interface BSInitializer ()
-@property (nonatomic, assign) Class type;
-@property (nonatomic, assign) SEL selector;
-@property (nonatomic, retain) NSMethodSignature *signature;
+@property (nonatomic, weak) Class type;
+@property (nonatomic) SEL selector;
+@property (nonatomic, strong) NSMethodSignature *signature;
+@property (nonatomic, strong, readwrite) NSArray *argumentKeys;
 
 - (id)initWithClass:(Class)type selector:(SEL)selector argumentKeys:(NSArray *)argumentKeys;
 - (id)nullify:(id)value;
@@ -15,7 +16,7 @@
 
 @implementation BSInitializer
 
-@synthesize type = type_, selector = selector_, argumentKeys = argumentKeys_, signature = signature_;
+@synthesize type = _type, selector = _selector, argumentKeys = _argumentKeys, signature = _signature;
 
 + (BSInitializer *)initializerWithClass:(Class)type selector:(SEL)selector argumentKeys:(id)firstKey, ... {
     NSMutableArray *argKeys = [NSMutableArray array];
@@ -30,7 +31,7 @@
         va_end(argList);
     }
     
-    return [[[BSInitializer alloc] initWithClass:type selector:selector argumentKeys:argKeys] autorelease]; 
+    return [[BSInitializer alloc] initWithClass:type selector:selector argumentKeys:argKeys]; 
 }
 
 - (id)initWithClass:(Class)type selector:(SEL)selector argumentKeys:(NSArray *)argumentKeys{
@@ -41,12 +42,6 @@
         self.signature = [self.type instanceMethodSignatureForSelector:self.selector];
     }
     return self;
-}
-                          
-- (void)dealloc {
-    self.argumentKeys = nil;
-    self.signature = nil;
-    [super dealloc];
 }
 
 - (id)keyForArgumentAtIndex:(NSUInteger)index {
@@ -59,7 +54,9 @@
 
 - (id)perform:(NSArray *)argValues {
     id instance = [self.type alloc];
-    
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     if (self.numberOfArguments == 0) {
         [instance performSelector:self.selector];        
     } else if (self.numberOfArguments == 1) {
@@ -68,7 +65,8 @@
     } else if (self.numberOfArguments == 2) {
         id arg0Value = [self nullify:[argValues objectAtIndex:0]];
         id arg1Value = [self nullify:[argValues objectAtIndex:1]];
-        [instance performSelector:self.selector withObject:arg0Value withObject:arg1Value];                
+        [instance performSelector:self.selector withObject:arg0Value withObject:arg1Value];  
+#pragma clang diagnostic push
     } else {
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:self.signature];
         [invocation setTarget:instance];
@@ -82,7 +80,7 @@
         [invocation invoke];
     }
     
-    return [instance autorelease];
+    return instance;
 }
 
 - (id)nullify:(id)value {

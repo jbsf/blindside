@@ -12,10 +12,7 @@
  * 
  * Users of Blindside are not expected to use this class.
  */
-@interface BSInitializerProvider : NSObject<BSProvider> {
-    BSInitializer *_initializer;
-    id<BSInjector> _injector;
-}
+@interface BSInitializerProvider : NSObject<BSProvider> 
 
 + (BSInitializerProvider *)providerWithInitializer:(BSInitializer *)initializer injector:(id<BSInjector>)injector;
 

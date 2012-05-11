@@ -1,11 +1,16 @@
 #import "BSInstanceProvider.h"
 
+@interface BSInstanceProvider ()
+@property (nonatomic, strong) id instance;
+- (id)initWithInstance:(id)instance;
+@end
+
 @implementation BSInstanceProvider
 
 @synthesize instance = _instance;
 
 + (BSInstanceProvider *)provider:(id)instance {
-    return [[[BSInstanceProvider alloc] initWithInstance:instance] autorelease];
+    return [[BSInstanceProvider alloc] initWithInstance:instance];
 }
 
 - (id)initWithInstance:(id)instance {
@@ -13,11 +18,6 @@
         self.instance = instance;
     }
     return self;
-}
-
-- (void)dealloc {
-    self.instance = nil;
-    [super dealloc];
 }
 
 - (id)provide:(NSArray *)args {

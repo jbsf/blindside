@@ -2,8 +2,8 @@
 #import "BSInjector.h"
 
 @interface BSClassProvider ()
-@property (nonatomic, assign) Class klass;
-@property (nonatomic, assign) id<BSInjector> injector;
+@property (nonatomic, weak) Class klass;
+@property (nonatomic, weak) id<BSInjector> injector;
 
 - (id)initWithClass:(Class)class injector:(id<BSInjector>)injector;
 
@@ -13,7 +13,7 @@
 @synthesize klass = _klass, injector = _injector;
 
 + (BSClassProvider *)providerWithClass:(Class)class injector:(id<BSInjector>)injector {
-    return [[[BSClassProvider alloc] initWithClass:class injector:injector] autorelease];
+    return [[BSClassProvider alloc] initWithClass:class injector:injector];
 }
 
 - (id)initWithClass:(Class)klass injector:(id<BSInjector>)injector {

@@ -5,8 +5,8 @@
 #import <objc/runtime.h>
 
 @interface BSPropertySet ()
-@property (nonatomic, assign) Class owningClass;
-@property (nonatomic, retain) NSMutableArray *properties;
+@property (nonatomic, weak) Class owningClass;
+@property (nonatomic, strong) NSMutableArray *properties;
 
 - (id)initWithClass:(Class)owningClass properties:(NSMutableArray *)properties;
 
@@ -16,7 +16,7 @@
 
 @implementation BSPropertySet
 
-@synthesize owningClass = owningClass_, properties = properties_;
+@synthesize owningClass = _owningClass, properties = _properties;
 
 + (BSPropertySet *)propertySetWithClass:(Class)owningClass propertyNames:(NSString *)property1, ... {
     NSMutableArray *bsProperties = [NSMutableArray array];
@@ -32,7 +32,7 @@
         va_end(argList);
     }
 
-    BSPropertySet *propertySet = [[[BSPropertySet alloc] initWithClass:owningClass properties:bsProperties] autorelease];
+    BSPropertySet *propertySet = [[BSPropertySet alloc] initWithClass:owningClass properties:bsProperties];
     
     Class superclass = class_getSuperclass(owningClass);
     if (superclass != nil) {
@@ -51,11 +51,6 @@
     return self;
 }
 
-- (void)dealloc {
-    self.properties = nil;
-    [super dealloc];
-}
-
 - (void)bindProperty:(NSString *)propertyName toKey:(id)key {
     for (BSProperty *property in self.properties) {
         if (property.propertyName == propertyName) {
@@ -64,7 +59,7 @@
     }
 }
 
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id *)stackbuf count:(NSUInteger)len {
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])stackbuf count:(NSUInteger)len {
     return [self.properties countByEnumeratingWithState:state objects:stackbuf count:len];
 }
 

@@ -5,9 +5,7 @@
 
 @class BSInstanceProvider;
 
-@interface BSSingleton : NSObject<BSScope, BSProvider> {
-    BSInstanceProvider *_instanceProvider;
-}
+@interface BSSingleton : NSObject<BSScope, BSProvider>
 
 + (BSSingleton *)scope;
 

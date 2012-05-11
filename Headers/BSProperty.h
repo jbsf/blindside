@@ -3,19 +3,13 @@
 /**
  * A representation of an Objective-C property
  */
-@interface BSProperty : NSObject {
-//    Class     owningClass_;
-//    NSString *propertyName_;
-//    Class     returnType;
-//    id        injectionKey_;
-}
+@interface BSProperty : NSObject
 
-@property (nonatomic, retain) NSString *propertyName;
-@property (nonatomic, assign) Class returnType;
-@property (nonatomic, retain) id injectionKey;
+@property (nonatomic, strong) id injectionKey;
+@property (nonatomic, weak, readonly) Class returnType;
+@property (nonatomic, strong, readonly) NSString *propertyName;
 
 + (BSProperty *)propertyWithClass:(Class)owningClass propertyName:(NSString *)propertyName;
 
-- (id)initWithClass:(Class)owningClass propertyName:(NSString *)propertyName;
 - (id)injectionKey;
 @end

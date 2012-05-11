@@ -6,8 +6,8 @@
 #import "BSProperty.h"
 
 @interface BSBlockProvider ()
-@property (nonatomic, retain) BSBlock block;
-@property (nonatomic, assign) id<BSInjector> injector;
+@property (nonatomic, strong) BSBlock block;
+@property (nonatomic, weak) id<BSInjector> injector;
 
 - (id)initWithBlock:(BSBlock)block injector:(id<BSInjector>)injector;
 
@@ -18,7 +18,7 @@
 @synthesize block = _block, injector = _injector;
 
 + (BSBlockProvider *)providerWithBlock:(BSBlock)block injector:(id<BSInjector>)injector {
-    return [[[BSBlockProvider alloc] initWithBlock:block injector:injector] autorelease];
+    return [[BSBlockProvider alloc] initWithBlock:block injector:injector];
 }
 
 - (id)initWithBlock:(BSBlock)block injector:(id<BSInjector>)injector {
@@ -26,11 +26,6 @@
         self.block = [block copy];
     }
     return self;
-}
-
-- (void)dealloc {
-    self.block = nil;
-    [super dealloc];
 }
 
 - (id)provide:(NSArray *)args {

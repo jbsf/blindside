@@ -2,8 +2,8 @@
 #import "BSProvider.h"
 
 @interface BSSingleton ()
-@property (nonatomic, retain) id<BSProvider> source;
-@property (nonatomic, retain) id instance;
+@property (nonatomic, strong) id<BSProvider> source;
+@property (nonatomic, strong) id instance;
 @end
 
 @implementation BSSingleton
@@ -11,7 +11,7 @@
 @synthesize source = _source, instance = _instance;
 
 + (BSSingleton *)scope {
-    return [[[BSSingleton alloc] init] autorelease];
+    return [[BSSingleton alloc] init];
 }
 
 - (id<BSProvider>)scope:(id<BSProvider>)source {
@@ -25,12 +25,6 @@
         self.source = nil;
     }
     return self.instance;
-}
-
-- (void)dealloc {
-    self.instance = nil;
-    self.source = nil;
-    [super dealloc];
 }
 
 @end

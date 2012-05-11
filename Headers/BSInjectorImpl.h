@@ -4,7 +4,4 @@
 #import "BSInjector.h"
 
 @interface BSInjectorImpl : NSObject<BSBinder, BSInjector>
-
-
-
 @end

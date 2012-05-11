@@ -11,13 +11,11 @@
 
 #import <objc/runtime.h>
 
-@interface BSInjectorImpl () {
-    NSMutableDictionary *providers_;
-    NSMutableDictionary *scopes_;
-}
+@interface BSInjectorImpl () 
 
-@property(nonatomic, retain) NSMutableDictionary *providers;
-@property(nonatomic, retain) NSMutableDictionary *scopes;
+@property(nonatomic, strong) NSMutableDictionary *providers;
+@property(nonatomic, strong) NSMutableDictionary *scopes;
+
 - (void)injectInjector:(id)object;
 - (id)getInstance:(id)key withArgArray:(NSArray *)args;
 @end
@@ -33,12 +31,6 @@
         self.scopes = [NSMutableDictionary dictionary];
     }
     return self;
-}
-
-- (void)dealloc {
-    self.providers = nil;
-    self.scopes = nil;
-    [super dealloc];
 }
 
 - (void)bind:(id)key toInstance:(id)instance {

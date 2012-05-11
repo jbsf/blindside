@@ -4,15 +4,9 @@
  * A BSInitializer describes an initializer method that Blindside will use when constructing
  * objects of a given class. 
  */
-@interface BSInitializer : NSObject {
-    Class type_;
-    SEL selector_;
-    NSArray *argumentKeys_;
-    NSMethodSignature *signature_;
-    
-}
+@interface BSInitializer : NSObject 
 
-@property (nonatomic, retain) NSArray *argumentKeys;
+@property (nonatomic, strong, readonly) NSArray *argumentKeys;
 
 /**
  * Creates a BSInitializer representing the given class and selector. This is an important method
