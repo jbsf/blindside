@@ -12,7 +12,7 @@ It's a play on the idea that objects should be blind to the origin of their depe
 
 ## What, are we Java?
 
-Sadly, yes. Objective-C and Java are identical with respect to the object dependency management facilities offered by the language: basically none. Global variables, "sharedInstance" singletons, and pass-through parameters are the common patterns used to access dependencies. None are good options. 
+Sadly, yes. Objective-C and Java are identical with respect to the object-level dependency management  offered by the language: basically none. Global variables, "sharedInstance" singletons, and pass-through parameters are the common patterns used to access dependencies. None are good options. 
 
 Guice brought elegant object dependency management to Java, obviating the need for static data, and fulfilling the promise of true OO programming. Blindside seeks to do the same for Objective-C.
 
@@ -49,7 +49,9 @@ You describe your object's dependencies, define bindings to fill those dependenc
  * Describing MyViewController's dependencies. We want instances initialized using initWithApi:, which takes one arg.
  */
 + (BSInitializer *)blindsideInitializer {
-		return [BSInitializer initializerWithClass:self selector:@selector(initWithApi:) argumentKeys:@"myApi", nil];
+		return [BSInitializer initializerWithClass:self 
+		                                  selector:@selector(initWithApi:) 
+		                              argumentKeys:@"myApi", nil];
 }
 
 ...
@@ -77,7 +79,7 @@ You describe your object's dependencies, define bindings to fill those dependenc
 		...
 		// Creating an injector configured with our BSModule. Asking the injector for an instance of our ViewController.
 		MyBlindsideModule *module = [[MyBlindsideModule alloc] init];
-		BSInjector *injector = [Blindside injectorWithModule:module];
+		id<BSInjector> injector = [Blindside injectorWithModule:module];
 		UIViewController *rootViewController = [injector getInstance:[MyViewController class]];
 		
 		...
