@@ -11,7 +11,7 @@ describe(@"BSInjector", ^{
 
     beforeEach(^{
         injector = [[[BSInjectorImpl alloc] init] autorelease];
-    }); 
+    });
 
     it(@"can bind an instance to a class", ^{
         NSString *instance = @"foo";
@@ -27,7 +27,14 @@ describe(@"BSInjector", ^{
         expect(object == instance).to(equal(YES));
     });
 
-    describe(@"building an object whose class has a blindsideInitializer", ^{
+    it(@"can bind an instance to a protocol", ^{
+        TestProtocolImpl *protocolImpl = [[TestProtocolImpl alloc] init];
+        [injector bind:@protocol(TestProtocol) toInstance:protocolImpl];
+        id object = [injector getInstance:@protocol(TestProtocol)];
+        expect(object == protocolImpl).to(equal(YES));
+    });
+
+    describe(@"building an object using a BSInitializer", ^{
         it(@"resolves first-order dependencies", ^{
             Address *address = [[[Address alloc] init] autorelease];
             [injector bind:[Address class] toInstance:address];
@@ -42,34 +49,34 @@ describe(@"BSInjector", ^{
                 City *city = [[[City alloc] init] autorelease];
                 State *state = [[[State alloc] init] autorelease];
                 NSString *zip = @"94110";
-                
+
                 [injector bind:@"street" toInstance:street];
                 [injector bind:@"city"   toInstance:city];
                 [injector bind:@"state"  toInstance:state];
                 [injector bind:@"zip"    toInstance:zip];
-                
+
                 Address *address = [injector getInstance:[Address class]];
-                
+
                 expect(address.street == street).to(equal(YES));
                 expect(address.city   == city).to(equal(YES));
                 expect(address.state  == state).to(equal(YES));
                 expect(address.zip    == zip).to(equal(YES));
             });
-            
+
             context(@"when some argument keys have no bound values", ^{
                 it(@"injects nil", ^{
                     NSString *street = @"123 Market St.";
                     City *city = [[[City alloc] init] autorelease];
-                    
+
                     [injector bind:@"street" toInstance:street];
                     [injector bind:@"city"   toInstance:city];
-                    
+
                     Address *address = [injector getInstance:[Address class]];
-                    
+
                     expect(address.street == street).to(equal(YES));
                     expect(address.city == city).to(equal(YES));
                     expect(address.state).to(be_nil);
-                    expect(address.zip).to(be_nil);                    
+                    expect(address.zip).to(be_nil);
                 });
             });
         });
@@ -86,38 +93,50 @@ describe(@"BSInjector", ^{
                 [injector bind:@"theDriveway" toInstance:driveway];
             });
 
-            it(@"injects the properties", ^{
-                House *house = [injector getInstance:[House class]];
-                expect(house.garage == garage).to(equal(YES));
-                expect(house.driveway == driveway).to(equal(YES));
+            context(@"when there is an explicit binding for the property", ^{
+                it(@"uses the binding for the injection", ^{
+                    House *house = [injector getInstance:[House class]];
+                    expect(house.driveway == driveway).to(equal(YES));
+                });
             });
-            
+
+            context(@"when the property does not have an explicit binding", ^{
+                it(@"uses the binding for the property's return type", ^{
+                    House *house = [injector getInstance:[House class]];
+                    expect(house.garage == garage).to(equal(YES));
+                });
+
+                context(@"and the property's return type is a protocol", ^{
+
+                });
+            });
+
             context(@"when the superclass has properties", ^{
                 it(@"injects superclass properties too", ^{
                     TennisCourt *tennisCourt = [[[TennisCourt alloc] init] autorelease];
                     [injector bind:[TennisCourt class] toInstance:tennisCourt];
 
-                    Mansion *mansion = [injector getInstance:[Mansion class]];                    
+                    Mansion *mansion = [injector getInstance:[Mansion class]];
                     expect(mansion.tennisCourt == tennisCourt).to(equal(YES));
                     expect(mansion.garage == garage).to(equal(YES));
                 });
-                
+
                 context(@"when the subclass binds a shared property", ^{
                     it(@"does not affect the superclass binding", ^{
                         Driveway *tenCarDriveway = [[[Driveway alloc] init] autorelease];
                         [injector bind:@"10 car driveway" toInstance:tenCarDriveway];
-                        
+
                         Mansion *mansion = [injector getInstance:[Mansion class]];
                         House *house = [injector getInstance:[House class]];
-                        
+
                         expect(mansion.driveway == tenCarDriveway).to(equal(YES));
                         expect(house.driveway == driveway).to(equal(YES));
-                    }); 
+                    });
                 });
             });
         });
     });
-    
+
     it(@"binds to blocks", ^{
         __block Garage *garage;
 
@@ -129,7 +148,7 @@ describe(@"BSInjector", ^{
         House *house = [injector getInstance:[House class]];
         expect(house.garage == garage).to(equal(YES));
     });
-    
+
     describe(@"binding to classes", ^{
         context(@"when the class has a blindside initializer", ^{
             it(@"builds the class with the blindside initializer", ^{
@@ -147,7 +166,7 @@ describe(@"BSInjector", ^{
             });
         });
     });
-    
+
     describe(@"scoping", ^{
         describe(@"singleton", ^{
             it(@"uses the same instance for all injection points", ^{
@@ -156,7 +175,7 @@ describe(@"BSInjector", ^{
                 House *house2 = [injector getInstance:[House class]];
                 expect(house1 == house2).to(equal(YES));
             });
-            
+
             context(@"when a class is bound to a non-class key", ^{
                 it(@"uses the same instance for all injection points", ^{
                     [injector bind:@"house" toClass:[House class]];
@@ -166,7 +185,7 @@ describe(@"BSInjector", ^{
                     House *house3 = [injector getInstance:[House class]];
                     House *house4 = [injector getInstance:[House class]];
                     expect(house1 == house2 && house2 == house3 && house3 == house4).to(equal(YES));
-                });                
+                });
             });
         });
 

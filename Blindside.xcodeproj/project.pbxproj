@@ -66,6 +66,7 @@
 		299EA6B1155CDD2C0006C5A4 /* BSClassProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 299EA6AB155CDD2C0006C5A4 /* BSClassProvider.m */; };
 		299EA6B2155CDD2C0006C5A4 /* BSClassProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 299EA6AB155CDD2C0006C5A4 /* BSClassProvider.m */; };
 		299EA6B3155CDD2C0006C5A4 /* BSClassProvider.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 299EA6AB155CDD2C0006C5A4 /* BSClassProvider.m */; };
+		29B0D3D61560CFAF00183BAC /* BSInitializerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29B0D3D51560CFAF00183BAC /* BSInitializerSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		29B50684152583840035D197 /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; };
 		29B5068A15276D630035D197 /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; };
 		29B5068B15276D640035D197 /* BSBinder.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; };
@@ -245,6 +246,7 @@
 		29997B4D1505EC0B00C12110 /* Blindside_StaticLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Blindside_StaticLib.m; sourceTree = "<group>"; };
 		299EA6AA155CDD2C0006C5A4 /* Blindside.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Blindside.m; path = Source/Blindside.m; sourceTree = "<group>"; };
 		299EA6AB155CDD2C0006C5A4 /* BSClassProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSClassProvider.m; path = Source/BSClassProvider.m; sourceTree = "<group>"; };
+		29B0D3D51560CFAF00183BAC /* BSInitializerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSInitializerSpec.mm; sourceTree = "<group>"; };
 		29B50683152583840035D197 /* BSBinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBinder.h; sourceTree = "<group>"; };
 		29C967581508744900356446 /* NSObject+Blindside.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Blindside.h"; sourceTree = "<group>"; };
 		29C967591508744900356446 /* NSObject+Blindside.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Blindside.m"; path = "Headers/NSObject+Blindside.m"; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				29CAC77E1502AAA400731862 /* BSInjectorSpec.mm */,
 				29C967F3150D2C8800356446 /* BSPropertySpec.mm */,
 				29C967F8150D37E700356446 /* BSPropertySetSpec.mm */,
+				29B0D3D51560CFAF00183BAC /* BSInitializerSpec.mm */,
 				29CAC7051502932000731862 /* main.m */,
 				29CAC7801502AB4200731862 /* Fixtures */,
 			);
@@ -565,7 +568,7 @@
 		29CAC6DA150292AD00731862 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = self;
 			};
 			buildConfigurationList = 29CAC6DD150292AD00731862 /* Build configuration list for PBXProject "Blindside" */;
@@ -753,6 +756,7 @@
 				29D7FE90153EAEF000C8C4E7 /* BSPropertySet.m in Sources */,
 				299EA6AD155CDD2C0006C5A4 /* Blindside.m in Sources */,
 				299EA6B1155CDD2C0006C5A4 /* BSClassProvider.m in Sources */,
+				29B0D3D61560CFAF00183BAC /* BSInitializerSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

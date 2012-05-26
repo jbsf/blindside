@@ -10,8 +10,9 @@
 #import "BSClassProvider.h"
 
 #import <objc/runtime.h>
+#import <objc/Protocol.h>
 
-@interface BSInjectorImpl () 
+@interface BSInjectorImpl ()
 
 @property(nonatomic, strong) NSMutableDictionary *providers;
 @property(nonatomic, strong) NSMutableDictionary *scopes;
@@ -35,16 +36,16 @@
 
 - (void)bind:(id)key toInstance:(id)instance {
     BSInstanceProvider *provider = [BSInstanceProvider provider:instance];
-    [self.providers setObject:provider forKey:key];
+    [self setProvider:provider forKey:key];
 }
 
 - (void)bind:(id)key toProvider:(id<BSProvider>)provider {
-    [self.providers setObject:provider forKey:key];
+    [self setProvider:provider forKey:key];
 }
 
 - (void)bind:(id)key toBlock:(BSBlock)block {
     BSBlockProvider *provider = [BSBlockProvider providerWithBlock:block injector:self];
-    [self.providers setObject:provider forKey:key];
+    [self setProvider:provider forKey:key];
 }
 
 - (void)bind:(id)key toClass:(Class)class {
@@ -58,7 +59,7 @@
 }
 
 - (void)bind:(id)key withScope:(id<BSScope>)scope {
-    [self.scopes setObject:scope forKey:key];
+    [self setScope:scope forKey:key];
 }
 
 - (void)injectInjector:(id)object {
@@ -98,14 +99,14 @@
 }
 
 - (id)getInstance:(id)key withArgArray:(NSArray *)args {
-    id<BSProvider> provider = [self.providers objectForKey:key];
-    id<BSScope> scope = [self.scopes objectForKey:key];
-    
+    id<BSProvider> provider = [self providerForKey:key];
+    id<BSScope> scope = [self scopeForKey:key];
+
     if (provider == nil && [key respondsToSelector:@selector(blindsideInitializer)]) {
         BSInitializer *initializer = [key performSelector:@selector(blindsideInitializer)];
         provider = [BSInitializerProvider providerWithInitializer:initializer injector:self];
     }
-    
+
     if (provider && scope) {
         provider = [scope scope:provider];
     }
@@ -114,5 +115,28 @@
     [self injectInjector:instance];
 
     return instance;
+}
+
+- (void)setProvider:(id<BSProvider>)provider forKey:(id)key {
+    [self.providers setObject:provider forKey:[self internalKey:key]];
+}
+
+- (id<BSProvider>)providerForKey:(id)key {
+    return [self.providers objectForKey:[self internalKey:key]];
+}
+
+- (void)setScope:(id<BSScope>)scope forKey:(id)key {
+    [self.scopes setObject:scope forKey:[self internalKey:key]];
+}
+
+- (id<BSScope>)scopeForKey:(id)key {
+    return [self.scopes objectForKey:[self internalKey:key]];
+}
+
+- (id)internalKey:(id)key {
+    if ([key class] == [Protocol class]) {
+        return [NSString stringWithFormat:@"@protocol(@%)", NSStringFromProtocol(key)];
+    }
+    return key;
 }
 @end

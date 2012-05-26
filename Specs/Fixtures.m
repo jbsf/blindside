@@ -7,26 +7,26 @@
 @implementation State
 @end
 
-@implementation City 
+@implementation City
 @synthesize population = population_;
 @end
 
-@implementation Garage 
+@implementation Garage
 @end
 
-@implementation Driveway 
+@implementation Driveway
 @end
 
 @implementation Address : NSObject
 
-@synthesize 
+@synthesize
 street = street_,
 city = city_,
 state = state_,
 zip = zip_;
 
 + (BSInitializer *)blindsideInitializer {
-    BSInitializer *initializer = [BSInitializer initializerWithClass:self selector:@selector(initWithStreet:city:state:zip:) 
+    BSInitializer *initializer = [BSInitializer initializerWithClass:self selector:@selector(initWithStreet:city:state:zip:)
                                   argumentKeys:@"street", @"city", @"state", @"zip", nil];
     return initializer;
 }
@@ -76,9 +76,11 @@ zip = zip_;
 + (BSPropertySet *)blindsideProperties {
     BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"tennisCourt", nil];
     [propertySet bindProperty:@"driveway" toKey:@"10 car driveway"];
-    
+
     return propertySet;
 }
 
 @end
 
+@implementation TestProtocolImpl
+@end

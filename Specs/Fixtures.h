@@ -16,7 +16,7 @@
 @interface Driveway : NSObject
 @end
 
-@interface Address : NSObject 
+@interface Address : NSObject
 @property (nonatomic, retain) NSString *street;
 @property (nonatomic, retain) City *city;
 @property (nonatomic, retain) State *state;
@@ -43,3 +43,8 @@
 @property (nonatomic, retain) TennisCourt *tennisCourt;
 @end
 
+@protocol TestProtocol <NSObject>
+@end
+
+@interface TestProtocolImpl : NSObject<TestProtocol>
+@end
