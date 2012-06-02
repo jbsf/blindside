@@ -19,9 +19,9 @@
     return self;
 }
 
-- (id)provide:(NSArray *)args {
+- (id)provide:(NSArray *)args injector:(id<BSInjector>)injector {
     if (self.instance == nil) {
-        self.instance = [self.source provide:args];
+        self.instance = [self.source provide:args injector:injector];
         self.source = nil;
     }
     return self.instance;

@@ -26,6 +26,6 @@ typedef id(^BSBlock)(NSArray *args, id<BSInjector> injector);
 /**
  * Returns a BSBlockProvider that wraps the block
  */
-+ (BSBlockProvider *)providerWithBlock:(BSBlock)block injector:(id<BSInjector>)injector;
++ (BSBlockProvider *)providerWithBlock:(BSBlock)block;
 
 @end

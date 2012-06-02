@@ -7,30 +7,28 @@
 
 @interface BSBlockProvider ()
 @property (nonatomic, strong) BSBlock block;
-@property (nonatomic, weak) id<BSInjector> injector;
 
-- (id)initWithBlock:(BSBlock)block injector:(id<BSInjector>)injector;
+- (id)initWithBlock:(BSBlock)block;
 
 @end
 
 @implementation BSBlockProvider
 
-@synthesize block = _block, injector = _injector;
+@synthesize block = _block;
 
-+ (BSBlockProvider *)providerWithBlock:(BSBlock)block injector:(id<BSInjector>)injector {
-    return [[BSBlockProvider alloc] initWithBlock:block injector:injector];
++ (BSBlockProvider *)providerWithBlock:(BSBlock)block  {
+    return [[BSBlockProvider alloc] initWithBlock:block];
 }
 
-- (id)initWithBlock:(BSBlock)block injector:(id<BSInjector>)injector {
+- (id)initWithBlock:(BSBlock)block {
     if (self = [super init]) {
         self.block = [block copy];
-        self.injector = injector;
     }
     return self;
 }
 
-- (id)provide:(NSArray *)args {
-    return self.block(args, self.injector);
+- (id)provide:(NSArray *)args injector:(id<BSInjector>)injector{
+    return self.block(args, injector);
 }
 
 @end

@@ -20,7 +20,7 @@
     return self;
 }
 
-- (id)provide:(NSArray *)args {
+- (id)provide:(NSArray *)args injector:(id<BSInjector>)injector{
     return self.instance;
 }
 

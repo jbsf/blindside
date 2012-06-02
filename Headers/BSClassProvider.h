@@ -6,6 +6,6 @@
 
 @interface BSClassProvider : NSObject<BSProvider> 
 
-+ (BSClassProvider *)providerWithClass:(Class)class injector:(id<BSInjector>)injector;
++ (BSClassProvider *)providerWithClass:(Class)class;
 
 @end

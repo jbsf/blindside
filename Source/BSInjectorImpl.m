@@ -7,6 +7,7 @@
 #import "BSInitializer.h"
 #import "BSScope.h"
 #import "BSProperty.h"
+#import "BSPropertySet.h"
 #import "BSClassProvider.h"
 
 #import <objc/runtime.h>
@@ -44,12 +45,12 @@
 }
 
 - (void)bind:(id)key toBlock:(BSBlock)block {
-    BSBlockProvider *provider = [BSBlockProvider providerWithBlock:block injector:self];
+    BSBlockProvider *provider = [BSBlockProvider providerWithBlock:block];
     [self setProvider:provider forKey:key];
 }
 
 - (void)bind:(id)key toClass:(Class)class {
-    BSClassProvider *provider = [BSClassProvider providerWithClass:class injector:self];
+    BSClassProvider *provider = [BSClassProvider providerWithClass:class];
     [self bind:key toProvider:provider];
 }
 
@@ -104,17 +105,27 @@
 
     if (provider == nil && [key respondsToSelector:@selector(blindsideInitializer)]) {
         BSInitializer *initializer = [key performSelector:@selector(blindsideInitializer)];
-        provider = [BSInitializerProvider providerWithInitializer:initializer injector:self];
+        provider = [BSInitializerProvider providerWithInitializer:initializer];
     }
 
     if (provider && scope) {
         provider = [scope scope:provider];
     }
 
-    id instance = [provider provide:args];
+    id instance = [provider provide:args injector:self];
     [self injectInjector:instance];
 
     return instance;
+}
+
+- (void)injectProperties:(id)instance {
+    if ([[instance class] respondsToSelector:@selector(blindsideProperties)]) {
+        BSPropertySet *propertySet = [[instance class] performSelector:@selector(blindsideProperties)];
+        for (BSProperty *property in propertySet) {
+            id value = [self getInstance:property.injectionKey];
+            [instance setValue:value forKey:property.propertyName];
+        }
+    }
 }
 
 - (void)setProvider:(id<BSProvider>)provider forKey:(id)key {
