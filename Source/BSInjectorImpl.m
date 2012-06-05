@@ -69,7 +69,7 @@
     }
 
     const char *attributes = property_getAttributes(objc_property);
-    NSString *attrStr = [NSString stringWithCString:attributes encoding:NSUTF8StringEncoding];
+    NSString *attrStr = [NSString stringWithUTF8String:attributes];
     NSRange startRange = [attrStr rangeOfString:@"T@\"<BSInjector>\""];
 
     if (startRange.location != NSNotFound) {
@@ -102,11 +102,6 @@
     id<BSProvider> provider = [self providerForKey:key];
     id<BSScope> scope = [self scopeForKey:key];
 
-    if (provider == nil && [key respondsToSelector:@selector(blindsideInitializer)]) {
-        BSInitializer *initializer = [key performSelector:@selector(blindsideInitializer)];
-        provider = [BSInitializerProvider providerWithInitializer:initializer];
-    }
-
     if (provider && scope) {
         provider = [scope scope:provider];
     }
@@ -132,7 +127,18 @@
 }
 
 - (id<BSProvider>)providerForKey:(id)key {
-    return [self.providers objectForKey:[self internalKey:key]];
+    id<BSProvider> provider = [self.providers objectForKey:[self internalKey:key]];
+    
+    if (provider == nil && [key respondsToSelector:@selector(bsCreateWithArgs:injector:)]) {
+        provider = [BSBlockProvider providerWithBlock:^id(NSArray *args, id<BSInjector> injector) {
+            return [key performSelector:@selector(bsCreateWithArgs:injector:) withObject:args withObject:self];
+        }];
+    } else if (provider == nil && [key respondsToSelector:@selector(blindsideInitializer)]) {
+        BSInitializer *initializer = [key performSelector:@selector(blindsideInitializer)];
+        provider = [BSInitializerProvider providerWithInitializer:initializer];
+    }
+    
+    return provider;
 }
 
 - (void)setScope:(id<BSScope>)scope forKey:(id)key {

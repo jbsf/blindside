@@ -8,12 +8,4 @@
     return [BSInitializer initializerWithClass:self selector:selector argumentKeys:nil];
 }
 
-+ (BSPropertySet *)blindsideProperties {
-    return nil;
-}
-
-+ (id<BSScope>)blindsideScope {
-    return nil;
-}
-
 @end

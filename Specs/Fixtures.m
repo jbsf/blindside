@@ -1,6 +1,7 @@
 #import "Fixtures.h"
 #import "BSInitializer.h"
 #import "BSPropertySet.h"
+#import "BSInjector.h"
 
 #import <objc/runtime.h>
 
@@ -83,4 +84,23 @@ zip = zip_;
 @end
 
 @implementation TestProtocolImpl
+@end
+
+@implementation ClassWithFactoryMethod 
+@synthesize foo = _foo, bar = _bar;
+
++ bsCreateWithArgs:(NSArray *)args injector:(id<BSInjector>)injector {
+    NSString *foo = [args objectAtIndex:0];
+    NSString *bar = [injector getInstance:@"bar"];
+    return [[ClassWithFactoryMethod alloc] initWithFoo:foo bar:bar];
+}
+
+- (id)initWithFoo:(NSString *)foo bar:(NSString *)bar {
+    self = [super init];
+    if (self) {
+        self.foo = foo;
+        self.bar = bar;
+    }
+    return self;
+}
 @end

@@ -34,6 +34,13 @@ describe(@"BSInjector", ^{
         id object = [injector getInstance:@protocol(TestProtocol)];
         expect(object == protocolImpl).to(equal(YES));
     });
+    
+    it(@"can build using a factory method", ^{
+        [injector bind:@"bar" toInstance:@"BAR"];
+        ClassWithFactoryMethod *instance = [injector getInstance:[ClassWithFactoryMethod class] withArgs:@"FOO", nil];
+        instance.foo should equal(@"FOO");
+        instance.bar should equal(@"BAR");
+    });
 
     describe(@"building an object using a BSInitializer", ^{
         it(@"resolves first-order dependencies", ^{

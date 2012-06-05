@@ -35,8 +35,8 @@
     BSPropertySet *propertySet = [[BSPropertySet alloc] initWithClass:owningClass properties:bsProperties];
     
     Class superclass = class_getSuperclass(owningClass);
-    if (superclass != nil) {
-        BSPropertySet *superclassPropertySet = [superclass blindsideProperties];
+    if (superclass != nil && [superclass respondsToSelector:@selector(blindsideProperties)]) {
+        BSPropertySet *superclassPropertySet = [superclass performSelector:@selector(blindsideProperties)];
         [propertySet merge:superclassPropertySet];
     }
     

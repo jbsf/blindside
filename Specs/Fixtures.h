@@ -48,3 +48,9 @@
 
 @interface TestProtocolImpl : NSObject<TestProtocol>
 @end
+
+@interface ClassWithFactoryMethod : NSObject
+@property (nonatomic, retain) NSString *foo;
+@property (nonatomic, retain) NSString *bar;
++ bsCreateWithArgs:(NSArray *)args injector:(id<BSInjector>)injector;
+@end
