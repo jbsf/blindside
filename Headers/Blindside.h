@@ -15,6 +15,7 @@
 #import "BSPropertySet.h"
 #import "BSProperty.h"
 #import "BSBinder.h"
+#import "BSNull.h"
 
 #define BS_DYNAMIC @"bs_dynamic"
 

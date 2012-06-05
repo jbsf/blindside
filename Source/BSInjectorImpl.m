@@ -9,6 +9,7 @@
 #import "BSProperty.h"
 #import "BSPropertySet.h"
 #import "BSClassProvider.h"
+#import "BSNull.h"
 
 #import <objc/runtime.h>
 #import <objc/Protocol.h>
@@ -25,7 +26,6 @@
 @implementation BSInjectorImpl
 
 @synthesize providers = _providers, scopes = _scopes;
-
 
 - (id)init {
     if (self = [super init]) {
@@ -146,7 +146,7 @@
 
 - (id)internalKey:(id)key {
     if ([key class] == [Protocol class]) {
-        return [NSString stringWithFormat:@"@protocol(@%)", NSStringFromProtocol(key)];
+        return [NSString stringWithFormat:@"@protocol(%@)", NSStringFromProtocol(key)];
     }
     return key;
 }

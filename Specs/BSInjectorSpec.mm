@@ -2,6 +2,7 @@
 #import "BSInjectorImpl.h"
 #import "Fixtures.h"
 #import "BSSingleton.h"
+#import "BSNull.h"
 
 using namespace Cedar::Matchers;
 
@@ -63,16 +64,36 @@ describe(@"BSInjector", ^{
                 expect(address.zip    == zip).to(equal(YES));
             });
 
-            context(@"when some argument keys have no bound values", ^{
-                it(@"injects nil", ^{
+            context(@"when an argument key does not have a bound value", ^{
+                it(@"raises an exception", ^{
                     NSString *street = @"123 Market St.";
                     City *city = [[[City alloc] init] autorelease];
 
                     [injector bind:@"street" toInstance:street];
                     [injector bind:@"city"   toInstance:city];
-
+                    
+                    // zip and state remain unbound
+                    
+                    void(^block)() = [[^{
+                        [injector getInstance:[Address class]];
+                    } copy] autorelease];
+                    
+                    block should raise_exception();
+                });
+            });
+            
+            context(@"when an argument key is bound to BS_NULL", ^{
+                it(@"injects nil", ^{
+                    NSString *street = @"123 Market St.";
+                    City *city = [[[City alloc] init] autorelease];
+                    
+                    [injector bind:@"street" toInstance:street];
+                    [injector bind:@"city"   toInstance:city];
+                    [injector bind:@"zip"    toInstance:BS_NULL];
+                    [injector bind:@"state"  toInstance:BS_NULL];
+                    
                     Address *address = [injector getInstance:[Address class]];
-
+                    
                     expect(address.street == street).to(equal(YES));
                     expect(address.city == city).to(equal(YES));
                     expect(address.state).to(be_nil);
@@ -86,6 +107,8 @@ describe(@"BSInjector", ^{
             __block Driveway *driveway;
 
             beforeEach(^{
+                [injector bind:[Address class] toInstance:BS_NULL];
+                
                 garage = [[[Garage alloc] init] autorelease];
                 [injector bind:[Garage class] toInstance:garage];
 
@@ -140,6 +163,8 @@ describe(@"BSInjector", ^{
     it(@"binds to blocks", ^{
         __block Garage *garage;
 
+        [injector bind:[Address class] toInstance:BS_NULL];
+        
         garage = [[[Garage alloc] init] autorelease];
         [injector bind:[Garage class] toBlock:^(NSArray *args, id<BSInjector> injector){
             return garage;
@@ -152,6 +177,7 @@ describe(@"BSInjector", ^{
     describe(@"binding to classes", ^{
         context(@"when the class has a blindside initializer", ^{
             it(@"builds the class with the blindside initializer", ^{
+                [injector bind:[Address class] toInstance:BS_NULL];
                 [injector bind:@"expensivePurchase" toClass:[House class]];
                 id expensivePurchase = [injector getInstance:@"expensivePurchase"];
                 expect([expensivePurchase class]).to(equal([House class]));
@@ -170,6 +196,7 @@ describe(@"BSInjector", ^{
     describe(@"scoping", ^{
         describe(@"singleton", ^{
             it(@"uses the same instance for all injection points", ^{
+                [injector bind:[Address class] toInstance:BS_NULL];
                 [injector bind:[House class] withScope:[BSSingleton scope]];
                 House *house1 = [injector getInstance:[House class]];
                 House *house2 = [injector getInstance:[House class]];
@@ -178,6 +205,7 @@ describe(@"BSInjector", ^{
 
             context(@"when a class is bound to a non-class key", ^{
                 it(@"uses the same instance for all injection points", ^{
+                    [injector bind:[Address class] toInstance:BS_NULL];
                     [injector bind:@"house" toClass:[House class]];
                     [injector bind:[House class] withScope:[BSSingleton scope]];
                     House *house1 = [injector getInstance:@"house"];
@@ -191,6 +219,7 @@ describe(@"BSInjector", ^{
 
         describe(@"unscoped", ^{
             it(@"uses a different instance for each injection point", ^{
+                [injector bind:[Address class] toInstance:BS_NULL];
                 House *house1 = [injector getInstance:[House class]];
                 House *house2 = [injector getInstance:[House class]];
                 expect(house1 == house2).to(equal(NO));
@@ -200,33 +229,66 @@ describe(@"BSInjector", ^{
 
     context(@"when the object being retrieved has a writable blindsideInjector property", ^{
         it(@"injects itself as the property value", ^{
+            [injector bind:[Address class] toInstance:BS_NULL];
             House *house = [injector getInstance:[House class]];
             house.injector should equal(injector);
         });
     });
 
     describe(@"getInstance:withArgs:", ^{
+        __block State *state;
+        __block City *city;
+        __block NSString *street;
+        __block NSString *zip;
+        
+        beforeEach(^{
+            street = @"Guerrero";
+            zip = @"Guerrero";
+            state = [[[State alloc] init] autorelease];
+            city = [[[City alloc] init] autorelease];
+            [injector bind:@"street" toInstance:street];
+            [injector bind:@"state"  toInstance:state];
+        });
+        
         context(@"when the are too many args", ^{
-
+            it(@"raises an exception", ^{
+                
+                void(^block)() = [[^{
+                   [injector getInstance:[Address class] withArgs:city, zip, @"too many args", nil];
+                } copy] autorelease];
+                
+                block should raise_exception();
+            });
         });
 
         context(@"when there are too few args", ^{
-
+            it(@"raises an exception", ^{
+                
+                void(^block)() = [[^{
+                    [injector getInstance:[Address class] withArgs:city, nil];
+                } copy] autorelease];
+                
+                block should raise_exception();                
+            });
         });
 
         context(@"with the correct number of args", ^{
             it(@"injects the provided args along with existing bindings", ^{
-                NSString *street = @"Guerrero";
-                NSString *zip = @"Guerrero";
-                State *state = [[[State alloc] init] autorelease];
-                City *city = [[[City alloc] init] autorelease];
-                [injector bind:@"street" toInstance:street];
-                [injector bind:@"state"  toInstance:state];
                 Address *address = [injector getInstance:[Address class] withArgs:city, zip, nil];
                 address.street should equal(street);
                 address.state should equal(state);
                 address.city should equal(city);
                 address.zip should equal(zip);
+            });
+        });
+        
+        context(@"when passing BS_NULL as an arg value", ^{
+            it(@"injects nil", ^{
+                Address *address = [injector getInstance:[Address class] withArgs:BS_NULL, zip, nil];
+                address.street should equal(street);
+                address.state should equal(state);
+                address.city should be_nil;
+                address.zip should equal(zip);                
             });
         });
     });

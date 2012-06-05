@@ -6,6 +6,8 @@
  */
 @interface BSInitializer : NSObject 
 
+@property (nonatomic, weak, readonly) Class type;
+@property (nonatomic, readonly) SEL selector;
 @property (nonatomic, strong, readonly) NSArray *argumentKeys;
 
 /**

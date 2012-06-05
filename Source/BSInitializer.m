@@ -6,7 +6,7 @@
 static NSString *const BSInvalidInitializerException = @"BSInvalidInitializerException";
 
 @interface BSInitializer ()
-@property (nonatomic, weak) Class type;
+@property (nonatomic, weak, readwrite) Class type;
 @property (nonatomic) SEL selector;
 @property (nonatomic, strong) NSMethodSignature *signature;
 @property (nonatomic, strong, readwrite) NSArray *argumentKeys;
@@ -45,7 +45,6 @@ static NSString *const BSInvalidInitializerException = @"BSInvalidInitializerExc
         if (self.signature == nil) {
             [NSException raise:BSInvalidInitializerException
                         format:@"selector %@ not found on class %@", NSStringFromSelector(self.selector), NSStringFromClass(self.type), nil];
-
         }
     }
     return self;
