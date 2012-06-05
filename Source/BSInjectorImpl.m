@@ -12,7 +12,6 @@
 #import "BSNull.h"
 
 #import <objc/runtime.h>
-#import <objc/Protocol.h>
 
 @interface BSInjectorImpl ()
 
@@ -145,9 +144,10 @@
 }
 
 - (id)internalKey:(id)key {
-    if ([key class] == [Protocol class]) {
+    if ([NSStringFromClass([key class]) isEqualToString:@"Protocol"]) {
         return [NSString stringWithFormat:@"@protocol(%@)", NSStringFromProtocol(key)];
     }
     return key;
 }
+
 @end
