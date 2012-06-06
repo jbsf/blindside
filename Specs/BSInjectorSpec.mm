@@ -109,7 +109,7 @@ describe(@"BSInjector", ^{
             });
         });
 
-        context(@"when the class also has blindsideProperties", ^{
+        context(@"when the class also has bsProperties", ^{
             __block Garage *garage;
             __block Driveway *driveway;
 

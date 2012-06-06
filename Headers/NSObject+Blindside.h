@@ -1,10 +1,14 @@
 #import <Foundation/Foundation.h>
 
 @class BSInitializer, BSPropertySet;
-@protocol BSScope;
+@protocol BSInjector;
 
 @interface NSObject(Blindside)
 
-+ (BSInitializer *)blindsideInitializer;
++ (id)bsCreateWithArgs:(NSArray *)args injector:(id<BSInjector>)injector;
+
++ (BSInitializer *)bsInitializer;
+
++ (BSPropertySet *)bsProperties;
 
 @end

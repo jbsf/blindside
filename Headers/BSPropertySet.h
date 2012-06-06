@@ -12,16 +12,16 @@
 
 /**
  * Returns a BSPropertySet for the given class, representing the properties named in the argument list. This
- * method is for use by classes within their implementation of blindsideProperties.
+ * method is for use by classes within their implementation of bsProperties.
  *
  * For example, suppose there is a class that has a property called "eventLogger" of type EventLogger *.
  *
- * Suppose we want to inject two of the properties - address and color. We could implement blindsideProperties
+ * Suppose we want to inject two of the properties - address and color. We could implement bsProperties
  * like this:
  *
  * \code
  *
- * + (BSPropertySet *)blindsideProperties {
+ * + (BSPropertySet *)bsProperties {
  *      BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"address" @"color", nil];
  *      [propertySet bind:@"address" toKey:@"my home address"
  *

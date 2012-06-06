@@ -113,8 +113,8 @@
 }
 
 - (void)injectProperties:(id)instance {
-    if ([[instance class] respondsToSelector:@selector(blindsideProperties)]) {
-        BSPropertySet *propertySet = [[instance class] performSelector:@selector(blindsideProperties)];
+    if ([[instance class] respondsToSelector:@selector(bsProperties)]) {
+        BSPropertySet *propertySet = [[instance class] performSelector:@selector(bsProperties)];
         for (BSProperty *property in propertySet) {
             id value = [self getInstance:property.injectionKey];
             [instance setValue:value forKey:property.propertyName];
@@ -129,13 +129,17 @@
 - (id<BSProvider>)providerForKey:(id)key {
     id<BSProvider> provider = [self.providers objectForKey:[self internalKey:key]];
     
+    if (provider == nil && [key respondsToSelector:@selector(bsInitializer)]) {
+        BSInitializer *initializer = [key performSelector:@selector(bsInitializer)];
+        if (initializer != nil) {
+            provider = [BSInitializerProvider providerWithInitializer:initializer];
+        }
+    }
+    
     if (provider == nil && [key respondsToSelector:@selector(bsCreateWithArgs:injector:)]) {
         provider = [BSBlockProvider providerWithBlock:^id(NSArray *args, id<BSInjector> injector) {
             return [key performSelector:@selector(bsCreateWithArgs:injector:) withObject:args withObject:self];
         }];
-    } else if (provider == nil && [key respondsToSelector:@selector(blindsideInitializer)]) {
-        BSInitializer *initializer = [key performSelector:@selector(blindsideInitializer)];
-        provider = [BSInitializerProvider providerWithInitializer:initializer];
     }
     
     return provider;

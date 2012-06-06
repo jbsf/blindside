@@ -97,7 +97,7 @@
    * For example, imagine a call to [injector getInstance:[Foo class]];
    *
    * If no bindings have been created using [Foo class] as a key, then Blindside will try to
-   * create a Foo instance using the Foo class' blindsideInitializer.
+   * create a Foo instance using the Foo class' bsInitializer.
    *
    * If [Foo class] had been bound to a block, then the block would be invoked and its
    * return value would be passed to the caller of getInstance:

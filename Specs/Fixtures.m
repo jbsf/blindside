@@ -26,7 +26,7 @@ city = city_,
 state = state_,
 zip = zip_;
 
-+ (BSInitializer *)blindsideInitializer {
++ (BSInitializer *)bsInitializer {
     BSInitializer *initializer = [BSInitializer initializerWithClass:self selector:@selector(initWithStreet:city:state:zip:)
                                   argumentKeys:@"street", @"city", @"state", @"zip", nil];
     return initializer;
@@ -48,11 +48,11 @@ zip = zip_;
 
 @synthesize address = _address, garage = _garage, driveway = _driveway, injector = _injector;
 
-+ (BSInitializer *)blindsideInitializer {
++ (BSInitializer *)bsInitializer {
     return [BSInitializer initializerWithClass:self selector:@selector(initWithAddress:) argumentKeys:[Address class], nil];
 }
 
-+ (BSPropertySet *)blindsideProperties {
++ (BSPropertySet *)bsProperties {
     BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"garage", @"driveway", nil];
     [propertySet bindProperty:@"driveway" toKey:@"theDriveway"];
     return propertySet;
@@ -74,7 +74,7 @@ zip = zip_;
 
 @synthesize tennisCourt = tennisCourt_;
 
-+ (BSPropertySet *)blindsideProperties {
++ (BSPropertySet *)bsProperties {
     BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"tennisCourt", nil];
     [propertySet bindProperty:@"driveway" toKey:@"10 car driveway"];
 

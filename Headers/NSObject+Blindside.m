@@ -1,11 +1,20 @@
 #import "NSObject+Blindside.h"
 #import "BSInitializer.h"
+#import "BSInjector.h"
+#import "BSPropertySet.h"
 
 @implementation NSObject(Blindside)
 
-+ (BSInitializer *)blindsideInitializer {
-    SEL selector = @selector(init);
-    return [BSInitializer initializerWithClass:self selector:selector argumentKeys:nil];
++ (id)bsCreateWithArgs:(NSArray *)args injector:(id<BSInjector>)injector {
+    return [[self alloc] init];
+}
+
++ (BSInitializer *)bsInitializer {
+    return nil;
+}
+
++ (BSPropertySet *)bsProperties {
+    return nil;
 }
 
 @end

@@ -12,8 +12,7 @@
 
 /**
  * Creates a BSInitializer representing the given class and selector. This is an important method
- * for users of Blindside. Within their implementations of blindsideInitializer, Blindside
- * users will create BSInitializers using this method. 
+ * within Blindside, one that users will commonly use within their implementations of bsInitializer.
  *
  * @param type The class to which the initializer belongs. The BSInitializer returned by this method
  * will be used by Blindise to create instances of this class.
@@ -36,7 +35,7 @@
  * Here is the most basic:
  * 
  * \code
- * + (BSInitializer *)blindsideInitializer {
+ * + (BSInitializer *)bsInitializer {
  *     SEL selector = @selector(initWithFoo:bar:);
  *     return [BSInitializer initializerWithClass:self selector:selector argumentKeys:[Foo class], [Bar class], nil];
  * }
@@ -45,13 +44,13 @@
  * In the example above, our argumentKeys indicate that the initializer needs an instance of Foo and an instance of Bar.
  * If there are Blindside bindings for [Foo class] and [Bar class], those bindings will be used and the results
  * injected when this initializer is invoked. If there are no such bindings, Blindide will use the 
- * blindsideInitializer of Foo and Bar to create Foo and Bar instances.
+ * bsInitializer of Foo and Bar to create Foo and Bar instances.
  * 
  * argument keys can be any valid id - they need not represent the argument type. Suppose that our class needs 
  * the uberFoo - the most powerful Foo imaginable. We could describe the initializer like this:
  *
  * \code
- * + (BSInitializer *)blindsideInitializer {
+ * + (BSInitializer *)bsInitializer {
  *     SEL selector = @selector(initWithFoo:bar:);
  *     return [BSInitializer initializerWithClass:self selector:selector argumentKeys:@"uberFoo", [Bar class], nil];
  * }
