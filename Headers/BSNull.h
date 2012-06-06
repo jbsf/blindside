@@ -2,7 +2,7 @@
 
 #define BS_NULL [BSNull null]
 
-@interface BSNull : NSObject
+@interface BSNull : NSObject<NSCopying>
 
 + (BSNull *)null;
 

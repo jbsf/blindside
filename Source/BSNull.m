@@ -10,4 +10,8 @@ static BSNull *null = nil;
     }
     return null;
 }
+
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
 @end
