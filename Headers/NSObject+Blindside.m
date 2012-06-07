@@ -6,7 +6,9 @@
 @implementation NSObject(Blindside)
 
 + (id)bsCreateWithArgs:(NSArray *)args injector:(id<BSInjector>)injector {
-    return [[self alloc] init];
+    id instance = [[self alloc] init];
+    [injector injectProperties:instance];
+    return instance;
 }
 
 + (BSInitializer *)bsInitializer {
