@@ -12,7 +12,6 @@
     for (id<BSModule> module in modules) {
         [module configure:injector];
     }
-    [injector bind:@"injector" toInstance:injector];
     [injector bind:BS_NULL toInstance:BS_NULL];
     return injector;
 }

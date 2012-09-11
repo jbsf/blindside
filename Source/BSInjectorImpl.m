@@ -137,8 +137,9 @@
     }
     
     if (provider == nil && [key respondsToSelector:@selector(bsCreateWithArgs:injector:)]) {
+        __weak id this = self;
         provider = [BSBlockProvider providerWithBlock:^id(NSArray *args, id<BSInjector> injector) {
-            return [key performSelector:@selector(bsCreateWithArgs:injector:) withObject:args withObject:self];
+            return [key performSelector:@selector(bsCreateWithArgs:injector:) withObject:args withObject:this];
         }];
     }
     
