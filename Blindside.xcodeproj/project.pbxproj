@@ -568,7 +568,7 @@
 		29CAC6DA150292AD00731862 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = self;
 			};
 			buildConfigurationList = 29CAC6DD150292AD00731862 /* Build configuration list for PBXProject "Blindside" */;
