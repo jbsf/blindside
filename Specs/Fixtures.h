@@ -10,6 +10,10 @@
 @property NSUInteger population;
 @end
 
+@interface Country : NSObject
+@property (nonatomic, retain) NSString *name;
+@end
+
 @interface Garage : NSObject
 @end
 
