@@ -8,6 +8,7 @@ static NSString *const BSInvalidInitializerException = @"BSInvalidInitializerExc
 @interface BSInitializer ()
 @property (nonatomic, weak, readwrite) Class type;
 @property (nonatomic) SEL selector;
+@property (nonatomic) BOOL canAlloc;
 @property (nonatomic, strong) NSMethodSignature *signature;
 @property (nonatomic, strong, readwrite) NSArray *argumentKeys;
 
@@ -41,11 +42,44 @@ static NSString *const BSInvalidInitializerException = @"BSInvalidInitializerExc
         self.type = type;
         self.selector = selector;
         self.argumentKeys = argumentKeys;
+        self.canAlloc = YES;
         self.signature = [self.type instanceMethodSignatureForSelector:self.selector];
         if (self.signature == nil) {
             [NSException raise:BSInvalidInitializerException
                         format:@"selector %@ not found on class %@", NSStringFromSelector(self.selector), NSStringFromClass(self.type), nil];
         }
+    }
+    return self;
+}
+
++ (BSInitializer *)initializerWithClass:(Class)type classSelector:(SEL)selector argumentKeys:(id)firstKey, ... {
+    NSMutableArray *argKeys = [NSMutableArray array];
+    if (firstKey) {
+        [argKeys addObject:firstKey];
+        va_list argList;
+        id argKey = nil;
+        va_start(argList, firstKey);
+        while ((argKey = va_arg(argList, id))) {
+            [argKeys addObject:argKey];
+        }
+        va_end(argList);
+    }
+
+    return [[BSInitializer alloc] initWithClass:type classSelector:selector argumentKeys:argKeys];
+}
+
+- (id)initWithClass:(Class)type classSelector:(SEL)selector argumentKeys:(NSArray *)argumentKeys {
+    if (self = [super init]) {
+        self.type = type;
+        self.selector = selector;
+        self.argumentKeys = argumentKeys;
+        self.canAlloc = NO;
+        self.signature = [self.type methodSignatureForSelector:self.selector];
+        if (self.signature == nil) {
+            [NSException raise:BSInvalidInitializerException
+                        format:@"class selector %@ not found on class %@", NSStringFromSelector(self.selector), NSStringFromClass(self.type), nil];
+        }
+
     }
     return self;
 }
@@ -58,35 +92,34 @@ static NSString *const BSInvalidInitializerException = @"BSInvalidInitializerExc
     return self.signature.numberOfArguments - 2;
 }
 
+- (id)target {
+    if (self.canAlloc) {
+        return [self.type alloc];
+    }
+    return self.type;
+}
+
 - (id)perform:(NSArray *)argValues {
-    id instance = [self.type alloc];
+    id obj = [self target];
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    if (self.numberOfArguments == 0) {
-        [instance performSelector:self.selector];
-    } else if (self.numberOfArguments == 1) {
-        id argValue = [self nullify:[argValues objectAtIndex:0]];
-        [instance performSelector:self.selector withObject:argValue];
-    } else if (self.numberOfArguments == 2) {
-        id arg0Value = [self nullify:[argValues objectAtIndex:0]];
-        id arg1Value = [self nullify:[argValues objectAtIndex:1]];
-        [instance performSelector:self.selector withObject:arg0Value withObject:arg1Value];
-#pragma clang diagnostic push
-    } else {
-        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:self.signature];
-        [invocation setTarget:instance];
-        [invocation setSelector:self.selector];
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:self.signature];
+    [invocation setTarget:obj];
+    [invocation setSelector:self.selector];
 
-        for (int i = 0; i < self.numberOfArguments; i++) {
-            id argValue = [self nullify:[argValues objectAtIndex:i]];
-            [invocation setArgument:&argValue atIndex:(i + 2)];
-        }
-
-        [invocation invoke];
+    for (int i = 0; i < self.numberOfArguments; i++) {
+        id argValue = [self nullify:[argValues objectAtIndex:i]];
+        [invocation setArgument:&argValue atIndex:(i + 2)];
     }
 
-    return instance;
+    [invocation invoke];
+
+    if (!self.canAlloc) {
+        __unsafe_unretained id instance;
+        [invocation getReturnValue:&instance];
+        obj = instance;
+    }
+
+    return obj;
 }
 
 - (id)nullify:(id)value {

@@ -2,6 +2,7 @@
 #import "BSInitializer.h"
 #import "BSPropertySet.h"
 #import "BSInjector.h"
+#import "Blindside.h"
 
 #import <objc/runtime.h>
 
@@ -10,6 +11,23 @@
 
 @implementation City
 @synthesize population = population_;
+@end
+
+@implementation Country
+@synthesize name = name_;
+
++ (BSInitializer *)bsInitializer {
+    return [BSInitializer initializerWithClass:self
+                                 classSelector:@selector(countryWithName:)
+                                  argumentKeys:@"countryName", nil];
+}
+
++ (id)countryWithName:(NSString *)name
+{
+    Country *value = [self new];
+    value.name = name;
+    return value;
+}
 @end
 
 @implementation Garage

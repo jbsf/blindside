@@ -15,7 +15,7 @@
  * within Blindside, one that users will commonly use within their implementations of bsInitializer.
  *
  * @param type The class to which the initializer belongs. The BSInitializer returned by this method
- * will be used by Blindise to create instances of this class.
+ * will be used by Blindside to create instances of this class.
  *
  * @param selector The selector representing the initializer signature. The initializer will be invoked
  * by Blindside when creating instances of the class
@@ -70,6 +70,26 @@
  * 
  */
 + (BSInitializer *)initializerWithClass:(Class)type selector:(SEL)selector argumentKeys:(id)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
+
+/**
+ * Creates a BSInitializer representing the given class and selector. This is an important method
+ * within Blindside, one that users will commonly use within their implementations of bsInitializer.
+ * Similar to -[initializerWithClass:selector:argumentKeys:], except a class method is used instead
+ * of an initialize selector.
+ *
+ * @param type The class to which the initializer belongs. The BSInitializer returned by this method
+ * will be used by Blindside to create instances of this class.
+ *
+ * @param selector The selector representing the class method signature. The initializer will be invoked
+ * by Blindside when creating instances of the class
+ *
+ * @param argumentKeys A nil-terminated list of keys that Blindside will use to resolve object dependencies.
+ * The number of argumentKeys provided must match the number of arguments expected by the initializer. Argument
+ * keys are commonly classes, representing the class of the needed dependency, or strings, representing an
+ * actual object instance configured elsewhere in Blindside.
+ */
++ (BSInitializer *)initializerWithClass:(Class)type classSelector:(SEL)selector argumentKeys:(id)firstKey, ...
+    NS_REQUIRES_NIL_TERMINATION;
 
 /**
  * Creates an object using the initializer and the passed-in argument values. The number of argument values
