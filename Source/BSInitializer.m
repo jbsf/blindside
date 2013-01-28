@@ -17,71 +17,63 @@ static NSString *const BSInvalidInitializerException = @"BSInvalidInitializerExc
 
 @end
 
+#define AddVarArgsToNSMutableArray(firstKey, argKeys) va_list __argList__;\
+va_start(__argList__, firstKey);\
+for (id arg = (firstKey); arg != nil; arg = va_arg(__argList__, id)) {\
+    [(argKeys) addObject:arg];\
+}\
+va_end(__argList__);
+
 @implementation BSInitializer
 
 @synthesize type = _type, selector = _selector, argumentKeys = _argumentKeys, signature = _signature;
 
 + (BSInitializer *)initializerWithClass:(Class)type selector:(SEL)selector argumentKeys:(id)firstKey, ... {
     NSMutableArray *argKeys = [NSMutableArray array];
-    if (firstKey) {
-        [argKeys addObject:firstKey];
-        va_list argList;
-        id argKey = nil;
-        va_start(argList, firstKey);
-        while ((argKey = va_arg(argList, id))) {
-            [argKeys addObject:argKey];
-        }
-        va_end(argList);
-    }
-
+    AddVarArgsToNSMutableArray(firstKey, argKeys);
     return [[BSInitializer alloc] initWithClass:type selector:selector argumentKeys:argKeys];
-}
-
-- (id)initWithClass:(Class)type selector:(SEL)selector argumentKeys:(NSArray *)argumentKeys{
-    if (self = [super init]) {
-        self.type = type;
-        self.selector = selector;
-        self.argumentKeys = argumentKeys;
-        self.canAlloc = YES;
-        self.signature = [self.type instanceMethodSignatureForSelector:self.selector];
-        if (self.signature == nil) {
-            [NSException raise:BSInvalidInitializerException
-                        format:@"selector %@ not found on class %@", NSStringFromSelector(self.selector), NSStringFromClass(self.type), nil];
-        }
-    }
-    return self;
 }
 
 + (BSInitializer *)initializerWithClass:(Class)type classSelector:(SEL)selector argumentKeys:(id)firstKey, ... {
     NSMutableArray *argKeys = [NSMutableArray array];
-    if (firstKey) {
-        [argKeys addObject:firstKey];
-        va_list argList;
-        id argKey = nil;
-        va_start(argList, firstKey);
-        while ((argKey = va_arg(argList, id))) {
-            [argKeys addObject:argKey];
-        }
-        va_end(argList);
-    }
-
+    AddVarArgsToNSMutableArray(firstKey, argKeys);
     return [[BSInitializer alloc] initWithClass:type classSelector:selector argumentKeys:argKeys];
 }
 
-- (id)initWithClass:(Class)type classSelector:(SEL)selector argumentKeys:(NSArray *)argumentKeys {
+- (id)initWithClass:(Class)type selector:(SEL)selector argumentKeys:(NSArray *)argumentKeys classSelector:(BOOL)isClassSelector {
     if (self = [super init]) {
         self.type = type;
         self.selector = selector;
         self.argumentKeys = argumentKeys;
-        self.canAlloc = NO;
-        self.signature = [self.type methodSignatureForSelector:self.selector];
-        if (self.signature == nil) {
-            [NSException raise:BSInvalidInitializerException
-                        format:@"class selector %@ not found on class %@", NSStringFromSelector(self.selector), NSStringFromClass(self.type), nil];
+        self.canAlloc = !isClassSelector;
+        if (isClassSelector) {
+            self.signature = [self.type methodSignatureForSelector:self.selector];
+        } else {
+            self.signature = [self.type instanceMethodSignatureForSelector:self.selector];
         }
-
+        [self validate];
     }
     return self;
+}
+
+- (id)initWithClass:(Class)type selector:(SEL)selector argumentKeys:(NSArray *)argumentKeys{
+    return [self initWithClass:type selector:selector argumentKeys:argumentKeys classSelector:NO];
+}
+
+- (id)initWithClass:(Class)type classSelector:(SEL)selector argumentKeys:(NSArray *)argumentKeys {
+    return [self initWithClass:type selector:selector argumentKeys:argumentKeys classSelector:YES];
+}
+
+- (void)validate {
+    if (self.signature == nil) {
+        [NSException raise:BSInvalidInitializerException
+                    format:@"%@selector %@ not found on class %@", (self.canAlloc ? @"" : @"class "), NSStringFromSelector(self.selector), NSStringFromClass(self.type), nil];
+    }
+    NSUInteger signatureArgCount = self.signature.numberOfArguments - 2;
+    if (signatureArgCount != self.argumentKeys.count) {
+        [NSException raise:BSInvalidInitializerException
+                    format:@"%@selector %@ on class %@ has %lu argument key%@, when selector expects %lu argument%@", (self.canAlloc ? @"" : @"class "), NSStringFromSelector(self.selector), NSStringFromClass(self.type), self.argumentKeys.count, (self.argumentKeys.count == 1 ? @"" : @"s"), signatureArgCount, (signatureArgCount == 1 ? @"" : @"s"), nil];
+    }
 }
 
 - (id)keyForArgumentAtIndex:(NSUInteger)index {

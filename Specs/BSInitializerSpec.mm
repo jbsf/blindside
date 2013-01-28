@@ -36,6 +36,17 @@ describe(@"BSInitializer", ^{
         });
     });
 
+    context(@"when the initializer's class does not have the same number of arguments as the selector", ^{
+        it(@"raises an exception", ^{
+            void(^block)() = [[^{
+                SEL goodSelector = @selector(initWithAddress:);
+                [BSInitializer initializerWithClass:[House class] selector:goodSelector argumentKeys:BS_NULL, BS_NULL, nil];
+            } copy] autorelease];
+
+            block should raise_exception();
+        });
+    });
+
     it(@"can initialize using class methods", ^{
         BSInitializer *initializer = [BSInitializer initializerWithClass:[Country class] classSelector:@selector(countryWithName:) argumentKeys:BS_DYNAMIC, nil];
         Country *usa = [initializer perform:@[@"USA"]];
