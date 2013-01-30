@@ -72,7 +72,7 @@ va_end(__argList__);
     NSUInteger signatureArgCount = self.signature.numberOfArguments - 2;
     if (signatureArgCount != self.argumentKeys.count) {
         [NSException raise:BSInvalidInitializerException
-                    format:@"%@selector %@ on class %@ has %lu argument key%@, when selector expects %lu argument%@", (self.canAlloc ? @"" : @"class "), NSStringFromSelector(self.selector), NSStringFromClass(self.type), self.argumentKeys.count, (self.argumentKeys.count == 1 ? @"" : @"s"), signatureArgCount, (signatureArgCount == 1 ? @"" : @"s"), nil];
+                    format:@"%@selector %@ on class %@ has %lu argument key%@, when selector expects %lu argument%@", (self.canAlloc ? @"" : @"class "), NSStringFromSelector(self.selector), NSStringFromClass(self.type), (unsigned long int)self.argumentKeys.count, (self.argumentKeys.count == 1 ? @"" : @"s"), (unsigned long int)signatureArgCount, (signatureArgCount == 1 ? @"" : @"s"), nil];
     }
 }
 
