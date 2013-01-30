@@ -19,7 +19,7 @@
 
 #define BS_DYNAMIC @"bs_dynamic"
 
-@interface Blindside
+@interface Blindside : NSObject 
 
 /**
  * Returns a BSInjector configured with the module.
