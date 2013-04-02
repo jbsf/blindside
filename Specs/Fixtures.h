@@ -30,6 +30,14 @@
 
 @end
 
+@interface Intersection : NSObject
+@property (nonatomic, retain) NSString *street;
+@property (nonatomic, retain) NSString *street2;
+@property (nonatomic, retain) City *city;
+@property (nonatomic, retain) State *state;
+@property (nonatomic, retain) NSString *zip;
+@end
+
 @interface House : NSObject
 
 @property (nonatomic, retain) Address *address;
