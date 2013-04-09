@@ -106,6 +106,10 @@
         provider = [scope scope:provider];
     }
 
+    if (provider == nil && ![BS_DYNAMIC isEqual:key]) {
+        [NSException raise:@"BSNoProvider" format:@"Injector could not getInstance for key (%@) with args %@", key, args];
+    }
+
     id instance = [provider provide:args injector:self];
     [self injectInjector:instance];
 

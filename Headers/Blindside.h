@@ -17,8 +17,6 @@
 #import "BSBinder.h"
 #import "BSNull.h"
 
-#define BS_DYNAMIC @"bs_dynamic"
-
 @interface Blindside : NSObject 
 
 /**

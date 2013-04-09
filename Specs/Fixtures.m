@@ -6,6 +6,7 @@
 
 #import <objc/runtime.h>
 
+
 @implementation State
 @end
 
@@ -53,6 +54,38 @@ zip = zip_;
 - (id)initWithStreet:(NSString *)street city:(City *)city state:(State *)state zip:(NSString *)zip {
     if (self = [super init]) {
         self.street = street;
+        self.city = city;
+        self.state = state;
+        self.zip = zip;
+    }
+    return self;
+}
+
+@end
+
+@implementation Intersection
+
+@synthesize
+street = street_,
+street2 = street2_,
+city = city_,
+state = state_,
+zip = zip_;
+
++ (BSInitializer *)bsInitializer {
+    return [BSInitializer initializerWithClass:self
+                                      selector:@selector(initWithStreet:andStreet:city:state:zip:)
+                                  argumentKeys:@"street", @"street2", BS_DYNAMIC, @"state", BS_DYNAMIC, nil];
+}
+
+- (id)initWithStreet:(NSString *)street
+           andStreet:(NSString *)street2
+                city:(City *)city
+               state:(State *)state
+                 zip:(NSString *)zip {
+    if (self = [super init]) {
+        self.street = street;
+        self.street2 = street2;
         self.city = city;
         self.state = state;
         self.zip = zip;
