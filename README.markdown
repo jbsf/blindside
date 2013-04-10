@@ -48,7 +48,7 @@ You describe your object's dependencies, define bindings to fill those dependenc
 /**
  * Describing MyViewController's dependencies. We want instances initialized using initWithApi:, which takes one arg.
  */
-+ (BSInitializer *)blindsideInitializer {
++ (BSInitializer *)bsInitializer {
 		return [BSInitializer initializerWithClass:self 
 		                                  selector:@selector(initWithApi:) 
 		                              argumentKeys:@"myApi", nil];
@@ -97,8 +97,8 @@ Blindside provides dependencies to objects in two ways: via an initializer (e.g.
  
 Blindside relies on two class methods for describing dependencies. These methods are added to NSObject in the NSObject+Blindside category, and are meant to be overridden by classes injected with Blindside. The methods are:
 
-+ (BSInitializer *)blindsideInitializer;
-+ (BSPropertySet *)blindsideProperties;
++ (BSInitializer *)bsInitializer;
++ (BSPropertySet *)bsProperties;
 
 blindsideInitializer describes the initialization method to be used when creating instances of a class, including the initializer's selector and arguments. Blindside can use a class' BSInitializer to create instances of the class, with dependencies injected. 
 
@@ -109,12 +109,12 @@ Here's an example implementation of the two methods for a class named House. The
 <pre>
 @implementation House
 
-+ (BSInitializer *)blindsideInitializer {
++ (BSInitializer *)bsInitializer {
 		SEL selector = @selector(initWithAddress:)
 		return [BSInitializer initializerWithClass:self selector:selector argumentKeys:[Address class]];
 }
 
-+ (BSPropertySet *)blindsideProperties {
++ (BSPropertySet *)bsProperties {
 		BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"color", nil];
 		[propertySet bindProperty:@"color" toKey:@"myHouseColor"];
 		return propertySet;
