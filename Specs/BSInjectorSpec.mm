@@ -247,7 +247,7 @@ describe(@"BSInjector", ^{
         });
     });
 
-    context(@"when the object being retrieved has a writable blindsideInjector property", ^{
+    context(@"when the object being retrieved has a writable injector property", ^{
         it(@"injects itself as the property value", ^{
             [injector bind:@"theDriveway" toInstance:BS_NULL];
             [injector bind:[Address class] toInstance:BS_NULL];
@@ -317,5 +317,26 @@ describe(@"BSInjector", ^{
             });
         });
     });
+
+    describe(@"injectProperties:", ^{
+        __block Mansion *mansion;
+        beforeEach(^{
+            mansion = [[[Mansion alloc] init] autorelease];
+        });
+
+        context(@"when the object receiving injected property values has a writable injector property not declared in the BSPropertySet", ^{
+            beforeEach(^{
+                Driveway *tenCarDriveway = [[[Driveway alloc] init] autorelease];
+                [injector bind:@"10 car driveway" toInstance:tenCarDriveway];
+
+                [injector injectProperties:mansion];
+            });
+
+            it(@"injects itself as the property value", ^{
+                mansion.injector should be_same_instance_as(injector);
+            });
+        });
+    });
 });
+
 SPEC_END
