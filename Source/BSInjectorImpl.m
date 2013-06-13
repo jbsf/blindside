@@ -124,6 +124,7 @@
             [instance setValue:value forKey:property.propertyName];
         }
     }
+    [self injectInjector:instance];
 }
 
 - (void)setProvider:(id<BSProvider>)provider forKey:(id)key {
