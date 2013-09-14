@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol BSInjector;
+@protocol BSBinder;
 @class BSInitializer;
 
 @interface State : NSObject
@@ -46,6 +47,10 @@
 @property (nonatomic, assign) id<BSInjector> injector;
 
 - (id)initWithAddress:(Address *)address;
+@end
+
+@interface Cottage : NSObject
+@property (nonatomic, assign) id<BSInjector, BSBinder> injector;
 @end
 
 @interface TennisCourt : NSObject
