@@ -256,6 +256,13 @@ describe(@"BSInjector", ^{
         });
     });
 
+    context(@"when the object being retrieved has a writable injector property that also conforms to a protocol other than BSInjector", ^{
+        it(@"injects itself as the property value", ^{
+            Cottage *cottage = [injector getInstance:[Cottage class]];
+            cottage.injector should equal(injector);
+        });
+    });
+
     describe(@"getInstance:withArgs:", ^{
         __block State *state;
         __block City *city;

@@ -70,7 +70,7 @@
 
     const char *attributes = property_getAttributes(objc_property);
     NSString *attrStr = [NSString stringWithUTF8String:attributes];
-    NSRange startRange = [attrStr rangeOfString:@"T@\"<BSInjector>\""];
+    NSRange startRange = [attrStr rangeOfString:@"<BSInjector>"];
 
     if (startRange.location != NSNotFound) {
         [object setValue:self forKey:@"injector"];

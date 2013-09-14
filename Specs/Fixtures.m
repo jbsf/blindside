@@ -118,6 +118,9 @@ zip = zip_;
 
 @end
 
+@implementation Cottage
+@end
+
 @implementation TennisCourt
 @end
 
