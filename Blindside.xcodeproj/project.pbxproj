@@ -774,6 +774,7 @@
 		29997B501505EC0B00C12110 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/Blindside_StaticLib.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -790,6 +791,7 @@
 		29997B511505EC0B00C12110 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/Blindside_StaticLib.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
