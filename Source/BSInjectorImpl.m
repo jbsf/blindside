@@ -13,6 +13,16 @@
 
 #import <objc/runtime.h>
 
+
+@protocol BSDoAwayWithWanringsUntilABetterPullRequestCanBeMade <NSObject>
+@optional
+-(void)bsInitializer;
+-(void)bsProperties;
+-(void)bsCreateWithArgs:(NSArray *)args
+               injector:(id<BSInjector>)injector;
+@end
+
+
 @interface BSInjectorImpl ()
 
 @property(nonatomic, strong) NSMutableDictionary *providers;
