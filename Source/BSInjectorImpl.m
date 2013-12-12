@@ -12,15 +12,7 @@
 #import "BSNull.h"
 
 #import <objc/runtime.h>
-
-
-@protocol BSDoAwayWithWanringsUntilABetterPullRequestCanBeMade <NSObject>
-@optional
--(void)bsInitializer;
--(void)bsProperties;
--(void)bsCreateWithArgs:(NSArray *)args
-               injector:(id<BSInjector>)injector;
-@end
+#import <objc/message.h>
 
 
 @interface BSInjectorImpl ()
@@ -127,8 +119,9 @@
 }
 
 - (void)injectProperties:(id)instance {
-    if ([[instance class] respondsToSelector:@selector(bsProperties)]) {
-        BSPropertySet *propertySet = [[instance class] performSelector:@selector(bsProperties)];
+    SEL bsPropertiesSelector = NSSelectorFromString(@"bsProperties");
+    if ([[instance class] respondsToSelector:bsPropertiesSelector]) {
+        BSPropertySet *propertySet = objc_msgSend([instance class], bsPropertiesSelector);
         for (BSProperty *property in propertySet) {
             id value = [self getInstance:property.injectionKey];
             [instance setValue:value forKey:property.propertyName];
@@ -144,17 +137,19 @@
 - (id<BSProvider>)providerForKey:(id)key {
     id<BSProvider> provider = [self.providers objectForKey:[self internalKey:key]];
     
-    if (provider == nil && [key respondsToSelector:@selector(bsInitializer)]) {
-        BSInitializer *initializer = [key performSelector:@selector(bsInitializer)];
+    SEL bsInitializerSelector = NSSelectorFromString(@"bsInitializer");
+    if (provider == nil && [key respondsToSelector:bsInitializerSelector]) {
+        BSInitializer *initializer = objc_msgSend(key, bsInitializerSelector);;
         if (initializer != nil) {
             provider = [BSInitializerProvider providerWithInitializer:initializer];
         }
     }
     
-    if (provider == nil && [key respondsToSelector:@selector(bsCreateWithArgs:injector:)]) {
+    SEL bsCreateWithArgsInjectorSelector = NSSelectorFromString(@"bsCreateWithArgs:injector:");
+    if (provider == nil && [key respondsToSelector:bsCreateWithArgsInjectorSelector]) {
         __weak id this = self;
         provider = [BSBlockProvider providerWithBlock:^id(NSArray *args, id<BSInjector> injector) {
-            return [key performSelector:@selector(bsCreateWithArgs:injector:) withObject:args withObject:this];
+            return objc_msgSend(key, bsCreateWithArgsInjectorSelector, args, this);
         }];
     }
     

@@ -17,7 +17,7 @@ describe(@"BSInitializer", ^{
     context(@"when the initializer's class does not have a matching initialize selector", ^{
         it(@"raises an exception", ^{
             void(^block)() = [[^{
-                SEL badSelector = @selector(initWithFoo:);
+                SEL badSelector = NSSelectorFromString(@"initWithFoo:");
                 [BSInitializer initializerWithClass:[ClassMissingInitializer class] selector:badSelector argumentKeys:nil];
             } copy] autorelease];
 
@@ -28,7 +28,7 @@ describe(@"BSInitializer", ^{
     context(@"when the initializer's class does not have a matching class selector", ^{
         it(@"raises an exception", ^{
             void(^block)() = [[^{
-                SEL badSelector = @selector(initWithFoo:);
+                SEL badSelector = NSSelectorFromString(@"initWithFoo:");
                 [BSInitializer initializerWithClass:[ClassMissingInitializer class] classSelector:badSelector argumentKeys:nil];
             } copy] autorelease];
 
@@ -48,7 +48,8 @@ describe(@"BSInitializer", ^{
     });
 
     it(@"can initialize using class methods", ^{
-        BSInitializer *initializer = [BSInitializer initializerWithClass:[Country class] classSelector:@selector(countryWithName:) argumentKeys:BS_DYNAMIC, nil];
+        SEL countryWithNameSelector = NSSelectorFromString(@"countryWithName:");
+        BSInitializer *initializer = [BSInitializer initializerWithClass:[Country class] classSelector:countryWithNameSelector argumentKeys:BS_DYNAMIC, nil];
         Country *usa = [initializer perform:@[@"USA"]];
         usa should be_instance_of([Country class]);
         usa.name should equal(@"USA");
