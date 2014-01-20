@@ -13,6 +13,9 @@
 
 @interface Country : NSObject
 @property (nonatomic, retain) NSString *name;
+
++ (id)countryWithName:(NSString *)name;
+
 @end
 
 @interface Garage : NSObject
