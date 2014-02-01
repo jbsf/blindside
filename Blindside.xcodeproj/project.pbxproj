@@ -189,6 +189,20 @@
 			remoteGlobalIDString = AEEE1FB511DC271300029872;
 			remoteInfo = Cedar;
 		};
+		AEE8AAF5188B67F90045ADC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC75915029F2900731862 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE02E7E4184EABCD00414F19;
+			remoteInfo = iOSFrameworkSpecs;
+		};
+		AEE8AAF7188B67F90045ADC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC75915029F2900731862 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F45A3DD180E4796003C1E36;
+			remoteInfo = XCUnitAppTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -432,8 +446,10 @@
 				29CAC76A15029F2900731862 /* FocusedSpecs */,
 				29CAC76C15029F2900731862 /* libCedar-StaticLib.a */,
 				29CAC76E15029F2900731862 /* iOSSpecs.app */,
+				AEE8AAF6188B67F90045ADC6 /* iOSFrameworkSpecs.app */,
 				29CAC77015029F2900731862 /* OCUnitApp.app */,
 				29CAC77215029F2900731862 /* OCUnitAppTests.octest */,
+				AEE8AAF8188B67F90045ADC6 /* XCUnitAppTests.xctest */,
 				29CAC77415029F2900731862 /* OCUnitAppLogicTests.octest */,
 			);
 			name = Products;
@@ -652,6 +668,20 @@
 			fileType = wrapper.cfbundle;
 			path = OCUnitAppLogicTests.octest;
 			remoteRef = 29CAC77315029F2900731862 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEE8AAF6188B67F90045ADC6 /* iOSFrameworkSpecs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = iOSFrameworkSpecs.app;
+			remoteRef = AEE8AAF5188B67F90045ADC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEE8AAF8188B67F90045ADC6 /* XCUnitAppTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XCUnitAppTests.xctest;
+			remoteRef = AEE8AAF7188B67F90045ADC6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -933,6 +963,8 @@
 		29CAC70C1502932000731862 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -948,6 +980,8 @@
 		29CAC70D1502932000731862 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

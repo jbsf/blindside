@@ -17,7 +17,7 @@ describe(@"BSInitializer", ^{
     context(@"when the initializer's class does not have a matching initialize selector", ^{
         it(@"raises an exception", ^{
             void(^block)() = [[^{
-                SEL badSelector = @selector(initWithFoo:);
+                SEL badSelector = NSSelectorFromString(@"initWithFoo:");
                 [BSInitializer initializerWithClass:[ClassMissingInitializer class] selector:badSelector argumentKeys:nil];
             } copy] autorelease];
 
@@ -28,7 +28,7 @@ describe(@"BSInitializer", ^{
     context(@"when the initializer's class does not have a matching class selector", ^{
         it(@"raises an exception", ^{
             void(^block)() = [[^{
-                SEL badSelector = @selector(initWithFoo:);
+                SEL badSelector = NSSelectorFromString(@"initWithFoo:");
                 [BSInitializer initializerWithClass:[ClassMissingInitializer class] classSelector:badSelector argumentKeys:nil];
             } copy] autorelease];
 

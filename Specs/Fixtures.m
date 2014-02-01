@@ -23,12 +23,12 @@
                                   argumentKeys:@"countryName", nil];
 }
 
-+ (id)countryWithName:(NSString *)name
-{
++ (id)countryWithName:(NSString *)name {
     Country *value = [self new];
     value.name = name;
     return value;
 }
+
 @end
 
 @implementation Garage

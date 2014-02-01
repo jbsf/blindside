@@ -10,18 +10,8 @@
 #import "BSPropertySet.h"
 #import "BSClassProvider.h"
 #import "BSNull.h"
-
+#import "NSObject+Blindside.h"
 #import <objc/runtime.h>
-
-
-@protocol BSDoAwayWithWanringsUntilABetterPullRequestCanBeMade <NSObject>
-@optional
--(void)bsInitializer;
--(void)bsProperties;
--(void)bsCreateWithArgs:(NSArray *)args
-               injector:(id<BSInjector>)injector;
-@end
-
 
 @interface BSInjectorImpl ()
 
@@ -30,6 +20,7 @@
 
 - (void)injectInjector:(id)object;
 - (id)getInstance:(id)key withArgArray:(NSArray *)args;
+
 @end
 
 @implementation BSInjectorImpl
