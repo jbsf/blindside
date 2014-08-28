@@ -21,13 +21,13 @@
 + (BSPropertySet *)propertySetWithClass:(Class)owningClass propertyNames:(NSString *)property1, ... {
     NSMutableArray *bsProperties = [NSMutableArray array];
     if (property1) {
-        [bsProperties addObject:[BSProperty propertyWithClass:owningClass propertyName:property1]];
+        [bsProperties addObject:[BSProperty propertyWithClass:owningClass propertyNameString:property1]];
 
         va_list argList;
         id propertyName = nil;
         va_start(argList, property1);
         while ((propertyName = va_arg(argList, id))) {
-            [bsProperties addObject:[BSProperty propertyWithClass:owningClass propertyName:propertyName]];
+            [bsProperties addObject:[BSProperty propertyWithClass:owningClass propertyNameString:propertyName]];
         }
         va_end(argList);
     }
@@ -53,7 +53,7 @@
 
 - (void)bindProperty:(NSString *)propertyName toKey:(id)key {
     for (BSProperty *property in self.properties) {
-        if (property.propertyName == propertyName) {
+        if (property.propertyNameString == propertyName) {
             property.injectionKey = key;
         }
     }
@@ -65,7 +65,7 @@
 
 - (BOOL)hasProperty:(BSProperty *)property {
     for (BSProperty *myProperty in self.properties) {
-        if (myProperty.propertyName == property.propertyName) {
+        if (myProperty.propertyNameString == property.propertyNameString) {
             return YES;
         }
     }

@@ -98,6 +98,6 @@
  *
  * This method is used internally by Blindside when it needs to create instances of a class.
  */
-- (id)perform:(NSArray *)argumentValues;
+- (id)bsPerform:(NSArray *)argumentValues;
 
 @end
