@@ -1,4 +1,4 @@
-#import <Cedar/SpecHelper.h>
+#import <Cedar/Cedar.h>
 #import "Fixtures.h"
 #import "BSInitializer.h"
 #import "Blindside.h"
