@@ -7,9 +7,9 @@
 
 @property (nonatomic, strong) id injectionKey;
 @property (nonatomic, weak, readonly) Class returnType;
-@property (nonatomic, strong, readonly) NSString *propertyName;
+@property (nonatomic, strong, readonly) NSString *propertyNameString;
 
-+ (BSProperty *)propertyWithClass:(Class)owningClass propertyName:(NSString *)propertyName;
++ (BSProperty *)propertyWithClass:(Class)owningClass propertyNameString:(NSString *)propertyNameString;
 
 - (id)injectionKey;
 @end

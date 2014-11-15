@@ -91,7 +91,7 @@ va_end(__argList__);
     return self.type;
 }
 
-- (id)perform:(NSArray *)argValues {
+- (id)bsPerform:(NSArray *)argValues {
     id obj = [self target];
 
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:self.signature];

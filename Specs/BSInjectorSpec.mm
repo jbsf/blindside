@@ -1,4 +1,4 @@
-#import <Cedar/SpecHelper.h>
+#import <Cedar/Cedar.h>
 #import "BSInjectorImpl.h"
 #import "Fixtures.h"
 #import "BSSingleton.h"
@@ -141,10 +141,6 @@ describe(@"BSInjector", ^{
                 it(@"uses the binding for the property's return type", ^{
                     House *house = [injector getInstance:[House class]];
                     expect(house.garage == garage).to(equal(YES));
-                });
-
-                context(@"and the property's return type is a protocol", ^{
-
                 });
             });
 

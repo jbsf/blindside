@@ -122,7 +122,7 @@
         BSPropertySet *propertySet = [[instance class] performSelector:@selector(bsProperties)];
         for (BSProperty *property in propertySet) {
             id value = [self getInstance:property.injectionKey];
-            [instance setValue:value forKey:property.propertyName];
+            [instance setValue:value forKey:property.propertyNameString];
         }
     }
     [self injectInjector:instance];

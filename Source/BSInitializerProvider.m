@@ -54,7 +54,7 @@ static NSString *const BSTooManyArguments = @"BSTooManyArguments";
         [self raiseTooManyArgsException];
     }
 
-    id newInstance = [self.initializer perform:mergedArgValues];
+    id newInstance = [self.initializer bsPerform:mergedArgValues];
     [injector injectProperties:newInstance];
 
     return newInstance;

@@ -1,4 +1,4 @@
-#import <Cedar/SpecHelper.h>
+#import <Cedar/Cedar.h>
 #import "Fixtures.h"
 #import "BSInitializer.h"
 #import "Blindside.h"
@@ -49,7 +49,7 @@ describe(@"BSInitializer", ^{
 
     it(@"can initialize using class methods", ^{
         BSInitializer *initializer = [BSInitializer initializerWithClass:[Country class] classSelector:@selector(countryWithName:) argumentKeys:BS_DYNAMIC, nil];
-        Country *usa = [initializer perform:@[@"USA"]];
+        Country *usa = [initializer bsPerform:@[@"USA"]];
         usa should be_instance_of([Country class]);
         usa.name should equal(@"USA");
     });
