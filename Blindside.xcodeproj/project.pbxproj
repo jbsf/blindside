@@ -123,6 +123,36 @@
 		61DC9F781541FA8D009DDFA6 /* BSInjectorImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */; };
 		61DC9F791541FA8E009DDFA6 /* BSInjectorImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */; };
 		61DC9F7A1541FA8F009DDFA6 /* BSInjectorImpl.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */; };
+		AE4864C21B066F11005DB302 /* Blindside-iOS-Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4864C11B066F11005DB302 /* Blindside-iOS-Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE4864D61B066F35005DB302 /* Blindside.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997AB41505D04600C12110 /* Blindside.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE4864D71B066F35005DB302 /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; };
+		AE4864D81B066F35005DB302 /* BSBlockProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 294B3C311522C84E001A69D3 /* BSBlockProvider.h */; };
+		AE4864D91B066F35005DB302 /* BSClassProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6172C027155B98E900348C4E /* BSClassProvider.h */; };
+		AE4864DA1B066F35005DB302 /* BSInitializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997AFF1505D8A600C12110 /* BSInitializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE4864DB1B066F35005DB302 /* BSInitializerProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B001505D8A600C12110 /* BSInitializerProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE4864DC1B066F35005DB302 /* BSInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B061505D8FE00C12110 /* BSInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE4864DD1B066F35005DB302 /* BSInjectorImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */; };
+		AE4864DE1B066F35005DB302 /* BSInstanceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B071505D8FE00C12110 /* BSInstanceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE4864DF1B066F35005DB302 /* BSModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B081505D8FE00C12110 /* BSModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE4864E01B066F35005DB302 /* BSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967CF1509BF1100356446 /* BSNull.h */; };
+		AE4864E11B066F35005DB302 /* BSProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; };
+		AE4864E21B066F35005DB302 /* BSProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B091505D8FE00C12110 /* BSProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE4864E31B066F35005DB302 /* BSPropertySet.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967E1150C4E1900356446 /* BSPropertySet.h */; };
+		AE4864E41B066F35005DB302 /* BSScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967661508919300356446 /* BSScope.h */; };
+		AE4864E51B066F35005DB302 /* BSSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967D01509BF1100356446 /* BSSingleton.h */; };
+		AE4864E61B066F35005DB302 /* NSObject+Blindside.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967581508744900356446 /* NSObject+Blindside.h */; };
+		AE4864E71B06735F005DB302 /* Blindside.m in Sources */ = {isa = PBXBuildFile; fileRef = 299EA6AA155CDD2C0006C5A4 /* Blindside.m */; };
+		AE4864E81B06735F005DB302 /* BSBlockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */; };
+		AE4864E91B06735F005DB302 /* BSClassProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 299EA6AB155CDD2C0006C5A4 /* BSClassProvider.m */; };
+		AE4864EA1B06735F005DB302 /* BSInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997B0E1505D94200C12110 /* BSInitializer.m */; };
+		AE4864EB1B06735F005DB302 /* BSInitializerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997B0F1505D94200C12110 /* BSInitializerProvider.m */; };
+		AE4864EC1B06735F005DB302 /* BSInjectorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A771502C48B00C12110 /* BSInjectorImpl.m */; };
+		AE4864ED1B06735F005DB302 /* BSInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A791502C48B00C12110 /* BSInstanceProvider.m */; };
+		AE4864EE1B06735F005DB302 /* BSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D71509BF2100356446 /* BSNull.m */; };
+		AE4864EF1B06735F005DB302 /* BSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE85153EAEF000C8C4E7 /* BSProperty.m */; };
+		AE4864F01B06735F005DB302 /* BSPropertySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */; };
+		AE4864F11B06735F005DB302 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; };
+		AE4864F21B06735F005DB302 /* NSObject+Blindside.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967591508744900356446 /* NSObject+Blindside.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -304,6 +334,9 @@
 		29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSPropertySet.m; path = Source/BSPropertySet.m; sourceTree = "<group>"; };
 		6172C027155B98E900348C4E /* BSClassProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSClassProvider.h; sourceTree = "<group>"; };
 		61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSInjectorImpl.h; sourceTree = "<group>"; };
+		AE4864BD1B066F11005DB302 /* Blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4864C01B066F11005DB302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE4864C11B066F11005DB302 /* Blindside-iOS-Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blindside-iOS-Framework.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +361,13 @@
 			files = (
 				29CAC77C1502A3B300731862 /* Cedar.framework in Frameworks */,
 				29CAC7031502932000731862 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4864B91B066F11005DB302 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +443,7 @@
 				29CAC7041502932000731862 /* Specs */,
 				29CAC77515029F3B00731862 /* Externals */,
 				29997B491505EC0B00C12110 /* Blindside-StaticLib */,
+				AE4864BE1B066F11005DB302 /* Blindside-iOS-Framework */,
 				29CAC6E6150292AD00731862 /* Frameworks */,
 				29CAC6E5150292AD00731862 /* Products */,
 				29997ABA1505D2B600C12110 /* Blindside-Info.plist */,
@@ -415,6 +456,7 @@
 				29CAC6E4150292AD00731862 /* Blindside.framework */,
 				29CAC7001502932000731862 /* Specs */,
 				29997B471505EC0B00C12110 /* libBlindside-StaticLib.a */,
+				AE4864BD1B066F11005DB302 /* Blindside.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -488,6 +530,23 @@
 			name = Fixtures;
 			sourceTree = "<group>";
 		};
+		AE4864BE1B066F11005DB302 /* Blindside-iOS-Framework */ = {
+			isa = PBXGroup;
+			children = (
+				AE4864C11B066F11005DB302 /* Blindside-iOS-Framework.h */,
+				AE4864BF1B066F11005DB302 /* Supporting Files */,
+			);
+			path = "Blindside-iOS-Framework";
+			sourceTree = "<group>";
+		};
+		AE4864BF1B066F11005DB302 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE4864C01B066F11005DB302 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -536,6 +595,31 @@
 				29B50684152583840035D197 /* BSBinder.h in Headers */,
 				61DC9F781541FA8D009DDFA6 /* BSInjectorImpl.h in Headers */,
 				6172C028155B98FF00348C4E /* BSClassProvider.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4864BA1B066F11005DB302 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE4864C21B066F11005DB302 /* Blindside-iOS-Framework.h in Headers */,
+				AE4864D61B066F35005DB302 /* Blindside.h in Headers */,
+				AE4864DA1B066F35005DB302 /* BSInitializer.h in Headers */,
+				AE4864DB1B066F35005DB302 /* BSInitializerProvider.h in Headers */,
+				AE4864DC1B066F35005DB302 /* BSInjector.h in Headers */,
+				AE4864DE1B066F35005DB302 /* BSInstanceProvider.h in Headers */,
+				AE4864DF1B066F35005DB302 /* BSModule.h in Headers */,
+				AE4864E21B066F35005DB302 /* BSProvider.h in Headers */,
+				AE4864D71B066F35005DB302 /* BSBinder.h in Headers */,
+				AE4864D81B066F35005DB302 /* BSBlockProvider.h in Headers */,
+				AE4864D91B066F35005DB302 /* BSClassProvider.h in Headers */,
+				AE4864DD1B066F35005DB302 /* BSInjectorImpl.h in Headers */,
+				AE4864E01B066F35005DB302 /* BSNull.h in Headers */,
+				AE4864E11B066F35005DB302 /* BSProperty.h in Headers */,
+				AE4864E31B066F35005DB302 /* BSPropertySet.h in Headers */,
+				AE4864E41B066F35005DB302 /* BSScope.h in Headers */,
+				AE4864E51B066F35005DB302 /* BSSingleton.h in Headers */,
+				AE4864E61B066F35005DB302 /* NSObject+Blindside.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +678,24 @@
 			productReference = 29CAC7001502932000731862 /* Specs */;
 			productType = "com.apple.product-type.tool";
 		};
+		AE4864BC1B066F11005DB302 /* Blindside-iOS-Framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE4864D01B066F11005DB302 /* Build configuration list for PBXNativeTarget "Blindside-iOS-Framework" */;
+			buildPhases = (
+				AE4864B81B066F11005DB302 /* Sources */,
+				AE4864B91B066F11005DB302 /* Frameworks */,
+				AE4864BA1B066F11005DB302 /* Headers */,
+				AE4864BB1B066F11005DB302 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Blindside-iOS-Framework";
+			productName = "Blindside-iOS-Framework";
+			productReference = AE4864BD1B066F11005DB302 /* Blindside.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -602,6 +704,11 @@
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = self;
+				TargetAttributes = {
+					AE4864BC1B066F11005DB302 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+				};
 			};
 			buildConfigurationList = 29CAC6DD150292AD00731862 /* Build configuration list for PBXProject "Blindside" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -625,6 +732,7 @@
 				29CAC6FF1502932000731862 /* Specs */,
 				29997B461505EC0B00C12110 /* Blindside-StaticLib */,
 				29997B5E1505ED9400C12110 /* Blindside-iOS */,
+				AE4864BC1B066F11005DB302 /* Blindside-iOS-Framework */,
 			);
 		};
 /* End PBXProject section */
@@ -724,6 +832,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE4864BB1B066F11005DB302 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -817,6 +932,25 @@
 				299EA6AD155CDD2C0006C5A4 /* Blindside.m in Sources */,
 				299EA6B1155CDD2C0006C5A4 /* BSClassProvider.m in Sources */,
 				29B0D3D61560CFAF00183BAC /* BSInitializerSpec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4864B81B066F11005DB302 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE4864E71B06735F005DB302 /* Blindside.m in Sources */,
+				AE4864E81B06735F005DB302 /* BSBlockProvider.m in Sources */,
+				AE4864E91B06735F005DB302 /* BSClassProvider.m in Sources */,
+				AE4864EA1B06735F005DB302 /* BSInitializer.m in Sources */,
+				AE4864EB1B06735F005DB302 /* BSInitializerProvider.m in Sources */,
+				AE4864EC1B06735F005DB302 /* BSInjectorImpl.m in Sources */,
+				AE4864ED1B06735F005DB302 /* BSInstanceProvider.m in Sources */,
+				AE4864EE1B06735F005DB302 /* BSNull.m in Sources */,
+				AE4864EF1B06735F005DB302 /* BSProperty.m in Sources */,
+				AE4864F01B06735F005DB302 /* BSPropertySet.m in Sources */,
+				AE4864F11B06735F005DB302 /* BSSingleton.m in Sources */,
+				AE4864F21B06735F005DB302 /* NSObject+Blindside.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1027,6 +1161,78 @@
 			};
 			name = Release;
 		};
+		AE4864D11B066F11005DB302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Blindside-iOS-Framework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Blindside;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE4864D21B066F11005DB302 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Blindside-iOS-Framework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Blindside;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1074,6 +1280,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AE4864D01B066F11005DB302 /* Build configuration list for PBXNativeTarget "Blindside-iOS-Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE4864D11B066F11005DB302 /* Debug */,
+				AE4864D21B066F11005DB302 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

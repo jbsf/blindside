@@ -1,5 +1,7 @@
 # Blindside: dependency injection for Objective-C
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 ## Why should I use this?
 
 Blindside helps you write clean code. You can keep your objects loosely coupled and ignorant of the world outside. Your objects can create other objects without needing to know about the other objects' dependencies.
