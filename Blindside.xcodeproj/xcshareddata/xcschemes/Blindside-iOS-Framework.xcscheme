@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0630"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AE4864BC1B066F11005DB302"
-               BuildableName = "Blindside-iOS-Framework.framework"
+               BuildableName = "Blindside.framework"
                BlueprintName = "Blindside-iOS-Framework"
                ReferencedContainer = "container:Blindside.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE4864BC1B066F11005DB302"
-            BuildableName = "Blindside-iOS-Framework.framework"
+            BuildableName = "Blindside.framework"
             BlueprintName = "Blindside-iOS-Framework"
             ReferencedContainer = "container:Blindside.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE4864BC1B066F11005DB302"
-            BuildableName = "Blindside-iOS-Framework.framework"
+            BuildableName = "Blindside.framework"
             BlueprintName = "Blindside-iOS-Framework"
             ReferencedContainer = "container:Blindside.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE4864BC1B066F11005DB302"
-            BuildableName = "Blindside-iOS-Framework.framework"
+            BuildableName = "Blindside.framework"
             BlueprintName = "Blindside-iOS-Framework"
             ReferencedContainer = "container:Blindside.xcodeproj">
          </BuildableReference>
