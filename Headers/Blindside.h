@@ -16,8 +16,9 @@
 #import "BSProperty.h"
 #import "BSBinder.h"
 #import "BSNull.h"
+#import "BSBlockProvider.h"
 
-@interface Blindside : NSObject 
+@interface Blindside : NSObject
 
 /**
  * Returns a BSInjector configured with the module.
