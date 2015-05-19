@@ -42,8 +42,8 @@ def kill_simulator
   system %Q[killall -m -KILL "iPhone Simulator"]
 end
 
-task :default => [:trim_whitespace, :specs, :focused_specs, :uispecs, "ocunit:logic", "ocunit:application"]
-task :cruise => [:clean, :build_all, "ocunit:logic", "ocunit:application", :specs, :focused_specs, :uispecs]
+task :default => [:trim_whitespace, :build_ios_dynamic_test, :specs, :focused_specs, :uispecs]
+task :cruise => [:clean, :build_all, :specs, :focused_specs, :uispecs]
 
 desc "Trim whitespace"
 task :trim_whitespace do
@@ -92,6 +92,13 @@ desc "Build specs"
 task :build_specs do
   puts "SYMROOT: #{ENV['SYMROOT']}"
   system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{SPECS_TARGET_NAME} -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], output_file("specs"))
+end
+
+desc "Build iOS Dynamic Framework test"
+task :build_ios_dynamic_test do
+  puts "SYMROOT: #{ENV['SYMROOT']}"
+  kill_simulator
+  system_or_exit(%Q[xcodebuild -project Blindside.xcodeproj -target 'Blindside-iOS-Framework BuildTest' build SYMROOT=#{BUILD_DIR}], output_file("framework_build"))
 end
 
 desc "Build UI specs"
