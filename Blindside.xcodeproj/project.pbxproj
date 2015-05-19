@@ -1449,6 +1449,7 @@
 				AE03FC3C1B0A57DE00013784 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE4864D01B066F11005DB302 /* Build configuration list for PBXNativeTarget "Blindside-iOS-Framework" */ = {
 			isa = XCConfigurationList;
