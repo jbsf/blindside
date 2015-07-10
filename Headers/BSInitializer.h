@@ -1,12 +1,16 @@
 #import <Foundation/Foundation.h>
 
+#import "BSNullabilityCompat.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  * A BSInitializer describes an initializer method that Blindside will use when constructing
  * objects of a given class. 
  */
 @interface BSInitializer : NSObject 
 
-@property (nonatomic, weak, readonly) Class type;
+@property (nonatomic, strong, readonly) Class type;
 @property (nonatomic, readonly) SEL selector;
 @property (nonatomic, strong, readonly) NSArray *argumentKeys;
 
@@ -69,7 +73,7 @@
  * \endcode
  * 
  */
-+ (BSInitializer *)initializerWithClass:(Class)type selector:(SEL)selector argumentKeys:(id)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
++ (BSInitializer *)initializerWithClass:(Class)type selector:(SEL)selector argumentKeys:(nullable id)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
  * Creates a BSInitializer representing the given class and selector. This is an important method
@@ -88,7 +92,7 @@
  * keys are commonly classes, representing the class of the needed dependency, or strings, representing an
  * actual object instance configured elsewhere in Blindside.
  */
-+ (BSInitializer *)initializerWithClass:(Class)type classSelector:(SEL)selector argumentKeys:(id)firstKey, ...
++ (BSInitializer *)initializerWithClass:(Class)type classSelector:(SEL)selector argumentKeys:(nullable id)firstKey, ...
     NS_REQUIRES_NIL_TERMINATION;
 
 /**
@@ -101,3 +105,5 @@
 - (id)bsPerform:(NSArray *)argumentValues;
 
 @end
+
+NS_ASSUME_NONNULL_END

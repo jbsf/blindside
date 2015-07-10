@@ -5,7 +5,7 @@
 #import <objc/runtime.h>
 
 @interface BSPropertySet ()
-@property (nonatomic, weak) Class owningClass;
+@property (nonatomic, strong) Class owningClass;
 @property (nonatomic, strong) NSMutableArray *properties;
 
 - (id)initWithClass:(Class)owningClass properties:(NSMutableArray *)properties;

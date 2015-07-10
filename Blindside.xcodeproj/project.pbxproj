@@ -117,6 +117,9 @@
 		29D7FE90153EAEF000C8C4E7 /* BSPropertySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */; };
 		29D7FE91153EAEF000C8C4E7 /* BSPropertySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */; };
 		29D7FE92153EAEF000C8C4E7 /* BSPropertySet.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */; };
+		3453B89C1B4F7B0E00026E19 /* BSNullabilityCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */; };
+		3453B89D1B4F7B1600026E19 /* BSNullabilityCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3453B89E1B4F7B1A00026E19 /* BSNullabilityCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6172C028155B98FF00348C4E /* BSClassProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6172C027155B98E900348C4E /* BSClassProvider.h */; };
 		6172C029155B990000348C4E /* BSClassProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6172C027155B98E900348C4E /* BSClassProvider.h */; };
 		6172C02A155B990100348C4E /* BSClassProvider.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 6172C027155B98E900348C4E /* BSClassProvider.h */; };
@@ -343,6 +346,7 @@
 		29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSBlockProvider.m; path = Source/BSBlockProvider.m; sourceTree = "<group>"; };
 		29D7FE85153EAEF000C8C4E7 /* BSProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSProperty.m; path = Source/BSProperty.m; sourceTree = "<group>"; };
 		29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSPropertySet.m; path = Source/BSPropertySet.m; sourceTree = "<group>"; };
+		3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSNullabilityCompat.h; sourceTree = "<group>"; };
 		6172C027155B98E900348C4E /* BSClassProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSClassProvider.h; sourceTree = "<group>"; };
 		61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSInjectorImpl.h; sourceTree = "<group>"; };
 		AE03FC1A1B0A57DD00013784 /* Blindside-iOS-Framework BuildTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blindside-iOS-Framework BuildTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -438,6 +442,7 @@
 				29C967661508919300356446 /* BSScope.h */,
 				29C967D01509BF1100356446 /* BSSingleton.h */,
 				29C967581508744900356446 /* NSObject+Blindside.h */,
+				3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 				29B5068A15276D630035D197 /* BSBinder.h in Headers */,
 				61DC9F791541FA8E009DDFA6 /* BSInjectorImpl.h in Headers */,
 				6172C029155B990000348C4E /* BSClassProvider.h in Headers */,
+				3453B89C1B4F7B0E00026E19 /* BSNullabilityCompat.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +648,7 @@
 				29B50684152583840035D197 /* BSBinder.h in Headers */,
 				61DC9F781541FA8D009DDFA6 /* BSInjectorImpl.h in Headers */,
 				6172C028155B98FF00348C4E /* BSClassProvider.h in Headers */,
+				3453B89D1B4F7B1600026E19 /* BSNullabilityCompat.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +673,7 @@
 				AE4864D81B066F35005DB302 /* BSBlockProvider.h in Headers */,
 				AE4864DD1B066F35005DB302 /* BSInjectorImpl.h in Headers */,
 				AE4864D91B066F35005DB302 /* BSClassProvider.h in Headers */,
+				3453B89E1B4F7B1A00026E19 /* BSNullabilityCompat.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,9 @@
 #import <Foundation/Foundation.h>
 
 #import <Foundation/NSEnumerator.h>
+#import "BSNullabilityCompat.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * A BSPropertySet represents the set of a Class' properties that will be injected into class instances after
@@ -34,3 +37,5 @@
 - (void)bindProperty:(NSString *)propertyName toKey:(id)key;
 
 @end
+
+NS_ASSUME_NONNULL_END

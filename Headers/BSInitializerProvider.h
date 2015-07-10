@@ -1,7 +1,11 @@
 #import <Foundation/Foundation.h>
 
 #import "BSProvider.h"
+#import "BSNullabilityCompat.h"
+
 @class BSInitializer;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Implementation of BSProvider that wraps a BSInitializer. Instances of BSInitializerProvider are 
@@ -14,3 +18,5 @@
 + (BSInitializerProvider *)providerWithInitializer:(BSInitializer *)initializer;
 
 @end
+
+NS_ASSUME_NONNULL_END
