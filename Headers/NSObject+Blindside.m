@@ -19,4 +19,8 @@
     return nil;
 }
 
+- (void)bsAwakeFromPropertyInjection {
+    
+}
+
 @end

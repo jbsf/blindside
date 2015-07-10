@@ -116,6 +116,10 @@ zip = zip_;
     return self;
 }
 
+- (void)bsAwakeFromPropertyInjection {
+    self.garage.isEmpty = YES;
+}
+
 @end
 
 @implementation Cottage

@@ -126,6 +126,9 @@
         }
     }
     [self injectInjector:instance];
+    if ([instance respondsToSelector:@selector(bsAwakeFromPropertyInjection)]) {
+        [instance bsAwakeFromPropertyInjection];
+    }
 }
 
 - (void)setProvider:(id<BSProvider>)provider forKey:(id)key {

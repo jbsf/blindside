@@ -19,6 +19,7 @@
 @end
 
 @interface Garage : NSObject
+@property (nonatomic, assign) BOOL isEmpty;
 @end
 
 @interface Driveway : NSObject

@@ -143,6 +143,13 @@ describe(@"BSInjector", ^{
                     expect(house.garage == garage).to(equal(YES));
                 });
             });
+            
+            context(@"when the class implements bsAwakeFromPropertyInjection", ^{
+                it(@"should call it after property injection", ^{
+                    House *house = [injector getInstance:[House class]];
+                    expect(house.garage.isEmpty).to(equal(YES));
+                });
+            });
 
             context(@"when the superclass has properties", ^{
                 it(@"injects superclass properties too", ^{

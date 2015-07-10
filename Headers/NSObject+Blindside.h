@@ -11,4 +11,6 @@
 
 + (BSPropertySet *)bsProperties;
 
+- (void)bsAwakeFromPropertyInjection;
+
 @end
