@@ -2,8 +2,11 @@
 
 #import "BSScope.h"
 #import "BSProvider.h"
+#import "BSNullabilityCompat.h"
 
 @class BSInstanceProvider;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * The BSSingelton scope is used to define bindings for which the same object instance
@@ -32,3 +35,5 @@
 + (BSSingleton *)scope;
 
 @end
+
+NS_ASSUME_NONNULL_END

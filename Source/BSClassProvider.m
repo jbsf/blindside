@@ -2,7 +2,7 @@
 #import "BSInjector.h"
 
 @interface BSClassProvider ()
-@property (nonatomic, weak) Class klass;
+@property (nonatomic, strong) Class klass;
 
 - (id)initWithClass:(Class)class;
 

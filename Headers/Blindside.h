@@ -17,6 +17,9 @@
 #import "BSBinder.h"
 #import "BSNull.h"
 #import "BSBlockProvider.h"
+#import "BSNullabilityCompat.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface Blindside : NSObject
 
@@ -33,3 +36,5 @@
 + (id<BSInjector>)injectorWithModules:(NSArray *)modules;
 
 @end
+
+NS_ASSUME_NONNULL_END

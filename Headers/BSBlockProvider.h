@@ -1,8 +1,11 @@
 #import <Foundation/Foundation.h>
 
 #import "BSProvider.h"
+#import "BSNullabilityCompat.h"
 
 @protocol BSInjector;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Typedef for blocks used by Blindside. Such blocks take an NSArray * of args and return
@@ -15,7 +18,7 @@
  * @param injector The BSInjector invoking the block. Can be used by blocks that need
  *        it and ignored by blocks that don't.
  */
-typedef id(^BSBlock)(NSArray *args, id<BSInjector> injector);
+typedef __nonnull id(^BSBlock)(NSArray *args, id<BSInjector> injector);
 
 /**
  * Used internally by Blindside when a key is bound to a block. BSBlockProvider 
@@ -29,3 +32,5 @@ typedef id(^BSBlock)(NSArray *args, id<BSInjector> injector);
 + (BSBlockProvider *)providerWithBlock:(BSBlock)block;
 
 @end
+
+NS_ASSUME_NONNULL_END

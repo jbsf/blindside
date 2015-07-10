@@ -6,7 +6,7 @@
 static NSString *const BSInvalidInitializerException = @"BSInvalidInitializerException";
 
 @interface BSInitializer ()
-@property (nonatomic, weak, readwrite) Class type;
+@property (nonatomic, strong, readwrite) Class type;
 @property (nonatomic) SEL selector;
 @property (nonatomic) BOOL canAlloc;
 @property (nonatomic, strong) NSMethodSignature *signature;

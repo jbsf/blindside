@@ -4,8 +4,8 @@
 static NSString *const BSInvalidPropertyException = @"BSInvalidPropertyException";
 
 @interface BSProperty ()
-@property (nonatomic, weak) Class owningClass;
-@property (nonatomic, weak, readwrite) Class returnType;
+@property (nonatomic, strong) Class owningClass;
+@property (nonatomic, strong, readwrite) Class returnType;
 @property (nonatomic, strong, readwrite) NSString *propertyNameString;
 
 - (id)initWithClass:(Class)owningClass propertyName:(NSString *)propertyName;

@@ -1,6 +1,9 @@
 #import <Foundation/Foundation.h>
 
 #import "BSProvider.h"
+#import "BSNullabilityCompat.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Implementations of BSScope determine when new object instances will be created or retrieved,
@@ -20,3 +23,4 @@
 - (id<BSProvider>)scope:(id<BSProvider>)source;
 @end
 
+NS_ASSUME_NONNULL_END

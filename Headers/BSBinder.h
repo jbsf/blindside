@@ -1,8 +1,11 @@
 #import <Foundation/Foundation.h>
 
 #import "BSBlockProvider.h"
+#import "BSNullabilityCompat.h"
 
 @protocol BSProvider, BSScope;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * The BSBinder interface is used in configuration of Blindside. Using BSBinder,
@@ -124,3 +127,5 @@
 - (void)bind:(id)key withScope:(id<BSScope>)scope;
 
 @end
+
+NS_ASSUME_NONNULL_END
