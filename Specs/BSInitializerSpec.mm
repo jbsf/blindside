@@ -1,7 +1,6 @@
 #import <Cedar/Cedar.h>
+#import <Blindside/Blindside.h>
 #import "Fixtures.h"
-#import "BSInitializer.h"
-#import "Blindside.h"
 
 @interface ClassMissingInitializer : NSObject
 @end

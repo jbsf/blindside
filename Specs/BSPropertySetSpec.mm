@@ -1,10 +1,5 @@
-#import <Cedar/SpecHelper.h>
-#import "BSModule.h"
-#import "BSInjector.h"
-#import "Fixtures.h"
-#import "BSSingleton.h"
-#import "BSPropertySet.h"
-#import "BSProperty.h"
+#import <Cedar/Cedar.h>
+#import <Blindside/Blindside.h>
 
 using namespace Cedar::Matchers;
 
