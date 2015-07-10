@@ -23,7 +23,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		294B3C321522C84E001A69D3 /* BSBlockProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 294B3C311522C84E001A69D3 /* BSBlockProvider.h */; };
+		294B3C321522C84E001A69D3 /* BSBlockProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 294B3C311522C84E001A69D3 /* BSBlockProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		294B3C3C1522C85E001A69D3 /* BSBlockProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 294B3C311522C84E001A69D3 /* BSBlockProvider.h */; };
 		294B3C3D1522C85E001A69D3 /* BSBlockProvider.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 294B3C311522C84E001A69D3 /* BSBlockProvider.h */; };
 		29997A7E1502C48B00C12110 /* BSInjectorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A771502C48B00C12110 /* BSInjectorImpl.m */; };
@@ -67,24 +67,24 @@
 		299EA6B2155CDD2C0006C5A4 /* BSClassProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 299EA6AB155CDD2C0006C5A4 /* BSClassProvider.m */; };
 		299EA6B3155CDD2C0006C5A4 /* BSClassProvider.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 299EA6AB155CDD2C0006C5A4 /* BSClassProvider.m */; };
 		29B0D3D61560CFAF00183BAC /* BSInitializerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29B0D3D51560CFAF00183BAC /* BSInitializerSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		29B50684152583840035D197 /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; };
+		29B50684152583840035D197 /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29B5068A15276D630035D197 /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; };
 		29B5068B15276D640035D197 /* BSBinder.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; };
 		29C9673F15072C4C00356446 /* BSInitializerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997B0F1505D94200C12110 /* BSInitializerProvider.m */; };
 		29C9674915072C5300356446 /* BSInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997B0E1505D94200C12110 /* BSInitializer.m */; };
-		29C9675A1508744900356446 /* NSObject+Blindside.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967581508744900356446 /* NSObject+Blindside.h */; };
+		29C9675A1508744900356446 /* NSObject+Blindside.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967581508744900356446 /* NSObject+Blindside.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29C9675B1508744900356446 /* NSObject+Blindside.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967581508744900356446 /* NSObject+Blindside.h */; };
 		29C9675C1508744900356446 /* NSObject+Blindside.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967581508744900356446 /* NSObject+Blindside.h */; };
 		29C9675D1508744900356446 /* NSObject+Blindside.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967591508744900356446 /* NSObject+Blindside.m */; };
 		29C9675E1508744900356446 /* NSObject+Blindside.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967591508744900356446 /* NSObject+Blindside.m */; };
 		29C9675F1508744900356446 /* NSObject+Blindside.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967591508744900356446 /* NSObject+Blindside.m */; };
-		29C967671508919400356446 /* BSScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967661508919300356446 /* BSScope.h */; };
+		29C967671508919400356446 /* BSScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967661508919300356446 /* BSScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29C967681508919400356446 /* BSScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967661508919300356446 /* BSScope.h */; };
 		29C967691508919400356446 /* BSScope.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967661508919300356446 /* BSScope.h */; };
-		29C967D11509BF1100356446 /* BSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967CF1509BF1100356446 /* BSNull.h */; };
+		29C967D11509BF1100356446 /* BSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967CF1509BF1100356446 /* BSNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29C967D21509BF1100356446 /* BSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967CF1509BF1100356446 /* BSNull.h */; };
 		29C967D31509BF1100356446 /* BSNull.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967CF1509BF1100356446 /* BSNull.h */; };
-		29C967D41509BF1100356446 /* BSSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967D01509BF1100356446 /* BSSingleton.h */; };
+		29C967D41509BF1100356446 /* BSSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967D01509BF1100356446 /* BSSingleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29C967D51509BF1100356446 /* BSSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967D01509BF1100356446 /* BSSingleton.h */; };
 		29C967D61509BF1100356446 /* BSSingleton.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967D01509BF1100356446 /* BSSingleton.h */; };
 		29C967D91509BF2100356446 /* BSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D71509BF2100356446 /* BSNull.m */; };
@@ -93,10 +93,10 @@
 		29C967DD1509BF2100356446 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; };
 		29C967DE1509BF2100356446 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; };
 		29C967DF1509BF2100356446 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; };
-		29C967E2150C4E1A00356446 /* BSPropertySet.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967E1150C4E1900356446 /* BSPropertySet.h */; };
+		29C967E2150C4E1A00356446 /* BSPropertySet.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967E1150C4E1900356446 /* BSPropertySet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29C967E3150C4E1A00356446 /* BSPropertySet.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967E1150C4E1900356446 /* BSPropertySet.h */; };
 		29C967E4150C4E1A00356446 /* BSPropertySet.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967E1150C4E1900356446 /* BSPropertySet.h */; };
-		29C967EB150C50EE00356446 /* BSProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; };
+		29C967EB150C50EE00356446 /* BSProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29C967EC150C50EE00356446 /* BSProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; };
 		29C967ED150C50EE00356446 /* BSProperty.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; };
 		29C967F5150D2C8800356446 /* BSPropertySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29C967F3150D2C8800356446 /* BSPropertySpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
