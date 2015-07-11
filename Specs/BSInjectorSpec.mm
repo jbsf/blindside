@@ -1,8 +1,7 @@
 #import <Cedar/Cedar.h>
+#import <Blindside/Blindside.h>
 #import "BSInjectorImpl.h"
 #import "Fixtures.h"
-#import "BSSingleton.h"
-#import "BSNull.h"
 
 using namespace Cedar::Matchers;
 
