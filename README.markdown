@@ -102,9 +102,9 @@ Blindside relies on two class methods for describing dependencies. These methods
 + (BSInitializer *)bsInitializer;
 + (BSPropertySet *)bsProperties;
 
-blindsideInitializer describes the initialization method to be used when creating instances of a class, including the initializer's selector and arguments. Blindside can use a class' BSInitializer to create instances of the class, with dependencies injected. 
+bsInitializer describes the initialization method to be used when creating instances of a class, including the initializer's selector and arguments. Blindside can use a class' BSInitializer to create instances of the class, with dependencies injected.
 
-blindsideProperties describes the properties to be injected into already-created objects. 
+bsProperties describes the properties to be injected into already-created objects.
 
 Here's an example implementation of the two methods for a class named House. The House class takes an Address as an initializer arg, and has a property of type UIColor.
 
@@ -125,6 +125,22 @@ Here's an example implementation of the two methods for a class named House. The
 
 </pre>
 
+
+## Awaking from injection
+
+When working with property injection, it is occationally desirable to have a hook that can be used to finish setting up an object after all dependencies have been injected. Blindside provides a mechanism for this:
+
+<pre>
+
+@implementation House
+- (void)bsAwakeFromPropertyInjection {
+	// Finalize instantiation
+}
+ ...
+
+</pre>
+
+Note that the use of this method is discouraged because it increases the coupling between your code and Blindside. First look for other appropriate lifecycle methods on your object (e.g. `-viewDidLoad` for a view controller) that could be used to perform this kind of work.
 
 ## Author
 
