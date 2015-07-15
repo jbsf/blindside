@@ -102,9 +102,9 @@ Blindside relies on two class methods for describing dependencies. These methods
 + (BSInitializer *)bsInitializer;
 + (BSPropertySet *)bsProperties;
 
-blindsideInitializer describes the initialization method to be used when creating instances of a class, including the initializer's selector and arguments. Blindside can use a class' BSInitializer to create instances of the class, with dependencies injected. 
+bsInitializer describes the initialization method to be used when creating instances of a class, including the initializer's selector and arguments. Blindside can use a class' BSInitializer to create instances of the class, with dependencies injected.
 
-blindsideProperties describes the properties to be injected into already-created objects. 
+bsProperties describes the properties to be injected into already-created objects.
 
 Here's an example implementation of the two methods for a class named House. The House class takes an Address as an initializer arg, and has a property of type UIColor.
 
