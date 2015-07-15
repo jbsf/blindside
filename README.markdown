@@ -126,6 +126,22 @@ Here's an example implementation of the two methods for a class named House. The
 </pre>
 
 
+## Awaking from injection
+
+When working with property injection, it is occationally desirable to have a hook that can be used to finish setting up an object after all dependencies have been injected. Blindside provides a mechanism for this:
+
+<pre>
+
+@implementation House
+- (void)bsAwakeFromPropertyInjection {
+	// Finalize instantiation
+}
+ ...
+
+</pre>
+
+Note that the use of this method is discouraged because it increases the coupling between your code and Blindside. First look for other appropriate lifecycle methods on your object (e.g. `-viewDidLoad` for a view controller) that could be used to perform this kind of work.
+
 ## Author
 
 * [JB Steadman](mailto:jb@pivotallabs.com), Pivotal Labs
