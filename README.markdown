@@ -37,7 +37,7 @@ Blindside is alpha software. There's no documentation aside from this readme. My
 
 You describe your object's dependencies, define bindings to fill those dependencies, then ask the BSInjector to create your objects. Here's a "Hello, World" example:
 
-<pre>
+```objectivec
 /**
  * Our view controller. It needs to be created with an api instance.
  */
@@ -87,7 +87,7 @@ You describe your object's dependencies, define bindings to fill those dependenc
 		...
 }
 @end
-</pre>
+```
 
 Obviously you don't need a framework to accomplish a task this trivial. Blindside really helps when MyViewController creates another view controller, which creates another, which has additional dependencies, and so on.
 
@@ -108,7 +108,7 @@ bsProperties describes the properties to be injected into already-created object
 
 Here's an example implementation of the two methods for a class named House. The House class takes an Address as an initializer arg, and has a property of type UIColor.
 
-<pre>
+```objectivec
 @implementation House
 
 + (BSInitializer *)bsInitializer {
@@ -123,14 +123,14 @@ Here's an example implementation of the two methods for a class named House. The
 }
  ...
 
-</pre>
+```
 
 
 ## Awaking from injection
 
 When working with property injection, it is occationally desirable to have a hook that can be used to finish setting up an object after all dependencies have been injected. Blindside provides a mechanism for this:
 
-<pre>
+```objectivec
 
 @implementation House
 - (void)bsAwakeFromPropertyInjection {
@@ -138,7 +138,7 @@ When working with property injection, it is occationally desirable to have a hoo
 }
  ...
 
-</pre>
+```
 
 Note that the use of this method is discouraged because it increases the coupling between your code and Blindside. First look for other appropriate lifecycle methods on your object (e.g. `-viewDidLoad` for a view controller) that could be used to perform this kind of work.
 
