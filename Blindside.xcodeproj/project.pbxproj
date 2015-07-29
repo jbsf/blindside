@@ -60,7 +60,7 @@
 		299EA6AE155CDD2C0006C5A4 /* Blindside.m in Sources */ = {isa = PBXBuildFile; fileRef = 299EA6AA155CDD2C0006C5A4 /* Blindside.m */; };
 		299EA6B0155CDD2C0006C5A4 /* BSClassProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 299EA6AB155CDD2C0006C5A4 /* BSClassProvider.m */; };
 		299EA6B2155CDD2C0006C5A4 /* BSClassProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 299EA6AB155CDD2C0006C5A4 /* BSClassProvider.m */; };
-		29B0D3D61560CFAF00183BAC /* BSInitializerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29B0D3D51560CFAF00183BAC /* BSInitializerSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		29B0D3D61560CFAF00183BAC /* BSInitializerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29B0D3D51560CFAF00183BAC /* BSInitializerSpec.mm */; };
 		29B5068A15276D630035D197 /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; };
 		29B5068B15276D640035D197 /* BSBinder.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; };
 		29C9675A1508744900356446 /* NSObject+Blindside.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967581508744900356446 /* NSObject+Blindside.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,11 +87,11 @@
 		29C967EB150C50EE00356446 /* BSProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29C967EC150C50EE00356446 /* BSProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; };
 		29C967ED150C50EE00356446 /* BSProperty.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; };
-		29C967F5150D2C8800356446 /* BSPropertySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29C967F3150D2C8800356446 /* BSPropertySpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		29C967F5150D2C8800356446 /* BSPropertySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29C967F3150D2C8800356446 /* BSPropertySpec.mm */; };
 		29CAC7031502932000731862 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC7021502932000731862 /* Foundation.framework */; };
 		29CAC7061502932000731862 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC7051502932000731862 /* main.m */; };
 		29CAC77C1502A3B300731862 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC76615029F2900731862 /* Cedar.framework */; };
-		29CAC77F1502AAA400731862 /* BSInjectorSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC77E1502AAA400731862 /* BSInjectorSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		29CAC77F1502AAA400731862 /* BSInjectorSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC77E1502AAA400731862 /* BSInjectorSpec.mm */; };
 		29CAC7831502AB6F00731862 /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC7821502AB6F00731862 /* Fixtures.m */; };
 		29D7FE87153EAEF000C8C4E7 /* BSBlockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */; };
 		29D7FE89153EAEF000C8C4E7 /* BSBlockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */; };

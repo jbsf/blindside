@@ -12,7 +12,7 @@
 @end
 
 @interface Country : NSObject
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, copy) NSString *name;
 
 + (id)countryWithName:(NSString *)name;
 
@@ -26,42 +26,42 @@
 @end
 
 @interface Address : NSObject
-@property (nonatomic, retain) NSString *street;
-@property (nonatomic, retain) City *city;
-@property (nonatomic, retain) State *state;
-@property (nonatomic, retain) NSString *zip;
+@property (nonatomic, copy) NSString *street;
+@property (nonatomic, strong) City *city;
+@property (nonatomic, strong) State *state;
+@property (nonatomic, copy) NSString *zip;
 
 - (id)initWithStreet:(NSString *)street city:(City *)city state:(State *)state zip:(NSString *)zip;
 
 @end
 
 @interface Intersection : NSObject
-@property (nonatomic, retain) NSString *street;
-@property (nonatomic, retain) NSString *street2;
-@property (nonatomic, retain) City *city;
-@property (nonatomic, retain) State *state;
-@property (nonatomic, retain) NSString *zip;
+@property (nonatomic, copy) NSString *street;
+@property (nonatomic, copy) NSString *street2;
+@property (nonatomic, strong) City *city;
+@property (nonatomic, strong) State *state;
+@property (nonatomic, copy) NSString *zip;
 @end
 
 @interface House : NSObject
 
-@property (nonatomic, retain) Address *address;
-@property (nonatomic, retain) Garage *garage;
-@property (nonatomic, retain) Driveway *driveway;
-@property (nonatomic, assign) id<BSInjector> injector;
+@property (nonatomic, strong) Address *address;
+@property (nonatomic, strong) Garage *garage;
+@property (nonatomic, strong) Driveway *driveway;
+@property (nonatomic, unsafe_unretained) id<BSInjector> injector;
 
 - (id)initWithAddress:(Address *)address;
 @end
 
 @interface Cottage : NSObject
-@property (nonatomic, assign) id<BSInjector, BSBinder> injector;
+@property (nonatomic, unsafe_unretained) id<BSInjector, BSBinder> injector;
 @end
 
 @interface TennisCourt : NSObject
 @end
 
 @interface Mansion : House
-@property (nonatomic, retain) TennisCourt *tennisCourt;
+@property (nonatomic, strong) TennisCourt *tennisCourt;
 @end
 
 @protocol TestProtocol <NSObject>
@@ -71,7 +71,7 @@
 @end
 
 @interface ClassWithFactoryMethod : NSObject
-@property (nonatomic, retain) NSString *foo;
-@property (nonatomic, retain) NSString *bar;
+@property (nonatomic, copy) NSString *foo;
+@property (nonatomic, copy) NSString *bar;
 + bsCreateWithArgs:(NSArray *)args injector:(id<BSInjector>)injector;
 @end

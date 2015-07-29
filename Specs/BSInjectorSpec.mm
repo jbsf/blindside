@@ -10,7 +10,7 @@ describe(@"BSInjector", ^{
     __block BSInjectorImpl *injector;
 
     beforeEach(^{
-        injector = [[[BSInjectorImpl alloc] init] autorelease];
+        injector = [[BSInjectorImpl alloc] init];
     });
 
     it(@"can bind an instance to a class", ^{
@@ -42,15 +42,15 @@ describe(@"BSInjector", ^{
     });
 
     it(@"raises an exception if the given key produces a nil object", ^{
-        [[^{
+        ^{
             [injector getInstance:@"NotAnInstance"];
-        } copy] autorelease] should raise_exception();
+        } should raise_exception();
     });
 
     describe(@"building an object using a BSInitializer", ^{
         it(@"resolves first-order dependencies", ^{
             [injector bind:@"theDriveway" toInstance:BS_NULL];
-            Address *address = [[[Address alloc] init] autorelease];
+            Address *address = [[Address alloc] init];
             [injector bind:[Address class] toInstance:address];
             House *house = [injector getInstance:[House class]];
             expect(house).to_not(be_nil());
@@ -60,8 +60,8 @@ describe(@"BSInjector", ^{
         context(@"when the initializer has more than two arguments", ^{
             it(@"injects all the arguments", ^{
                 NSString *street = @"123 Market St.";
-                City *city = [[[City alloc] init] autorelease];
-                State *state = [[[State alloc] init] autorelease];
+                City *city = [[City alloc] init];
+                State *state = [[State alloc] init];
                 NSString *zip = @"94110";
 
                 [injector bind:@"street" toInstance:street];
@@ -80,25 +80,23 @@ describe(@"BSInjector", ^{
             context(@"when an argument key does not have a bound value", ^{
                 it(@"raises an exception", ^{
                     NSString *street = @"123 Market St.";
-                    City *city = [[[City alloc] init] autorelease];
+                    City *city = [[City alloc] init];
 
                     [injector bind:@"street" toInstance:street];
                     [injector bind:@"city"   toInstance:city];
                     
                     // zip and state remain unbound
                     
-                    void(^block)() = [[^{
+                    ^{
                         [injector getInstance:[Address class]];
-                    } copy] autorelease];
-                    
-                    block should raise_exception();
+                    } should raise_exception();
                 });
             });
             
             context(@"when an argument key is bound to BS_NULL", ^{
                 it(@"injects nil", ^{
                     NSString *street = @"123 Market St.";
-                    City *city = [[[City alloc] init] autorelease];
+                    City *city = [[City alloc] init];
                     
                     [injector bind:@"street" toInstance:street];
                     [injector bind:@"city"   toInstance:city];
@@ -122,10 +120,10 @@ describe(@"BSInjector", ^{
             beforeEach(^{
                 [injector bind:[Address class] toInstance:BS_NULL];
                 
-                garage = [[[Garage alloc] init] autorelease];
+                garage = [[Garage alloc] init];
                 [injector bind:[Garage class] toInstance:garage];
 
-                driveway = [[[Driveway alloc] init] autorelease];
+                driveway = [[Driveway alloc] init];
                 [injector bind:@"theDriveway" toInstance:driveway];
             });
 
@@ -153,7 +151,7 @@ describe(@"BSInjector", ^{
             context(@"when the superclass has properties", ^{
                 it(@"injects superclass properties too", ^{
                     [injector bind:@"10 car driveway" toInstance:BS_NULL];
-                    TennisCourt *tennisCourt = [[[TennisCourt alloc] init] autorelease];
+                    TennisCourt *tennisCourt = [[TennisCourt alloc] init];
                     [injector bind:[TennisCourt class] toInstance:tennisCourt];
 
                     Mansion *mansion = [injector getInstance:[Mansion class]];
@@ -163,7 +161,7 @@ describe(@"BSInjector", ^{
 
                 context(@"when the subclass binds a shared property", ^{
                     it(@"does not affect the superclass binding", ^{
-                        Driveway *tenCarDriveway = [[[Driveway alloc] init] autorelease];
+                        Driveway *tenCarDriveway = [[Driveway alloc] init];
                         [injector bind:@"10 car driveway" toInstance:tenCarDriveway];
 
                         Mansion *mansion = [injector getInstance:[Mansion class]];
@@ -183,7 +181,7 @@ describe(@"BSInjector", ^{
         [injector bind:@"theDriveway" toInstance:BS_NULL];
         [injector bind:[Address class] toInstance:BS_NULL];
         
-        garage = [[[Garage alloc] init] autorelease];
+        garage = [[Garage alloc] init];
         [injector bind:[Garage class] toBlock:^(NSArray *args, id<BSInjector> injector){
             return garage;
         }];
@@ -276,8 +274,8 @@ describe(@"BSInjector", ^{
             street = @"Guerrero";
             street2 = @"Market";
             zip = @"Guerrero";
-            state = [[[State alloc] init] autorelease];
-            city = [[[City alloc] init] autorelease];
+            state = [[State alloc] init];
+            city = [[City alloc] init];
             [injector bind:@"street" toInstance:street];
             [injector bind:@"street2" toInstance:street2];
             [injector bind:@"state"  toInstance:state];
@@ -286,21 +284,17 @@ describe(@"BSInjector", ^{
         context(@"when the are too many args", ^{
             it(@"raises an exception", ^{
                 
-                void(^block)() = [[^{
+                ^{
                    [injector getInstance:[Intersection class] withArgs:city, zip, @"too many args", nil];
-                } copy] autorelease];
-                
-                block should raise_exception();
+                } should raise_exception();
             });
         });
 
         context(@"when there are too few args", ^{
             it(@"raises an exception", ^{
-                void(^block)() = [[^{
+                ^{
                     [injector getInstance:[Intersection class] withArgs:city, nil];
-                } copy] autorelease];
-                
-                block should raise_exception();                
+                } should raise_exception();
             });
         });
 
@@ -330,12 +324,12 @@ describe(@"BSInjector", ^{
     describe(@"injectProperties:", ^{
         __block Mansion *mansion;
         beforeEach(^{
-            mansion = [[[Mansion alloc] init] autorelease];
+            mansion = [[Mansion alloc] init];
         });
 
         context(@"when the object receiving injected property values has a writable injector property not declared in the BSPropertySet", ^{
             beforeEach(^{
-                Driveway *tenCarDriveway = [[[Driveway alloc] init] autorelease];
+                Driveway *tenCarDriveway = [[Driveway alloc] init];
                 [injector bind:@"10 car driveway" toInstance:tenCarDriveway];
 
                 [injector injectProperties:mansion];

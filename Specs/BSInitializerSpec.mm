@@ -15,34 +15,28 @@ describe(@"BSInitializer", ^{
 
     context(@"when the initializer's class does not have a matching initialize selector", ^{
         it(@"raises an exception", ^{
-            void(^block)() = [[^{
+            ^{
                 SEL badSelector = NSSelectorFromString(@"initWithFoo:");
                 [BSInitializer initializerWithClass:[ClassMissingInitializer class] selector:badSelector argumentKeys:nil];
-            } copy] autorelease];
-
-            block should raise_exception();
+            } should raise_exception();
         });
     });
 
     context(@"when the initializer's class does not have a matching class selector", ^{
         it(@"raises an exception", ^{
-            void(^block)() = [[^{
+            ^{
                 SEL badSelector = NSSelectorFromString(@"initWithFoo:");
                 [BSInitializer initializerWithClass:[ClassMissingInitializer class] classSelector:badSelector argumentKeys:nil];
-            } copy] autorelease];
-
-            block should raise_exception();
+            } should raise_exception();
         });
     });
 
     context(@"when the initializer's class does not have the same number of arguments as the selector", ^{
         it(@"raises an exception", ^{
-            void(^block)() = [[^{
+            ^{
                 SEL goodSelector = @selector(initWithAddress:);
                 [BSInitializer initializerWithClass:[House class] selector:goodSelector argumentKeys:BS_NULL, BS_NULL, nil];
-            } copy] autorelease];
-
-            block should raise_exception();
+            } should raise_exception();
         });
     });
 
