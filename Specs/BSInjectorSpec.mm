@@ -340,6 +340,16 @@ describe(@"BSInjector", ^{
             });
         });
     });
+
+    describe(@"cyclic dependencies", ^{
+        context(@"when an object's dependency directly depends on the object being retrieved", ^{
+            it(@"should raise an exception indicating the dependency chain", ^{
+                ^{
+                    [injector getInstance:[ClassADependsOnB class]];
+                } should raise_exception().with_reason(@"Cyclic dependency found on key ClassADependsOnB. The dependency chain was:\nClassADependsOnB -> ClassBDependsOnC -> ClassCDependsOnA -> ClassADependsOnB");
+            });
+        });
+    });
 });
 
 SPEC_END
