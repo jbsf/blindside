@@ -162,3 +162,51 @@ zip = zip_;
     return self;
 }
 @end
+
+@implementation ClassADependsOnB
+@synthesize b = _b;
+
++ (BSInitializer *)bsInitializer {
+    return [BSInitializer initializerWithClass:self selector:@selector(initWithB:) argumentKeys:[ClassBDependsOnC class], nil];
+}
+
+- (id)initWithB:(ClassBDependsOnC *)b {
+    if (self = [super init]) {
+        self.b = b;
+    }
+    return self;
+}
+
+@end
+
+@implementation ClassBDependsOnC
+@synthesize c = _c;
+
++ (BSInitializer *)bsInitializer {
+    return [BSInitializer initializerWithClass:self selector:@selector(initWithC:) argumentKeys:[ClassCDependsOnA class], nil];
+}
+
+- (id)initWithC:(ClassCDependsOnA *)c {
+    if (self = [super init]) {
+        self.c = c;
+    }
+    return self;
+}
+
+@end
+
+@implementation ClassCDependsOnA
+@synthesize a = _a;
+
++ (BSInitializer *)bsInitializer {
+    return [BSInitializer initializerWithClass:self selector:@selector(initWithA:) argumentKeys:[ClassADependsOnB class], nil];
+}
+
+- (id)initWithA:(ClassADependsOnB *)a {
+    if (self = [super init]) {
+        self.a = a;
+    }
+    return self;
+}
+
+@end

@@ -75,3 +75,21 @@
 @property (nonatomic, copy) NSString *bar;
 + bsCreateWithArgs:(NSArray *)args injector:(id<BSInjector>)injector;
 @end
+
+
+@class ClassBDependsOnC, ClassCDependsOnA;
+
+@interface ClassADependsOnB : NSObject
+@property (nonatomic, strong) ClassBDependsOnC *b;
+- (id)initWithB:(ClassBDependsOnC *)b;
+@end
+
+@interface ClassBDependsOnC : NSObject
+@property (nonatomic, strong) ClassCDependsOnA *c;
+- (id)initWithC:(ClassCDependsOnA *)c;
+@end
+
+@interface ClassCDependsOnA : NSObject
+@property (nonatomic, strong) ClassADependsOnB *a;
+- (id)initWithA:(ClassADependsOnB *)a;
+@end
