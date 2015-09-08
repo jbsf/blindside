@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.7'
+  s.watchos.deployment_target = '2.0'
 
   s.source_files = "{Source,Headers}/**/*.{h,m}"
   s.public_header_files = 'Headers/Public/*.{h}'
