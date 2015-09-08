@@ -54,8 +54,12 @@ static NSString *const BSInFlightKeysDictKey = @"BSInFlightKeysDictKey";
 }
 
 - (void)bind:(id)key toClass:(Class)class {
-    BSClassProvider *provider = [BSClassProvider providerWithClass:class];
-    [self bind:key toProvider:provider];
+    if (key == class) {
+        [self clearProviderForKey:key];
+    } else {
+        BSClassProvider *provider = [BSClassProvider providerWithClass:class];
+        [self bind:key toProvider:provider];
+    }
 }
 
 - (void)bind:(id)key toClass:(Class)class withScope:(id<BSScope>)scope {
@@ -139,6 +143,10 @@ static NSString *const BSInFlightKeysDictKey = @"BSInFlightKeysDictKey";
 
 - (void)setProvider:(id<BSProvider>)provider forKey:(id)key {
     [self.providers setObject:provider forKey:[self internalKey:key]];
+}
+
+- (void)clearProviderForKey:(id)key {
+    [self.providers removeObjectForKey:[self internalKey:key]];
 }
 
 - (id<BSProvider>)providerForKey:(id)key {
