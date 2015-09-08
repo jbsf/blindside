@@ -142,6 +142,29 @@ When working with property injection, it is occationally desirable to have a hoo
 
 Note that the use of this method is discouraged because it increases the coupling between your code and Blindside. First look for other appropriate lifecycle methods on your object (e.g. `-viewDidLoad` for a view controller) that could be used to perform this kind of work.
 
+## Swift
+
+You can also use Blindside in Swift. First, add `#import <Blindside/Blindside.h>` to your Swift's bridging header file to expose the framework to your Swift code.
+
+Create an injector as you would in Objective-C:
+
+````swift
+let module = MyBlindsideModule()
+let injector = Blindside.injectorWithModule(module)
+````
+
+To instantiate your controller with no arguments:
+
+````swift
+let controller = injector.getInstance(MyViewController.self)
+````
+
+To pass dynamic arguments (those marked with `BS_DYNAMIC`) to your controller, use the newly exposed `-getInstance:withArgArray:` method.
+
+````swift
+let controller = injector.getInstance(MyViewController.self, withArgArray: [BSNull(), "arg"])
+````
+
 ## Author
 
 * [JB Steadman](mailto:jb@pivotallabs.com), Pivotal Labs
