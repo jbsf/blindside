@@ -26,8 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * + (BSPropertySet *)bsProperties {
  *      BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"address" @"color", nil];
- *      [propertySet bind:@"address" toKey:@"my home address"
- *
+ *      [propertySet bind:@"address" toKey:@"my home address"];
+ *      return propertySet;
  * }
  *
  * \endcode
