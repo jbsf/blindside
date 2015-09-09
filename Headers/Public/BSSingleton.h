@@ -4,8 +4,6 @@
 #import "BSProvider.h"
 #import "BSNullabilityCompat.h"
 
-@class BSInstanceProvider;
-
 NS_ASSUME_NONNULL_BEGIN
 
 /**

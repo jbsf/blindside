@@ -1,5 +1,6 @@
 #import <Cedar/Cedar.h>
 #import <Blindside/Blindside.h>
+#import "BSProperty.h"
 #import "Fixtures.h"
 
 using namespace Cedar::Matchers;
