@@ -1,5 +1,6 @@
 #import "BSInitializer.h"
 #import "BSNull.h"
+#import "BSUtils.h"
 
 #import <objc/runtime.h>
 
@@ -17,13 +18,6 @@ static NSString *const BSInvalidInitializerException = @"BSInvalidInitializerExc
 
 @end
 
-#define AddVarArgsToNSMutableArray(firstKey, argKeys) va_list __argList__;\
-va_start(__argList__, firstKey);\
-for (id arg = (firstKey); arg != nil; arg = va_arg(__argList__, id)) {\
-    [(argKeys) addObject:arg];\
-}\
-va_end(__argList__);
-
 @implementation BSInitializer
 
 @synthesize type = _type, selector = _selector, argumentKeys = _argumentKeys, signature = _signature;
@@ -34,10 +28,18 @@ va_end(__argList__);
     return [[BSInitializer alloc] initWithClass:type selector:selector argumentKeys:argKeys];
 }
 
++ (BSInitializer *)initializerWithClass:(Class)type selector:(SEL)selector argumentKeysArray:(NSArray *)keys {
+    return [[BSInitializer alloc] initWithClass:type selector:selector argumentKeys:keys];
+}
+
 + (BSInitializer *)initializerWithClass:(Class)type classSelector:(SEL)selector argumentKeys:(id)firstKey, ... {
     NSMutableArray *argKeys = [NSMutableArray array];
     AddVarArgsToNSMutableArray(firstKey, argKeys);
     return [[BSInitializer alloc] initWithClass:type classSelector:selector argumentKeys:argKeys];
+}
+
++ (BSInitializer *)initializerWithClass:(Class)type classSelector:(SEL)selector argumentKeysArray:(NSArray *)keys {
+    return [[BSInitializer alloc] initWithClass:type classSelector:selector argumentKeys:keys];
 }
 
 - (id)initWithClass:(Class)type selector:(SEL)selector argumentKeys:(NSArray *)argumentKeys classSelector:(BOOL)isClassSelector {

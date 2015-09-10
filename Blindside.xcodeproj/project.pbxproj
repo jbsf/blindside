@@ -100,6 +100,8 @@
 		3453B89E1B4F7B1A00026E19 /* BSNullabilityCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		347C245F1BA0CC61009BE82F /* BSNullabilityCompat.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */; };
 		347C24601BA0CD17009BE82F /* BSBlockProvider.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 294B3C311522C84E001A69D3 /* BSBlockProvider.h */; };
+		347C24701BA0D16C009BE82F /* BSInjectorSwiftSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 347C246F1BA0D16C009BE82F /* BSInjectorSwiftSpec.mm */; };
+		34A18C121BA0A6A700A65DB3 /* SwiftFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A18C111BA0A6A700A65DB3 /* SwiftFixtures.swift */; };
 		34E3BCD51B4F82960007037F /* Blindside.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC6E4150292AD00731862 /* Blindside.framework */; };
 		34E3BCD61B4F8ADD0007037F /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6172C028155B98FF00348C4E /* BSClassProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6172C027155B98E900348C4E /* BSClassProvider.h */; };
@@ -324,7 +326,11 @@
 		29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSBlockProvider.m; path = Source/BSBlockProvider.m; sourceTree = "<group>"; };
 		29D7FE85153EAEF000C8C4E7 /* BSProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSProperty.m; path = Source/BSProperty.m; sourceTree = "<group>"; };
 		29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSPropertySet.m; path = Source/BSPropertySet.m; sourceTree = "<group>"; };
+		342A3E321BA1CAFD00E41384 /* Specs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Bridging-Header.h"; sourceTree = "<group>"; };
 		3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSNullabilityCompat.h; sourceTree = "<group>"; };
+		347C24621BA0CEF8009BE82F /* BSUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSUtils.h; sourceTree = "<group>"; };
+		347C246F1BA0D16C009BE82F /* BSInjectorSwiftSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSInjectorSwiftSpec.mm; sourceTree = "<group>"; };
+		34A18C111BA0A6A700A65DB3 /* SwiftFixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftFixtures.swift; sourceTree = "<group>"; };
 		6172C027155B98E900348C4E /* BSClassProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSClassProvider.h; sourceTree = "<group>"; };
 		61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSInjectorImpl.h; sourceTree = "<group>"; };
 		AE03FC1A1B0A57DD00013784 /* Blindside-iOS-Framework BuildTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blindside-iOS-Framework BuildTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -480,10 +486,12 @@
 			isa = PBXGroup;
 			children = (
 				29CAC77E1502AAA400731862 /* BSInjectorSpec.mm */,
+				347C246F1BA0D16C009BE82F /* BSInjectorSwiftSpec.mm */,
 				29C967F3150D2C8800356446 /* BSPropertySpec.mm */,
 				29C967F8150D37E700356446 /* BSPropertySetSpec.mm */,
 				29B0D3D51560CFAF00183BAC /* BSInitializerSpec.mm */,
 				29CAC7051502932000731862 /* main.m */,
+				342A3E321BA1CAFD00E41384 /* Specs-Bridging-Header.h */,
 				29CAC7801502AB4200731862 /* Fixtures */,
 			);
 			path = Specs;
@@ -521,6 +529,7 @@
 			children = (
 				29CAC7811502AB6F00731862 /* Fixtures.h */,
 				29CAC7821502AB6F00731862 /* Fixtures.m */,
+				34A18C111BA0A6A700A65DB3 /* SwiftFixtures.swift */,
 			);
 			name = Fixtures;
 			sourceTree = "<group>";
@@ -553,6 +562,7 @@
 				61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */,
 				29997B071505D8FE00C12110 /* BSInstanceProvider.h */,
 				29C967EA150C50ED00356446 /* BSProperty.h */,
+				347C24621BA0CEF8009BE82F /* BSUtils.h */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -770,6 +780,7 @@
 		29CAC6DA150292AD00731862 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = self;
 				TargetAttributes = {
@@ -998,9 +1009,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				29CAC7061502932000731862 /* main.m in Sources */,
+				34A18C121BA0A6A700A65DB3 /* SwiftFixtures.swift in Sources */,
 				29CAC77F1502AAA400731862 /* BSInjectorSpec.mm in Sources */,
 				29CAC7831502AB6F00731862 /* Fixtures.m in Sources */,
 				29C967F5150D2C8800356446 /* BSPropertySpec.mm in Sources */,
+				347C24701BA0D16C009BE82F /* BSInjectorSwiftSpec.mm in Sources */,
 				29B0D3D61560CFAF00183BAC /* BSInitializerSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1239,9 +1252,13 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Specs/Specs-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1250,9 +1267,12 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Specs/Specs-Bridging-Header.h";
 			};
 			name = Release;
 		};

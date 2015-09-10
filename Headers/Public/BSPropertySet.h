@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BSPropertySet *)propertySetWithClass:(Class)owningClass propertyNames:(NSString *)property1, ... NS_REQUIRES_NIL_TERMINATION;
 
++ (BSPropertySet *)propertySetWithClass:(Class)owningClass propertyNamesArray:(NSArray *)propertyNames;
+
 - (void)bindProperty:(NSString *)propertyName toKey:(id)key;
 
 @end

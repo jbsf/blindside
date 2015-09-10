@@ -77,6 +77,12 @@
 @end
 
 
+@class BogusClass;
+@interface ClassWithBogusProperty : NSObject
+@property (nonatomic, strong) BogusClass *bogus;
+@end
+
+
 @class ClassBDependsOnC, ClassCDependsOnA;
 
 @interface ClassADependsOnB : NSObject

@@ -75,6 +75,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BSInitializer *)initializerWithClass:(Class)type selector:(SEL)selector argumentKeys:(nullable id)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
 
++ (BSInitializer *)initializerWithClass:(Class)type selector:(SEL)selector argumentKeysArray:(NSArray *)keys;
+
 /**
  * Creates a BSInitializer representing the given class and selector. This is an important method
  * within Blindside, one that users will commonly use within their implementations of bsInitializer.
@@ -94,6 +96,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BSInitializer *)initializerWithClass:(Class)type classSelector:(SEL)selector argumentKeys:(nullable id)firstKey, ...
     NS_REQUIRES_NIL_TERMINATION;
+
++ (BSInitializer *)initializerWithClass:(Class)type classSelector:(SEL)selector argumentKeysArray:(NSArray *)keys;
 
 /**
  * Creates an object using the initializer and the passed-in argument values. The number of argument values

@@ -32,6 +32,14 @@ describe(@"BSProperty", ^{
                 expect(property.returnType == [Address class]).to(equal(YES));
             });
         });
+
+        context(@"when the return type is a non-existent objective-c class", ^{
+            it(@"raises an exception", ^{
+                ^{
+                    [BSProperty propertyWithClass:[ClassWithBogusProperty class] propertyNameString:@"bogus"];
+                } should raise_exception();
+            });
+        });
     });
 });
 SPEC_END
