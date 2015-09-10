@@ -76,10 +76,14 @@
 + bsCreateWithArgs:(NSArray *)args injector:(id<BSInjector>)injector;
 @end
 
-
 @class BogusClass;
 @interface ClassWithBogusProperty : NSObject
 @property (nonatomic, strong) BogusClass *bogus;
+@end
+
+@interface ClassWithoutDependencyDeclaration : NSObject
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithDependency:(NSString *)dependency NS_DESIGNATED_INITIALIZER;
 @end
 
 
