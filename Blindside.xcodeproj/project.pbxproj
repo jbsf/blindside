@@ -101,6 +101,9 @@
 		347C245F1BA0CC61009BE82F /* BSNullabilityCompat.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */; };
 		347C24601BA0CD17009BE82F /* BSBlockProvider.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 294B3C311522C84E001A69D3 /* BSBlockProvider.h */; };
 		347C24701BA0D16C009BE82F /* BSInjectorSwiftSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 347C246F1BA0D16C009BE82F /* BSInjectorSwiftSpec.mm */; };
+		348E08321BA9A66C00DA8946 /* BSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 348E08311BA9A66C00DA8946 /* BSUtils.m */; };
+		348E08331BA9A66C00DA8946 /* BSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 348E08311BA9A66C00DA8946 /* BSUtils.m */; };
+		348E08341BA9A66C00DA8946 /* BSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 348E08311BA9A66C00DA8946 /* BSUtils.m */; };
 		34A18C121BA0A6A700A65DB3 /* SwiftFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A18C111BA0A6A700A65DB3 /* SwiftFixtures.swift */; };
 		34E3BCD51B4F82960007037F /* Blindside.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC6E4150292AD00731862 /* Blindside.framework */; };
 		34E3BCD61B4F8ADD0007037F /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -330,6 +333,7 @@
 		3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSNullabilityCompat.h; sourceTree = "<group>"; };
 		347C24621BA0CEF8009BE82F /* BSUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSUtils.h; sourceTree = "<group>"; };
 		347C246F1BA0D16C009BE82F /* BSInjectorSwiftSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSInjectorSwiftSpec.mm; sourceTree = "<group>"; };
+		348E08311BA9A66C00DA8946 /* BSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSUtils.m; path = Source/BSUtils.m; sourceTree = "<group>"; };
 		34A18C111BA0A6A700A65DB3 /* SwiftFixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftFixtures.swift; sourceTree = "<group>"; };
 		6172C027155B98E900348C4E /* BSClassProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSClassProvider.h; sourceTree = "<group>"; };
 		61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSInjectorImpl.h; sourceTree = "<group>"; };
@@ -402,6 +406,7 @@
 				29D7FE85153EAEF000C8C4E7 /* BSProperty.m */,
 				29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */,
 				29C967D81509BF2100356446 /* BSSingleton.m */,
+				348E08311BA9A66C00DA8946 /* BSUtils.m */,
 				29C967591508744900356446 /* NSObject+Blindside.m */,
 			);
 			name = Source;
@@ -971,6 +976,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29997B521505EC4500C12110 /* BSInjectorImpl.m in Sources */,
+				348E08331BA9A66C00DA8946 /* BSUtils.m in Sources */,
 				29997B531505EC4500C12110 /* BSInstanceProvider.m in Sources */,
 				29997B551505EC4500C12110 /* BSInitializer.m in Sources */,
 				29997B561505EC4500C12110 /* BSInitializerProvider.m in Sources */,
@@ -990,6 +996,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29997A7E1502C48B00C12110 /* BSInjectorImpl.m in Sources */,
+				348E08321BA9A66C00DA8946 /* BSUtils.m in Sources */,
 				29997A811502C48B00C12110 /* BSInstanceProvider.m in Sources */,
 				29997B111505D94200C12110 /* BSInitializer.m in Sources */,
 				29997B121505D94200C12110 /* BSInitializerProvider.m in Sources */,
@@ -1032,6 +1039,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE4864E71B06735F005DB302 /* Blindside.m in Sources */,
+				348E08341BA9A66C00DA8946 /* BSUtils.m in Sources */,
 				AE4864E81B06735F005DB302 /* BSBlockProvider.m in Sources */,
 				AE4864E91B06735F005DB302 /* BSClassProvider.m in Sources */,
 				AE4864EA1B06735F005DB302 /* BSInitializer.m in Sources */,

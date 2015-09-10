@@ -216,6 +216,14 @@ describe(@"BSInjector", ^{
                 expect(address).to(be_instance_of([TennisCourt class]));
             });
         });
+
+        context(@"when the class has a designated initializer but does not declare a blindside initializer", ^{
+            it(@"raises an exception", ^{
+                ^{
+                    [injector getInstance:[ClassWithoutDependencyDeclaration class]];
+                } should raise_exception();
+            });
+        });
     });
 
     describe(@"scoping", ^{

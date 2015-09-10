@@ -126,6 +126,11 @@ zip = zip_;
 @end
 
 @implementation TennisCourt
+
+- (instancetype)init {
+    return [super init];
+}
+
 @end
 
 @implementation Mansion
@@ -164,6 +169,14 @@ zip = zip_;
 @end
 
 @implementation ClassWithBogusProperty
+@end
+
+@implementation ClassWithoutDependencyDeclaration
+
+- (instancetype)initWithDependency:(NSString *)dependency {
+    return [super init];
+}
+
 @end
 
 @implementation ClassADependsOnB
