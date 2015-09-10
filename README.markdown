@@ -165,6 +165,25 @@ To pass dynamic arguments (those marked with `BS_DYNAMIC`) to your controller, u
 let controller = injector.getInstance(MyViewController.self, withArgArray: [BSNull(), "arg"])
 ````
 
+Describe your class dependencies like this:
+
+```swift
+class House : NSObject {
+    class override func bsInitializer() -> BSInitializer {
+        // `selector` requires the Objective-C method name of your initializer
+        return BSInitializer(withClass: self, selector: "initWithAddress:", argumentKeysArray: [Address.self])
+    }
+
+    class override func bsProperties() -> BSPropertySet {
+        let propertySet = BSPropertySet(withClass: self, propertyNamesArray: ["garage"])
+        propertySet.bindProperty("color", toKey: "myHouseColor")
+        return propertySet
+    }
+}
+```
+
+**Note that Blindside is only able to create and inject NSObject-derived classes.**
+
 ## Author
 
 * [JB Steadman](mailto:jb@pivotallabs.com), Pivotal Labs
