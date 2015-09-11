@@ -42,6 +42,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BSPropertySet *)propertySetWithClass:(Class)owningClass propertyNamesArray:(NSArray *)propertyNames;
 
+- (instancetype)init NS_UNAVAILABLE;
+
 - (void)bindProperty:(NSString *)propertyName toKey:(id)key;
 
 @end

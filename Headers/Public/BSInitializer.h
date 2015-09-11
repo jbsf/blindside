@@ -111,6 +111,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BSInitializer *)initializerWithClass:(Class)type classSelector:(SEL)selector argumentKeysArray:(NSArray *)keys;
 
+- (instancetype)init NS_UNAVAILABLE;
+
 /**
  * Creates an object using the initializer and the passed-in argument values. The number of argument values
  * must match the number of arguments expected by the initializer. Arguments are passed to the initializer 
