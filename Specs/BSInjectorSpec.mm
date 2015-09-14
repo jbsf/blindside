@@ -208,6 +208,14 @@ describe(@"BSInjector", ^{
                 expect([recreationalFacility class]).to_not(be_nil);
             });
         });
+
+        context(@"when the key is a class which is bound to the same class", ^{
+            it(@"builds the class successfully", ^{
+                [injector bind:[TennisCourt class] toClass:[TennisCourt class]];
+                id address = [injector getInstance:[TennisCourt class]];
+                expect(address).to(be_instance_of([TennisCourt class]));
+            });
+        });
     });
 
     describe(@"scoping", ^{
