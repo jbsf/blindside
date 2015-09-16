@@ -35,12 +35,18 @@ describe(@"BSInjector with NSObject-derived classes defined in Swift", ^{
     });
 
     context(@"when the object being retrieved has a writable injector property", ^{
+#if defined(__apple_build_version__) && __apple_build_version__ >= 7000000
         it(@"injects itself as the property value", ^{
             [injector bind:@"theDriveway" toInstance:BS_NULL];
             [injector bind:[SwiftAddress class] toInstance:BS_NULL];
             SwiftHouse *house = [injector getInstance:[SwiftHouse class]];
             house.injector should equal(injector);
         });
+#else
+        // Until Xcode 7 / Swift 2, the metadata exposed to the Objective-C runtime for properties
+        // on a Swift class does not include sufficient type information to safely write to an `injector` property
+        it(@"injects itself as the property value", PENDING);
+#endif
     });
 
     describe(@"building an object using a BSInitializer", ^{
