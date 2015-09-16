@@ -399,9 +399,6 @@
 		29997B0E1505D94200C12110 /* BSInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSInitializer.m; path = Source/BSInitializer.m; sourceTree = "<group>"; };
 		29997B0F1505D94200C12110 /* BSInitializerProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSInitializerProvider.m; path = Source/BSInitializerProvider.m; sourceTree = "<group>"; };
 		29997B471505EC0B00C12110 /* libBlindside-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libBlindside-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		29997B4B1505EC0B00C12110 /* Blindside-StaticLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blindside-StaticLib-Prefix.pch"; sourceTree = "<group>"; };
-		29997B4C1505EC0B00C12110 /* Blindside_StaticLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blindside_StaticLib.h; sourceTree = "<group>"; };
-		29997B4D1505EC0B00C12110 /* Blindside_StaticLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Blindside_StaticLib.m; sourceTree = "<group>"; };
 		299EA6AA155CDD2C0006C5A4 /* Blindside.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Blindside.m; path = Source/Blindside.m; sourceTree = "<group>"; };
 		299EA6AB155CDD2C0006C5A4 /* BSClassProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSClassProvider.m; path = Source/BSClassProvider.m; sourceTree = "<group>"; };
 		29B0D3D51560CFAF00183BAC /* BSInitializerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSInitializerSpec.mm; sourceTree = "<group>"; };
@@ -432,9 +429,9 @@
 		29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSBlockProvider.m; path = Source/BSBlockProvider.m; sourceTree = "<group>"; };
 		29D7FE85153EAEF000C8C4E7 /* BSProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSProperty.m; path = Source/BSProperty.m; sourceTree = "<group>"; };
 		29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSPropertySet.m; path = Source/BSPropertySet.m; sourceTree = "<group>"; };
+		3420FD131BAA305300AF22F0 /* Blindside-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Blindside-Framework.xcconfig"; sourceTree = "<group>"; };
 		342A3E321BA1CAFD00E41384 /* Specs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Bridging-Header.h"; sourceTree = "<group>"; };
 		343267161BAA2A9C005F2D7A /* Blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3432671A1BAA2A9C005F2D7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSNullabilityCompat.h; sourceTree = "<group>"; };
 		347C24621BA0CEF8009BE82F /* BSUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSUtils.h; sourceTree = "<group>"; };
 		347C246F1BA0D16C009BE82F /* BSInjectorSwiftSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSInjectorSwiftSpec.mm; sourceTree = "<group>"; };
@@ -446,7 +443,6 @@
 		34A18C091B9F88F700A65DB3 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Interface.storyboard; path = "Blindside-watchOS BuildTest/Interface.storyboard"; sourceTree = "<group>"; };
 		34A18C111BA0A6A700A65DB3 /* SwiftFixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftFixtures.swift; sourceTree = "<group>"; };
 		34E710AB1B9F85210088AB71 /* Blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		34E710AF1B9F85210088AB71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6172C027155B98E900348C4E /* BSClassProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSClassProvider.h; sourceTree = "<group>"; };
 		61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSInjectorImpl.h; sourceTree = "<group>"; };
 		AE03FC1A1B0A57DD00013784 /* Blindside-iOS-Framework BuildTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blindside-iOS-Framework BuildTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -457,7 +453,6 @@
 		AE03FC291B0A57DD00013784 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AE03FC2C1B0A57DD00013784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AE4864BD1B066F11005DB302 /* Blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE4864C01B066F11005DB302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -554,24 +549,6 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
-		29997B491505EC0B00C12110 /* Blindside-StaticLib */ = {
-			isa = PBXGroup;
-			children = (
-				29997B4C1505EC0B00C12110 /* Blindside_StaticLib.h */,
-				29997B4D1505EC0B00C12110 /* Blindside_StaticLib.m */,
-				29997B4A1505EC0B00C12110 /* Supporting Files */,
-			);
-			path = "Blindside-StaticLib";
-			sourceTree = "<group>";
-		};
-		29997B4A1505EC0B00C12110 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				29997B4B1505EC0B00C12110 /* Blindside-StaticLib-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		29CAC6D8150292AD00731862 = {
 			isa = PBXGroup;
 			children = (
@@ -579,15 +556,12 @@
 				29997AB31505CE7800C12110 /* Headers */,
 				29CAC7041502932000731862 /* Specs */,
 				29CAC77515029F3B00731862 /* Externals */,
-				29997B491505EC0B00C12110 /* Blindside-StaticLib */,
-				AE4864BE1B066F11005DB302 /* Blindside-iOS-Framework */,
 				AE03FC1B1B0A57DD00013784 /* Blindside-iOS-Framework BuildTest */,
-				34E710AC1B9F85210088AB71 /* Blindside-watchOS */,
 				34A18BD41B9F887200A65DB3 /* Blindside-watchOS BuildTest */,
-				343267171BAA2A9C005F2D7A /* Blindside-tvOS */,
 				29CAC6E6150292AD00731862 /* Frameworks */,
 				29CAC6E5150292AD00731862 /* Products */,
 				29997ABA1505D2B600C12110 /* Blindside-Info.plist */,
+				3420FD131BAA305300AF22F0 /* Blindside-Framework.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -679,14 +653,6 @@
 			name = Fixtures;
 			sourceTree = "<group>";
 		};
-		343267171BAA2A9C005F2D7A /* Blindside-tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				3432671A1BAA2A9C005F2D7A /* Info.plist */,
-			);
-			path = "Blindside-tvOS";
-			sourceTree = "<group>";
-		};
 		347C24511BA0CAE5009BE82F /* Public */ = {
 			isa = PBXGroup;
 			children = (
@@ -740,14 +706,6 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		34E710AC1B9F85210088AB71 /* Blindside-watchOS */ = {
-			isa = PBXGroup;
-			children = (
-				34E710AF1B9F85210088AB71 /* Info.plist */,
-			);
-			path = "Blindside-watchOS";
-			sourceTree = "<group>";
-		};
 		AE03FC1B1B0A57DD00013784 /* Blindside-iOS-Framework BuildTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -765,22 +723,6 @@
 			children = (
 				AE03FC1D1B0A57DD00013784 /* Info.plist */,
 				AE03FC1E1B0A57DD00013784 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AE4864BE1B066F11005DB302 /* Blindside-iOS-Framework */ = {
-			isa = PBXGroup;
-			children = (
-				AE4864BF1B066F11005DB302 /* Supporting Files */,
-			);
-			path = "Blindside-iOS-Framework";
-			sourceTree = "<group>";
-		};
-		AE4864BF1B066F11005DB302 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AE4864C01B066F11005DB302 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1490,13 +1432,10 @@
 		29997B501505EC0B00C12110 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/Blindside_StaticLib.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Blindside-StaticLib/Blindside-StaticLib-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1506,12 +1445,10 @@
 		29997B511505EC0B00C12110 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/Blindside_StaticLib.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Blindside-StaticLib/Blindside-StaticLib-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1548,6 +1485,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1.1.0;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1606,53 +1544,33 @@
 		};
 		29CAC6FA150292AD00731862 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3420FD131BAA305300AF22F0 /* Blindside-Framework.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "Blindside-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = "";
-				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
 		};
 		29CAC6FB150292AD00731862 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3420FD131BAA305300AF22F0 /* Blindside-Framework.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "Blindside-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = "";
-				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
 		};
@@ -1687,16 +1605,14 @@
 		};
 		3432671B1BAA2A9C005F2D7A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3420FD131BAA305300AF22F0 /* Blindside-Framework.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1704,12 +1620,8 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Blindside-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Blindside-tvOS";
-				PRODUCT_NAME = Blindside;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1721,29 +1633,22 @@
 		};
 		3432671C1BAA2A9C005F2D7A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3420FD131BAA305300AF22F0 /* Blindside-Framework.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_NS_ASSERTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Blindside-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Blindside-tvOS";
-				PRODUCT_NAME = Blindside;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1763,7 +1668,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -1814,7 +1718,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -1858,16 +1761,14 @@
 		};
 		34E710B11B9F85210088AB71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3420FD131BAA305300AF22F0 /* Blindside-Framework.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1875,12 +1776,8 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Blindside-watchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Blindside-watchOS";
-				PRODUCT_NAME = Blindside;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1892,8 +1789,8 @@
 		};
 		34E710B21B9F85210088AB71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3420FD131BAA305300AF22F0 /* Blindside-Framework.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1901,20 +1798,14 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_NS_ASSERTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Blindside-watchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Blindside-watchOS";
-				PRODUCT_NAME = Blindside;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1936,7 +1827,6 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1983,8 +1873,8 @@
 		};
 		AE4864D11B066F11005DB302 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3420FD131BAA305300AF22F0 /* Blindside-Framework.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1992,25 +1882,16 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Blindside-iOS-Framework/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Blindside;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2021,8 +1902,8 @@
 		};
 		AE4864D21B066F11005DB302 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3420FD131BAA305300AF22F0 /* Blindside-Framework.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -2031,21 +1912,16 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_NS_ASSERTIONS = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Blindside-iOS-Framework/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Blindside;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
