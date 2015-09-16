@@ -34,6 +34,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BSPropertySet *)propertySetWithClass:(Class)owningClass propertyNames:(NSString *)property1, ... NS_REQUIRES_NIL_TERMINATION;
 
+/**
+ * Returns a BSPropertySet for the given class, representing the properties named in the argument list. This
+ * method is for use by classes within their implementation of bsProperties.
+ *
+ * @see +[BSPropertySet propertySetWithClass:propertyNames:]
+ */
++ (BSPropertySet *)propertySetWithClass:(Class)owningClass propertyNamesArray:(NSArray *)propertyNames;
+
+- (instancetype)init NS_UNAVAILABLE;
+
 - (void)bindProperty:(NSString *)propertyName toKey:(id)key;
 
 @end

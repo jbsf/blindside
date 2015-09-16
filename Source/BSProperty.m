@@ -68,8 +68,25 @@ injectionKey = _injectionKey;
     }
     NSString *className = [attrStr substringWithRange:NSMakeRange(startPos, endRange.location - startPos)];
 
-    Class returnClass = NSClassFromString(className);
+    Class returnClass = NSClassFromString(className) ?: [self swiftClassForClassName:className];
+
+    if (!returnClass) {
+        [NSException raise:BSInvalidPropertyException
+                    format:@"Invalid property: %@ on class: %@. Unable to find return type class: %@", self.propertyNameString, self.owningClass, className];
+    }
+
     self.returnType = returnClass;
+}
+
+- (Class)swiftClassForClassName:(NSString *)className {
+    for (NSBundle *bundle in [NSBundle allBundles]) {
+        NSString *bundleName = [bundle objectForInfoDictionaryKey:@"CFBundleName"] ?: bundle.executablePath.lastPathComponent;
+        Class swiftClass = NSClassFromString([NSString stringWithFormat:@"%@.%@", bundleName, className]);
+        if (swiftClass) {
+            return swiftClass;
+        }
+    }
+    return nil;
 }
 
 @end

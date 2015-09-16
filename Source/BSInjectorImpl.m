@@ -11,6 +11,7 @@
 #import "BSClassProvider.h"
 #import "BSNull.h"
 #import "NSObject+Blindside.h"
+#import "BSUtils.h"
 #import <objc/runtime.h>
 
 static NSString *const BSNoProviderException = @"BSNoProviderException";
@@ -92,18 +93,7 @@ static NSString *const BSInFlightKeysDictKey = @"BSInFlightKeysDictKey";
 
 - (id)getInstance:(id)key withArgs:(id)arg1, ... {
     NSMutableArray *args = [NSMutableArray array];
-    if (arg1) {
-        [args addObject:arg1];
-
-        va_list argList;
-        id arg = nil;
-        va_start(argList, arg1);
-        while ((arg = va_arg(argList, id))) {
-            [args addObject:arg];
-        }
-        va_end(argList);
-    }
-
+    AddVarArgsToNSMutableArray(arg1, args);
     return [self getInstance:key withArgArray:args];
 }
 

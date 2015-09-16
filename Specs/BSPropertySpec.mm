@@ -1,5 +1,6 @@
 #import <Cedar/Cedar.h>
 #import <Blindside/Blindside.h>
+#import "BSProperty.h"
 #import "Fixtures.h"
 
 using namespace Cedar::Matchers;
@@ -29,6 +30,14 @@ describe(@"BSProperty", ^{
             it(@"determines the class", ^{
                 property = [BSProperty propertyWithClass:[House class] propertyNameString:@"address"];
                 expect(property.returnType == [Address class]).to(equal(YES));
+            });
+        });
+
+        context(@"when the return type is a non-existent objective-c class", ^{
+            it(@"raises an exception", ^{
+                ^{
+                    [BSProperty propertyWithClass:[ClassWithBogusProperty class] propertyNameString:@"bogus"];
+                } should raise_exception();
             });
         });
     });

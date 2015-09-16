@@ -1,47 +1,41 @@
 #import "BSPropertySet.h"
 #import "BSProperty.h"
 #import "NSObject+Blindside.h"
+#import "BSUtils.h"
 
 #import <objc/runtime.h>
 
 @interface BSPropertySet ()
 @property (nonatomic, strong) Class owningClass;
 @property (nonatomic, strong) NSMutableArray *properties;
-
-- (id)initWithClass:(Class)owningClass properties:(NSMutableArray *)properties;
-
-- (void)merge:(BSPropertySet *)propertySet;
-
 @end
 
 @implementation BSPropertySet
 
 @synthesize owningClass = _owningClass, properties = _properties;
 
-+ (BSPropertySet *)propertySetWithClass:(Class)owningClass propertyNames:(NSString *)property1, ... {
++ (BSPropertySet *)propertySetWithClass:(Class)owningClass propertyNamesArray:(NSArray *)propertyNames {
     NSMutableArray *bsProperties = [NSMutableArray array];
-    if (property1) {
-        [bsProperties addObject:[BSProperty propertyWithClass:owningClass propertyNameString:property1]];
-
-        va_list argList;
-        id propertyName = nil;
-        va_start(argList, property1);
-        while ((propertyName = va_arg(argList, id))) {
-            [bsProperties addObject:[BSProperty propertyWithClass:owningClass propertyNameString:propertyName]];
-        }
-        va_end(argList);
+    for (NSString *propertyName in propertyNames) {
+        [bsProperties addObject:[BSProperty propertyWithClass:owningClass propertyNameString:propertyName]];
     }
 
     BSPropertySet *propertySet = [[BSPropertySet alloc] initWithClass:owningClass properties:bsProperties];
-    
+
     Class superclass = class_getSuperclass(owningClass);
     if (superclass != nil && [superclass respondsToSelector:@selector(bsProperties)]) {
         BSPropertySet *superclassPropertySet = [superclass performSelector:@selector(bsProperties)];
         [propertySet merge:superclassPropertySet];
     }
-    
+
     return propertySet;
-};
+}
+
++ (BSPropertySet *)propertySetWithClass:(Class)owningClass propertyNames:(NSString *)property1, ... {
+    NSMutableArray *propertyNames = [NSMutableArray array];
+    AddVarArgsToNSMutableArray(property1, propertyNames);
+    return [self propertySetWithClass:owningClass propertyNamesArray:propertyNames];
+}
 
 - (id)initWithClass:(Class)owningClass properties:(NSMutableArray *)properties {
     if (self = [super init]) {
@@ -53,7 +47,7 @@
 
 - (void)bindProperty:(NSString *)propertyName toKey:(id)key {
     for (BSProperty *property in self.properties) {
-        if (property.propertyNameString == propertyName) {
+        if ([property.propertyNameString isEqualToString:propertyName]) {
             property.injectionKey = key;
         }
     }

@@ -12,4 +12,5 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.7'
 
   s.source_files = "{Source,Headers}/**/*.{h,m}"
+  s.public_header_files = 'Headers/Public/*.{h}'
 end

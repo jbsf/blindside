@@ -163,6 +163,9 @@ zip = zip_;
 }
 @end
 
+@implementation ClassWithBogusProperty
+@end
+
 @implementation ClassADependsOnB
 @synthesize b = _b;
 
