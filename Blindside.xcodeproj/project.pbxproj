@@ -101,9 +101,48 @@
 		347C245F1BA0CC61009BE82F /* BSNullabilityCompat.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */; };
 		347C24601BA0CD17009BE82F /* BSBlockProvider.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 294B3C311522C84E001A69D3 /* BSBlockProvider.h */; };
 		347C24701BA0D16C009BE82F /* BSInjectorSwiftSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 347C246F1BA0D16C009BE82F /* BSInjectorSwiftSpec.mm */; };
+		34A18BE01B9F887300A65DB3 /* Blindside-watchOS BuildTest Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 34A18BDF1B9F887300A65DB3 /* Blindside-watchOS BuildTest Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		34A18BEF1B9F887300A65DB3 /* Blindside-watchOS BuildTest.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 34A18BD31B9F887200A65DB3 /* Blindside-watchOS BuildTest.app */; };
+		34A18C0B1B9F890F00A65DB3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A18C091B9F88F700A65DB3 /* Interface.storyboard */; settings = {ASSET_TAGS = (); }; };
+		34A18C0C1B9F8B1E00A65DB3 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A18C081B9F88F700A65DB3 /* ExtensionDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		34A18C0E1B9F8BF600A65DB3 /* Blindside.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E710AB1B9F85210088AB71 /* Blindside.framework */; };
 		34A18C121BA0A6A700A65DB3 /* SwiftFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A18C111BA0A6A700A65DB3 /* SwiftFixtures.swift */; };
+		34D608571BAA28460016C8F3 /* BSUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 347C24621BA0CEF8009BE82F /* BSUtils.h */; settings = {ASSET_TAGS = (); }; };
+		34D608581BAA28480016C8F3 /* BSUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 347C24621BA0CEF8009BE82F /* BSUtils.h */; settings = {ASSET_TAGS = (); }; };
+		34D608591BAA28490016C8F3 /* BSUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 347C24621BA0CEF8009BE82F /* BSUtils.h */; settings = {ASSET_TAGS = (); }; };
+		34D6085A1BAA284D0016C8F3 /* BSUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 347C24621BA0CEF8009BE82F /* BSUtils.h */; settings = {ASSET_TAGS = (); }; };
 		34E3BCD51B4F82960007037F /* Blindside.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC6E4150292AD00731862 /* Blindside.framework */; };
 		34E3BCD61B4F8ADD0007037F /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710B31B9F85DF0088AB71 /* Blindside.m in Sources */ = {isa = PBXBuildFile; fileRef = 299EA6AA155CDD2C0006C5A4 /* Blindside.m */; settings = {ASSET_TAGS = (); }; };
+		34E710B41B9F85DF0088AB71 /* BSBlockProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE84153EAEF000C8C4E7 /* BSBlockProvider.m */; settings = {ASSET_TAGS = (); }; };
+		34E710B51B9F85DF0088AB71 /* BSClassProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 299EA6AB155CDD2C0006C5A4 /* BSClassProvider.m */; settings = {ASSET_TAGS = (); }; };
+		34E710B61B9F85DF0088AB71 /* BSInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997B0E1505D94200C12110 /* BSInitializer.m */; settings = {ASSET_TAGS = (); }; };
+		34E710B71B9F85DF0088AB71 /* BSInitializerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997B0F1505D94200C12110 /* BSInitializerProvider.m */; settings = {ASSET_TAGS = (); }; };
+		34E710B81B9F85DF0088AB71 /* BSInjectorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A771502C48B00C12110 /* BSInjectorImpl.m */; settings = {ASSET_TAGS = (); }; };
+		34E710B91B9F85DF0088AB71 /* BSInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 29997A791502C48B00C12110 /* BSInstanceProvider.m */; settings = {ASSET_TAGS = (); }; };
+		34E710BA1B9F85DF0088AB71 /* BSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D71509BF2100356446 /* BSNull.m */; settings = {ASSET_TAGS = (); }; };
+		34E710BB1B9F85DF0088AB71 /* BSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE85153EAEF000C8C4E7 /* BSProperty.m */; settings = {ASSET_TAGS = (); }; };
+		34E710BC1B9F85DF0088AB71 /* BSPropertySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D7FE86153EAEF000C8C4E7 /* BSPropertySet.m */; settings = {ASSET_TAGS = (); }; };
+		34E710BD1B9F85DF0088AB71 /* BSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967D81509BF2100356446 /* BSSingleton.m */; settings = {ASSET_TAGS = (); }; };
+		34E710BE1B9F85DF0088AB71 /* NSObject+Blindside.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C967591508744900356446 /* NSObject+Blindside.m */; settings = {ASSET_TAGS = (); }; };
+		34E710BF1B9F86100088AB71 /* Blindside.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997AB41505D04600C12110 /* Blindside.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710C01B9F86190088AB71 /* BSBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B50683152583840035D197 /* BSBinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710C11B9F86190088AB71 /* BSBlockProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 294B3C311522C84E001A69D3 /* BSBlockProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710C21B9F86190088AB71 /* BSClassProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6172C027155B98E900348C4E /* BSClassProvider.h */; settings = {ASSET_TAGS = (); }; };
+		34E710C31B9F86190088AB71 /* BSInitializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997AFF1505D8A600C12110 /* BSInitializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710C41B9F86190088AB71 /* BSInitializerProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B001505D8A600C12110 /* BSInitializerProvider.h */; };
+		34E710C51B9F86190088AB71 /* BSInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B061505D8FE00C12110 /* BSInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710C61B9F86190088AB71 /* BSInjectorImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */; settings = {ASSET_TAGS = (); }; };
+		34E710C71B9F86190088AB71 /* BSInstanceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B071505D8FE00C12110 /* BSInstanceProvider.h */; };
+		34E710C81B9F86190088AB71 /* BSModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B081505D8FE00C12110 /* BSModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710C91B9F86190088AB71 /* BSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967CF1509BF1100356446 /* BSNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710CA1B9F86190088AB71 /* BSProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; };
+		34E710CB1B9F86190088AB71 /* BSProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 29997B091505D8FE00C12110 /* BSProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710CC1B9F86190088AB71 /* BSPropertySet.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967E1150C4E1900356446 /* BSPropertySet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710CD1B9F86190088AB71 /* BSScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967661508919300356446 /* BSScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710CE1B9F86190088AB71 /* BSSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967D01509BF1100356446 /* BSSingleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710CF1B9F86190088AB71 /* NSObject+Blindside.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967581508744900356446 /* NSObject+Blindside.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34E710D01B9F86190088AB71 /* BSNullabilityCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6172C028155B98FF00348C4E /* BSClassProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6172C027155B98E900348C4E /* BSClassProvider.h */; };
 		6172C029155B990000348C4E /* BSClassProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6172C027155B98E900348C4E /* BSClassProvider.h */; };
 		61DC9F781541FA8D009DDFA6 /* BSInjectorImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */; };
@@ -201,6 +240,20 @@
 			remoteGlobalIDString = AEEE1FB511DC271300029872;
 			remoteInfo = Cedar;
 		};
+		34A18BE11B9F887300A65DB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC6DA150292AD00731862 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34A18BDE1B9F887300A65DB3;
+			remoteInfo = "Blindside-watchOS BuildTest Extension";
+		};
+		34A18BED1B9F887300A65DB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29CAC6DA150292AD00731862 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34A18BD21B9F887200A65DB3;
+			remoteInfo = "Blindside-watchOS BuildTest";
+		};
 		34E3BCD31B4F82900007037F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29CAC6DA150292AD00731862 /* Project object */;
@@ -276,6 +329,28 @@
 			name = "Copy headers to framework";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34A18C011B9F887300A65DB3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				34A18BE01B9F887300A65DB3 /* Blindside-watchOS BuildTest Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A18C031B9F887300A65DB3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				34A18BEF1B9F887300A65DB3 /* Blindside-watchOS BuildTest.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -330,7 +405,15 @@
 		3453B88F1B4F7AF700026E19 /* BSNullabilityCompat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSNullabilityCompat.h; sourceTree = "<group>"; };
 		347C24621BA0CEF8009BE82F /* BSUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSUtils.h; sourceTree = "<group>"; };
 		347C246F1BA0D16C009BE82F /* BSInjectorSwiftSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSInjectorSwiftSpec.mm; sourceTree = "<group>"; };
+		34A18BD31B9F887200A65DB3 /* Blindside-watchOS BuildTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blindside-watchOS BuildTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A18BDF1B9F887300A65DB3 /* Blindside-watchOS BuildTest Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Blindside-watchOS BuildTest Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A18C041B9F88F700A65DB3 /* App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "App-Info.plist"; path = "Blindside-watchOS BuildTest/App-Info.plist"; sourceTree = "<group>"; };
+		34A18C061B9F88F700A65DB3 /* Extension-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Extension-Info.plist"; path = "Blindside-watchOS BuildTest/Extension-Info.plist"; sourceTree = "<group>"; };
+		34A18C081B9F88F700A65DB3 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		34A18C091B9F88F700A65DB3 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Interface.storyboard; path = "Blindside-watchOS BuildTest/Interface.storyboard"; sourceTree = "<group>"; };
 		34A18C111BA0A6A700A65DB3 /* SwiftFixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftFixtures.swift; sourceTree = "<group>"; };
+		34E710AB1B9F85210088AB71 /* Blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34E710AF1B9F85210088AB71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6172C027155B98E900348C4E /* BSClassProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSClassProvider.h; sourceTree = "<group>"; };
 		61DC9F771541FA82009DDFA6 /* BSInjectorImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSInjectorImpl.h; sourceTree = "<group>"; };
 		AE03FC1A1B0A57DD00013784 /* Blindside-iOS-Framework BuildTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blindside-iOS-Framework BuildTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -367,6 +450,21 @@
 				34E3BCD51B4F82960007037F /* Blindside.framework in Frameworks */,
 				29CAC77C1502A3B300731862 /* Cedar.framework in Frameworks */,
 				29CAC7031502932000731862 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A18BDC1B9F887300A65DB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A18C0E1B9F8BF600A65DB3 /* Blindside.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E710A71B9F85210088AB71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +542,8 @@
 				29997B491505EC0B00C12110 /* Blindside-StaticLib */,
 				AE4864BE1B066F11005DB302 /* Blindside-iOS-Framework */,
 				AE03FC1B1B0A57DD00013784 /* Blindside-iOS-Framework BuildTest */,
+				34E710AC1B9F85210088AB71 /* Blindside-watchOS */,
+				34A18BD41B9F887200A65DB3 /* Blindside-watchOS BuildTest */,
 				29CAC6E6150292AD00731862 /* Frameworks */,
 				29CAC6E5150292AD00731862 /* Products */,
 				29997ABA1505D2B600C12110 /* Blindside-Info.plist */,
@@ -458,6 +558,9 @@
 				29997B471505EC0B00C12110 /* libBlindside-StaticLib.a */,
 				AE4864BD1B066F11005DB302 /* Blindside.framework */,
 				AE03FC1A1B0A57DD00013784 /* Blindside-iOS-Framework BuildTest.app */,
+				34E710AB1B9F85210088AB71 /* Blindside.framework */,
+				34A18BD31B9F887200A65DB3 /* Blindside-watchOS BuildTest.app */,
+				34A18BDF1B9F887300A65DB3 /* Blindside-watchOS BuildTest Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -567,6 +670,34 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
+		34A18BD41B9F887200A65DB3 /* Blindside-watchOS BuildTest */ = {
+			isa = PBXGroup;
+			children = (
+				34A18C081B9F88F700A65DB3 /* ExtensionDelegate.m */,
+				34A18C0D1B9F8B8200A65DB3 /* Supporting Files */,
+			);
+			path = "Blindside-watchOS BuildTest";
+			sourceTree = "<group>";
+		};
+		34A18C0D1B9F8B8200A65DB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				34A18C041B9F88F700A65DB3 /* App-Info.plist */,
+				34A18C061B9F88F700A65DB3 /* Extension-Info.plist */,
+				34A18C091B9F88F700A65DB3 /* Interface.storyboard */,
+			);
+			name = "Supporting Files";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		34E710AC1B9F85210088AB71 /* Blindside-watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				34E710AF1B9F85210088AB71 /* Info.plist */,
+			);
+			path = "Blindside-watchOS";
+			sourceTree = "<group>";
+		};
 		AE03FC1B1B0A57DD00013784 /* Blindside-iOS-Framework BuildTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,6 +742,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D6085A1BAA284D0016C8F3 /* BSUtils.h in Headers */,
 				29997B571505EC4F00C12110 /* BSInjector.h in Headers */,
 				29997B581505EC4F00C12110 /* BSInstanceProvider.h in Headers */,
 				29997B591505EC4F00C12110 /* BSModule.h in Headers */,
@@ -636,6 +768,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D608571BAA28460016C8F3 /* BSUtils.h in Headers */,
 				29997AB51505D04600C12110 /* Blindside.h in Headers */,
 				29997B031505D8A600C12110 /* BSInitializer.h in Headers */,
 				29997B041505D8A600C12110 /* BSInitializerProvider.h in Headers */,
@@ -657,10 +790,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34E710A81B9F85210088AB71 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34D608591BAA28490016C8F3 /* BSUtils.h in Headers */,
+				34E710C71B9F86190088AB71 /* BSInstanceProvider.h in Headers */,
+				34E710C91B9F86190088AB71 /* BSNull.h in Headers */,
+				34E710C11B9F86190088AB71 /* BSBlockProvider.h in Headers */,
+				34E710C21B9F86190088AB71 /* BSClassProvider.h in Headers */,
+				34E710CA1B9F86190088AB71 /* BSProperty.h in Headers */,
+				34E710C81B9F86190088AB71 /* BSModule.h in Headers */,
+				34E710BF1B9F86100088AB71 /* Blindside.h in Headers */,
+				34E710CC1B9F86190088AB71 /* BSPropertySet.h in Headers */,
+				34E710CF1B9F86190088AB71 /* NSObject+Blindside.h in Headers */,
+				34E710C61B9F86190088AB71 /* BSInjectorImpl.h in Headers */,
+				34E710C41B9F86190088AB71 /* BSInitializerProvider.h in Headers */,
+				34E710CD1B9F86190088AB71 /* BSScope.h in Headers */,
+				34E710CE1B9F86190088AB71 /* BSSingleton.h in Headers */,
+				34E710C51B9F86190088AB71 /* BSInjector.h in Headers */,
+				34E710C31B9F86190088AB71 /* BSInitializer.h in Headers */,
+				34E710CB1B9F86190088AB71 /* BSProvider.h in Headers */,
+				34E710C01B9F86190088AB71 /* BSBinder.h in Headers */,
+				34E710D01B9F86190088AB71 /* BSNullabilityCompat.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE4864BA1B066F11005DB302 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D608581BAA28480016C8F3 /* BSUtils.h in Headers */,
 				AE4864D61B066F35005DB302 /* Blindside.h in Headers */,
 				AE4864E41B066F35005DB302 /* BSScope.h in Headers */,
 				AE4864DA1B066F35005DB302 /* BSInitializer.h in Headers */,
@@ -738,6 +898,58 @@
 			productReference = 29CAC7001502932000731862 /* Specs */;
 			productType = "com.apple.product-type.tool";
 		};
+		34A18BD21B9F887200A65DB3 /* Blindside-watchOS BuildTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A18C021B9F887300A65DB3 /* Build configuration list for PBXNativeTarget "Blindside-watchOS BuildTest" */;
+			buildPhases = (
+				34A18BD11B9F887200A65DB3 /* Resources */,
+				34A18C011B9F887300A65DB3 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34A18BE21B9F887300A65DB3 /* PBXTargetDependency */,
+			);
+			name = "Blindside-watchOS BuildTest";
+			productName = "Blindside-watchOS BuildTest";
+			productReference = 34A18BD31B9F887200A65DB3 /* Blindside-watchOS BuildTest.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		34A18BDE1B9F887300A65DB3 /* Blindside-watchOS BuildTest Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A18C001B9F887300A65DB3 /* Build configuration list for PBXNativeTarget "Blindside-watchOS BuildTest Extension" */;
+			buildPhases = (
+				34A18BDB1B9F887300A65DB3 /* Sources */,
+				34A18BDC1B9F887300A65DB3 /* Frameworks */,
+				34A18BDD1B9F887300A65DB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Blindside-watchOS BuildTest Extension";
+			productName = "Blindside-watchOS BuildTest Extension";
+			productReference = 34A18BDF1B9F887300A65DB3 /* Blindside-watchOS BuildTest Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		34E710AA1B9F85210088AB71 /* Blindside-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34E710B01B9F85210088AB71 /* Build configuration list for PBXNativeTarget "Blindside-watchOS" */;
+			buildPhases = (
+				34E710A61B9F85210088AB71 /* Sources */,
+				34E710A71B9F85210088AB71 /* Frameworks */,
+				34E710A81B9F85210088AB71 /* Headers */,
+				34E710A91B9F85210088AB71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Blindside-watchOS";
+			productName = "Blindside-watchOS";
+			productReference = 34E710AB1B9F85210088AB71 /* Blindside.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		AE03FC191B0A57DD00013784 /* Blindside-iOS-Framework BuildTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE03FC3A1B0A57DE00013784 /* Build configuration list for PBXNativeTarget "Blindside-iOS-Framework BuildTest" */;
@@ -745,11 +957,13 @@
 				AE03FC161B0A57DD00013784 /* Sources */,
 				AE03FC171B0A57DD00013784 /* Frameworks */,
 				AE03FC181B0A57DD00013784 /* Resources */,
+				34A18C031B9F887300A65DB3 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				AE03FC411B0A580400013784 /* PBXTargetDependency */,
+				34A18BEE1B9F887300A65DB3 /* PBXTargetDependency */,
 			);
 			name = "Blindside-iOS-Framework BuildTest";
 			productName = "Blindside-iOS-Framework BuildTest";
@@ -784,6 +998,15 @@
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = self;
 				TargetAttributes = {
+					34A18BD21B9F887200A65DB3 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					34A18BDE1B9F887300A65DB3 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					34E710AA1B9F85210088AB71 = {
+						CreatedOnToolsVersion = 7.0;
+					};
 					AE03FC191B0A57DD00013784 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
@@ -817,6 +1040,9 @@
 				29997B5E1505ED9400C12110 /* Blindside-iOS */,
 				AE4864BC1B066F11005DB302 /* Blindside-iOS-Framework */,
 				AE03FC191B0A57DD00013784 /* Blindside-iOS-Framework BuildTest */,
+				34E710AA1B9F85210088AB71 /* Blindside-watchOS */,
+				34A18BD21B9F887200A65DB3 /* Blindside-watchOS BuildTest */,
+				34A18BDE1B9F887300A65DB3 /* Blindside-watchOS BuildTest Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -910,6 +1136,28 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		29CAC6E2150292AD00731862 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A18BD11B9F887200A65DB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A18C0B1B9F890F00A65DB3 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A18BDD1B9F887300A65DB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E710A91B9F85210088AB71 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1018,6 +1266,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34A18BDB1B9F887300A65DB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A18C0C1B9F8B1E00A65DB3 /* ExtensionDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34E710A61B9F85210088AB71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34E710BE1B9F85DF0088AB71 /* NSObject+Blindside.m in Sources */,
+				34E710B31B9F85DF0088AB71 /* Blindside.m in Sources */,
+				34E710B41B9F85DF0088AB71 /* BSBlockProvider.m in Sources */,
+				34E710B51B9F85DF0088AB71 /* BSClassProvider.m in Sources */,
+				34E710BA1B9F85DF0088AB71 /* BSNull.m in Sources */,
+				34E710BD1B9F85DF0088AB71 /* BSSingleton.m in Sources */,
+				34E710BC1B9F85DF0088AB71 /* BSPropertySet.m in Sources */,
+				34E710B71B9F85DF0088AB71 /* BSInitializerProvider.m in Sources */,
+				34E710BB1B9F85DF0088AB71 /* BSProperty.m in Sources */,
+				34E710B81B9F85DF0088AB71 /* BSInjectorImpl.m in Sources */,
+				34E710B61B9F85DF0088AB71 /* BSInitializer.m in Sources */,
+				34E710B91B9F85DF0088AB71 /* BSInstanceProvider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE03FC161B0A57DD00013784 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1053,6 +1328,16 @@
 			isa = PBXTargetDependency;
 			name = Cedar;
 			targetProxy = 29CAC77A1502A35400731862 /* PBXContainerItemProxy */;
+		};
+		34A18BE21B9F887300A65DB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34A18BDE1B9F887300A65DB3 /* Blindside-watchOS BuildTest Extension */;
+			targetProxy = 34A18BE11B9F887300A65DB3 /* PBXContainerItemProxy */;
+		};
+		34A18BEE1B9F887300A65DB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34A18BD21B9F887200A65DB3 /* Blindside-watchOS BuildTest */;
+			targetProxy = 34A18BED1B9F887300A65DB3 /* PBXContainerItemProxy */;
 		};
 		34E3BCD41B4F82900007037F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1276,6 +1561,177 @@
 			};
 			name = Release;
 		};
+		34A18BF01B9F887300A65DB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IBSC_MODULE = Blindside_watchOS_BuildTest_Extension;
+				INFOPLIST_FILE = "Blindside-watchOS BuildTest/App-Info.plist";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Blindside-iOS-Framework-BuildTest.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		34A18BF11B9F887300A65DB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IBSC_MODULE = Blindside_watchOS_BuildTest_Extension;
+				INFOPLIST_FILE = "Blindside-watchOS BuildTest/App-Info.plist";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Blindside-iOS-Framework-BuildTest.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		34A18BF21B9F887300A65DB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Blindside-watchOS BuildTest/Extension-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Blindside-iOS-Framework-BuildTest.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		34A18BF31B9F887300A65DB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Blindside-watchOS BuildTest/Extension-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Blindside-iOS-Framework-BuildTest.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		34E710B11B9F85210088AB71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Blindside-watchOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Blindside-watchOS";
+				PRODUCT_NAME = Blindside;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		34E710B21B9F85210088AB71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Blindside-watchOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Blindside-watchOS";
+				PRODUCT_NAME = Blindside;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 		AE03FC3B1B0A57DE00013784 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1450,6 +1906,33 @@
 			buildConfigurations = (
 				29CAC70C1502932000731862 /* Debug */,
 				29CAC70D1502932000731862 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34A18C001B9F887300A65DB3 /* Build configuration list for PBXNativeTarget "Blindside-watchOS BuildTest Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A18BF21B9F887300A65DB3 /* Debug */,
+				34A18BF31B9F887300A65DB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34A18C021B9F887300A65DB3 /* Build configuration list for PBXNativeTarget "Blindside-watchOS BuildTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A18BF01B9F887300A65DB3 /* Debug */,
+				34A18BF11B9F887300A65DB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34E710B01B9F85210088AB71 /* Build configuration list for PBXNativeTarget "Blindside-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34E710B11B9F85210088AB71 /* Debug */,
+				34E710B21B9F85210088AB71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
