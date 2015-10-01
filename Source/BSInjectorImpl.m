@@ -122,6 +122,8 @@ static NSString *const BSInFlightKeysDictKey = @"BSInFlightKeysDictKey";
         BSPropertySet *propertySet = [[instance class] performSelector:@selector(bsProperties)];
         for (BSProperty *property in propertySet) {
             id value = [self getInstance:property.injectionKey];
+            value = (value==[BSNull null]) ? nil : value;
+
             [instance setValue:value forKey:property.propertyNameString];
         }
     }

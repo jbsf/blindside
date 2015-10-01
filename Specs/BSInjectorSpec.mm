@@ -140,6 +140,15 @@ describe(@"BSInjector", ^{
                     expect(house.garage == garage).to(equal(YES));
                 });
             });
+
+            context(@"when the property is bound to BS_NULL", ^{
+                it(@"injects nil", ^{
+                    [injector bind:@"theDriveway" toInstance:BS_NULL];
+
+                    House *house = [injector getInstance:[House class]];
+                    expect(house.driveway).to(be_nil());
+                });
+            });
             
             context(@"when the class implements bsAwakeFromPropertyInjection", ^{
                 it(@"should call it after property injection", ^{
