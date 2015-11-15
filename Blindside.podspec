@@ -11,10 +11,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.7'
   s.watchos.deployment_target = '2.0'
-
-  if s.respond_to?(:tvos)
-    s.tvos.deployment_target = '9.0'
-  end
+  s.tvos.deployment_target = '9.0'
 
   s.source_files = "{Source,Headers}/**/*.{h,m}"
   s.public_header_files = "Headers/Public/*.h"
