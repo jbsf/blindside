@@ -83,7 +83,7 @@
 		29C967EB150C50EE00356446 /* BSProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; };
 		29C967EC150C50EE00356446 /* BSProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C967EA150C50ED00356446 /* BSProperty.h */; };
 		29C967F5150D2C8800356446 /* BSPropertySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29C967F3150D2C8800356446 /* BSPropertySpec.mm */; };
-		29CAC7061502932000731862 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC7051502932000731862 /* main.m */; };
+		29CAC7061502932000731862 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC7051502932000731862 /* main.mm */; };
 		29CAC77C1502A3B300731862 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAC76615029F2900731862 /* Cedar.framework */; };
 		29CAC77F1502AAA400731862 /* BSInjectorSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC77E1502AAA400731862 /* BSInjectorSpec.mm */; };
 		29CAC7831502AB6F00731862 /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CAC7821502AB6F00731862 /* Fixtures.m */; };
@@ -422,7 +422,7 @@
 		29C967F8150D37E700356446 /* BSPropertySetSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSPropertySetSpec.mm; sourceTree = "<group>"; };
 		29CAC6E4150292AD00731862 /* Blindside.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blindside.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CAC7001502932000731862 /* Specs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Specs; sourceTree = BUILT_PRODUCTS_DIR; };
-		29CAC7051502932000731862 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29CAC7051502932000731862 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		29CAC75915029F2900731862 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Externals/Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		29CAC77E1502AAA400731862 /* BSInjectorSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSInjectorSpec.mm; sourceTree = "<group>"; };
 		29CAC7811502AB6F00731862 /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixtures.h; sourceTree = "<group>"; };
@@ -596,7 +596,7 @@
 				29C967F3150D2C8800356446 /* BSPropertySpec.mm */,
 				29C967F8150D37E700356446 /* BSPropertySetSpec.mm */,
 				29B0D3D51560CFAF00183BAC /* BSInitializerSpec.mm */,
-				29CAC7051502932000731862 /* main.m */,
+				29CAC7051502932000731862 /* main.mm */,
 				342A3E321BA1CAFD00E41384 /* Specs-Bridging-Header.h */,
 				29CAC7801502AB4200731862 /* Fixtures */,
 			);
@@ -1322,7 +1322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29CAC7061502932000731862 /* main.m in Sources */,
+				29CAC7061502932000731862 /* main.mm in Sources */,
 				34A18C121BA0A6A700A65DB3 /* SwiftFixtures.swift in Sources */,
 				29CAC77F1502AAA400731862 /* BSInjectorSpec.mm in Sources */,
 				29CAC7831502AB6F00731862 /* Fixtures.m in Sources */,
