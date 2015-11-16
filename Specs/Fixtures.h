@@ -70,6 +70,12 @@
 @interface TestProtocolImpl : NSObject<TestProtocol>
 @end
 
+@protocol TestProtocol2 <NSObject>
+@end
+
+@protocol TestAliasProtocol <TestProtocol, TestProtocol2>
+@end
+
 @interface ClassWithFactoryMethod : NSObject
 @property (nonatomic, copy) NSString *foo;
 @property (nonatomic, copy) NSString *bar;
@@ -86,6 +92,21 @@
 - (instancetype)initWithDependency:(NSString *)dependency NS_DESIGNATED_INITIALIZER;
 @end
 
+@interface ClassWithProtocolInstance : NSObject
+@property (nonatomic, strong) TestProtocolImpl *protocolInstance;
+@end
+
+@interface ClassWithProtocolProperty : NSObject
+@property (nonatomic, strong) id<TestProtocol> protocolObject;
+@end
+
+@interface ClassWithAliasedProtocolsProperty : NSObject
+@property (nonatomic, strong) id<TestAliasProtocol> aliasProtocol;
+@end
+
+@interface ClassWithMultipleProtocolsProperty : NSObject
+@property (nonatomic, strong) id<TestProtocol, TestProtocol2> multipleProtocolsObject;
+@end
 
 @class ClassBDependsOnC, ClassCDependsOnA;
 

@@ -184,6 +184,42 @@ zip = zip_;
 
 @end
 
+
+@implementation ClassWithProtocolInstance
++ (BSPropertySet *)bsProperties {
+    return [BSPropertySet propertySetWithClass:self
+                                 propertyNames:@"protocolInstance",
+            nil];
+}
+@end
+
+
+@implementation ClassWithProtocolProperty
++ (BSPropertySet *)bsProperties {
+    return [BSPropertySet propertySetWithClass:self
+                                 propertyNames:@"protocolObject",
+            nil];
+}
+@end
+
+
+@implementation ClassWithAliasedProtocolsProperty : NSObject
++ (BSPropertySet *)bsProperties {
+    return [BSPropertySet propertySetWithClass:self
+                                 propertyNames:@"aliasProtocol",
+            nil];
+}
+@end
+
+@implementation ClassWithMultipleProtocolsProperty : NSObject
++ (BSPropertySet *)bsProperties {
+    return [BSPropertySet propertySetWithClass:self
+                                 propertyNames:@"multipleProtocolsObject",
+            nil];
+}
+@end
+
+
 @implementation ClassADependsOnB
 @synthesize b = _b;
 

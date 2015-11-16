@@ -26,6 +26,14 @@ describe(@"BSProperty", ^{
             });
         });
 
+        context(@"when the return type is a non-existent objective-c class", ^{
+            it(@"raises an exception", ^{
+                ^{
+                    [BSProperty propertyWithClass:[ClassWithBogusProperty class] propertyNameString:@"bogus"];
+                } should raise_exception();
+            });
+        });
+
         context(@"when the return type is an objective-c class", ^{
             it(@"determines the class", ^{
                 property = [BSProperty propertyWithClass:[House class] propertyNameString:@"address"];
@@ -33,10 +41,31 @@ describe(@"BSProperty", ^{
             });
         });
 
-        context(@"when the return type is a non-existent objective-c class", ^{
+        context(@"when the return type is an objective-c class conforming to a protocol", ^{
+            it(@"determines the protocol", ^{
+                property = [BSProperty propertyWithClass:[ClassWithProtocolInstance class] propertyNameString:@"protocolInstance"];
+                expect(property.returnType == [TestProtocolImpl class]).to(equal(YES));
+            });
+        });
+        
+        context(@"when the return type is an objective-c protocol", ^{
+            it(@"determines the protocol", ^{
+                property = [BSProperty propertyWithClass:[ClassWithProtocolProperty class] propertyNameString:@"protocolObject"];
+                expect(property.returnType == @protocol(TestProtocol)).to(equal(YES));
+            });
+        });
+        
+        context(@"when the return type is an objective-c protocol conforming to other procotols", ^{
+            it(@"determines the protocol", ^{
+                property = [BSProperty propertyWithClass:[ClassWithAliasedProtocolsProperty class] propertyNameString:@"aliasProtocol"];
+                expect(property.returnType == @protocol(TestAliasProtocol)).to(equal(YES));
+            });
+        });
+        
+        context(@"when the return type conforms to multiple objective-c protocols", ^{
             it(@"raises an exception", ^{
                 ^{
-                    [BSProperty propertyWithClass:[ClassWithBogusProperty class] propertyNameString:@"bogus"];
+                    [BSProperty propertyWithClass:[ClassWithMultipleProtocolsProperty class] propertyNameString:@"multipleProtocolsObject"];
                 } should raise_exception();
             });
         });
