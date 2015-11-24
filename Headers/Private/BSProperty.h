@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BSProperty *)propertyWithClass:(Class)owningClass propertyNameString:(NSString *)propertyNameString;
 
-- (id)injectionKey;
+- (_Nullable id)injectionKey;
 @end
 
 NS_ASSUME_NONNULL_END

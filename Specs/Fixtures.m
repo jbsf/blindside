@@ -149,6 +149,9 @@ zip = zip_;
 @implementation TestProtocolImpl
 @end
 
+@implementation TestAliasProtocolImpl
+@end
+
 @implementation ClassWithFactoryMethod 
 @synthesize foo = _foo, bar = _bar;
 
@@ -197,7 +200,16 @@ zip = zip_;
 @implementation ClassWithProtocolProperty
 + (BSPropertySet *)bsProperties {
     return [BSPropertySet propertySetWithClass:self
-                                 propertyNames:@"protocolObject",
+                                 propertyNames:@"protocolProperty",
+            nil];
+}
+@end
+
+
+@implementation ClassWithInvalidProtocolProperty : NSObject
++ (BSPropertySet *)bsProperties {
+    return [BSPropertySet propertySetWithClass:self
+                                 propertyNames:@"invalidProtocolProperty",
             nil];
 }
 @end
@@ -206,16 +218,26 @@ zip = zip_;
 @implementation ClassWithAliasedProtocolsProperty : NSObject
 + (BSPropertySet *)bsProperties {
     return [BSPropertySet propertySetWithClass:self
-                                 propertyNames:@"aliasProtocol",
+                                 propertyNames:@"aliasProtocolProperty",
             nil];
 }
 @end
 
+
 @implementation ClassWithMultipleProtocolsProperty : NSObject
 + (BSPropertySet *)bsProperties {
     return [BSPropertySet propertySetWithClass:self
-                                 propertyNames:@"multipleProtocolsObject",
+                                 propertyNames:@"multipleProtocolsProperty",
             nil];
+}
+@end
+
+
+@implementation ClassWithManuallySpecifiedMultipleProtocolsProperty : ClassWithMultipleProtocolsProperty
++ (BSPropertySet *)bsProperties {
+    BSPropertySet *propertySet = [super bsProperties];
+    [propertySet bindProperty:@"multipleProtocolsProperty" toKey:@protocol(TestAliasProtocol)];
+    return propertySet;
 }
 @end
 

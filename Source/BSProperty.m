@@ -35,7 +35,7 @@ injectionKey = _injectionKey;
     return self;
 }
 
-- (id)injectionKey {
+- (_Nullable id)injectionKey {
     if (_injectionKey) {
         return _injectionKey;
     };
@@ -71,22 +71,24 @@ injectionKey = _injectionKey;
     NSString *typeName;
     if ([self isProtocolAttributeString:attrStr]) {
         NSArray *protocols = [self protocolsFromAttributeString:attrStr];
-        if (protocols.count > 1) {
-            typeName = [NSString stringWithFormat:@"<%@>", [protocols componentsJoinedByString:@", "]];
-            [NSException raise:BSInvalidPropertyException
-                        format:@"Invalid property: %@ on class: %@. Return type should not be object conforming to multiple protocols: %@.", self.propertyNameString, self.owningClass, typeName];
-        } else {
+        for (NSString *protocolName in protocols) {
+            id validProtocol = NSProtocolFromString(protocolName) ? : [self swiftProtocolForProtocolName:protocolName];
+            if (!validProtocol) {
+                [NSException raise:BSInvalidPropertyException
+                            format:@"Invalid property: %@ on class: %@. Return type conforms to non-existent protocol: %@", self.propertyNameString, self.owningClass, protocolName];
+            }
+        }
+        if (protocols.count == 1) {
             NSString *protocolName = [protocols firstObject];
             returnType = NSProtocolFromString(protocolName) ? : [self swiftProtocolForProtocolName:protocolName];
         }
     } else {
         typeName = [attrStr substringWithRange:NSMakeRange(startPos, endRange.location - startPos)];
         returnType = NSClassFromString(typeName) ? : [self swiftClassForClassName:typeName];
-    }
-    
-    if (!returnType) {
-        [NSException raise:BSInvalidPropertyException
-                    format:@"Invalid property: %@ on class: %@. Unable to find return type class/protocol: %@", self.propertyNameString, self.owningClass, typeName];
+        if (!returnType) {
+            [NSException raise:BSInvalidPropertyException
+                        format:@"Invalid property: %@ on class: %@. Unable to find return type class: %@", self.propertyNameString, self.owningClass, typeName];
+        }
     }
 
     self.returnType = returnType;
