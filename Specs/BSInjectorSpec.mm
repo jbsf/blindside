@@ -364,6 +364,25 @@ describe(@"BSInjector", ^{
                 mansion.injector should be_same_instance_as(injector);
             });
         });
+        
+        context(@"when the object receiving injected property values has a property with nil injection key", ^{
+            it(@"should raise an exception", ^{
+                ^{
+                    ClassWithMultipleProtocolsProperty *objectWithNilInjectionKey = [[ClassWithMultipleProtocolsProperty alloc] init];
+                    [injector injectProperties:objectWithNilInjectionKey];
+                } should raise_exception().with_name(@"BSNilInjectionKeyException");
+            });
+        });
+        
+        context(@"when the object receiving injected property values has a property that returns nil inferred injection key, but has a user specified injection key", ^{
+            it(@"should raise an exception", ^{
+                ^{
+                    ClassWithMultipleProtocolsProperty *objectWithNilInjectionKey = [[ClassWithManuallySpecifiedMultipleProtocolsProperty alloc] init];
+                    [injector bind:@protocol(TestAliasProtocol) toClass:[TestAliasProtocolImpl class]];
+                    [injector injectProperties:objectWithNilInjectionKey];
+                } should_not raise_exception().with_name(@"BSNilInjectionKeyException");
+            });
+        });
     });
 
     describe(@"cyclic dependencies", ^{

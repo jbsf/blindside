@@ -17,6 +17,7 @@
 static NSString *const BSNoProviderException = @"BSNoProviderException";
 static NSString *const BSCyclicDependencyException = @"BSCyclicDependencyException";
 static NSString *const BSInFlightKeysDictKey = @"BSInFlightKeysDictKey";
+static NSString *const BSNilInjectionKeyException = @"BSNilInjectionKeyException";
 
 @interface BSInjectorImpl ()
 
@@ -121,6 +122,9 @@ static NSString *const BSInFlightKeysDictKey = @"BSInFlightKeysDictKey";
     if ([[instance class] respondsToSelector:@selector(bsProperties)]) {
         BSPropertySet *propertySet = [[instance class] performSelector:@selector(bsProperties)];
         for (BSProperty *property in propertySet) {
+            if (!property.injectionKey) {
+                [NSException raise:BSNilInjectionKeyException format:@"Property: %@ on class: %@ returned nil injection key", property.propertyNameString, NSStringFromClass([instance class])];
+            }
             id value = [self getInstance:property.injectionKey];
             value = (value==[BSNull null]) ? nil : value;
 
