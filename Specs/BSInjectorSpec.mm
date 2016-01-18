@@ -41,10 +41,20 @@ describe(@"BSInjector", ^{
         instance.bar should equal(@"BAR");
     });
 
-    it(@"raises an exception if the given key produces a nil object", ^{
-        ^{
-            [injector getInstance:@"NotAnInstance"];
-        } should raise_exception();
+    describe(@"getting an instance from an unbound key", ^{
+        it(@"should raise an exception", ^{
+            ^{
+                [injector getInstance:@"NotAnInstance"];
+            } should raise_exception();
+        });
+        
+        context(@"when the key is a protocol", ^{
+            it(@"should include the protocol name in the exception message", ^{
+                ^{
+                    [injector getInstance:@protocol(TestProtocol)];
+                } should raise_exception().with_reason(@"Injector could not getInstance for key (@protocol(TestProtocol)) with args (\n)");
+            });
+        });
     });
 
     describe(@"building an object using a BSInitializer", ^{

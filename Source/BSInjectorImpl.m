@@ -11,6 +11,7 @@
 #import "BSClassProvider.h"
 #import "BSNull.h"
 #import "NSObject+Blindside.h"
+#import "NSObject+BlindsidePrivate.h"
 #import "BSUtils.h"
 #import <objc/runtime.h>
 
@@ -107,7 +108,7 @@ static NSString *const BSNilInjectionKeyException = @"BSNilInjectionKeyException
     }
 
     if (provider == nil && ![BS_DYNAMIC isEqual:key]) {
-        [NSException raise:BSNoProviderException format:@"Injector could not getInstance for key (%@) with args %@", key, args];
+        [NSException raise:BSNoProviderException format:@"Injector could not getInstance for key (%@) with args %@", [key bsKeyDescription], args];
     }
 
     return [self performWithInFlightKey:key block:^id{
@@ -175,7 +176,7 @@ static NSString *const BSNilInjectionKeyException = @"BSNilInjectionKeyException
 
 - (id)internalKey:(id)key {
     if ([NSStringFromClass([key class]) isEqualToString:@"Protocol"]) {
-        return [NSString stringWithFormat:@"@protocol(%@)", NSStringFromProtocol(key)];
+        return [key bsKeyDescription];
     }
     return key;
 }
@@ -184,7 +185,7 @@ static NSString *const BSNilInjectionKeyException = @"BSNilInjectionKeyException
 
 - (id)performWithInFlightKey:(id)key block:(id (^)(void))block {
     if ([self isKeyInFlight:key]) {
-        [NSException raise:BSCyclicDependencyException format:@"Cyclic dependency found on key %@. The dependency chain was:\n%@", key, [self cyclicDependencyChainDescription]];
+        [NSException raise:BSCyclicDependencyException format:@"Cyclic dependency found on key %@. The dependency chain was:\n%@", [key bsKeyDescription], [self cyclicDependencyChainDescription]];
     }
 
     [self addInFlightKey:key];
