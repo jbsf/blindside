@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = "Blindside"
-  s.version      = "1.3.0"
+  s.version      = "1.3.1"
   s.summary      = "Blindside provides dependency injection capabilities for Objective-C on iOS and OS X"
   s.homepage     = "https://github.com/jbsf/blindside"
   s.license      = 'MIT'
   s.author       = { "JB Steadman" => "jbsteadman@gmail.com" }
-  s.source       = { :git => "https://github.com/jbsf/blindside.git", :tag => "v1.3.0" }
+  s.source       = { :git => "https://github.com/jbsf/blindside.git", :tag => "v1.3.1" }
   s.requires_arc = true
 
   s.ios.deployment_target = '5.0'
