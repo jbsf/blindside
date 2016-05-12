@@ -59,7 +59,7 @@
 
 - (BOOL)hasProperty:(BSProperty *)property {
     for (BSProperty *myProperty in self.properties) {
-        if (myProperty.propertyNameString == property.propertyNameString) {
+        if ([myProperty.propertyNameString isEqualToString:property.propertyNameString]) {
             return YES;
         }
     }
