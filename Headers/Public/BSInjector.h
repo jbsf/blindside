@@ -41,4 +41,41 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+#pragma mark - Lumos Labs additions
+
+/**
+ *  Conforming to this protocol signals that an object is purely a bag of properties, and that
+ *  it will be injected into another object. By conforming, the object gets a +bsProperties 
+ *  implementation automatically using the ObjC runtime. All properties on the object will be 
+ *  injected. The parent object that receives the injected BSDependencyProviding object can
+ *  conform to BSDependencyInjectable.
+ */
+@protocol BSDependencyProviding <NSObject>
+
+@end
+
+/**
+ *  Indicates that the conforming object can receive its dependencies bundled in an object
+ *  conforming to BSDependencyProviding. Conforming to this protocol provides an +bsInitializer
+ *  implementation automatically, though classes can still override that method if, eg, they
+ *  need to include dynamically injected arguments.
+ */
+@protocol BSDependencyInjectable <NSObject>
+
+/**
+ *  Default implementation appends "_Dependencies" to the name of the class. For example,
+ *  if the class is named MyClass, this method will return a class named MyClass_Dependencies,
+ *  if it exists. Classes can override this method to provide a custom dependency providing
+ *  class name.
+ */
++ (Class)dependencyProvidingClass;
+
+/**
+ *  Classes must implement this method, calling the appropriate super init method and storing
+ *  the "dependencies" object with a strong reference.
+ */
+- (instancetype)initWithDependencies:(id<BSDependencyProviding>)dependencies;
+
+@end
+
 NS_ASSUME_NONNULL_END
