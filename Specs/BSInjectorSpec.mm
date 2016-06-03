@@ -41,10 +41,20 @@ describe(@"BSInjector", ^{
         instance.bar should equal(@"BAR");
     });
 
-    it(@"raises an exception if the given key produces a nil object", ^{
-        ^{
-            [injector getInstance:@"NotAnInstance"];
-        } should raise_exception();
+    describe(@"getting an instance from an unbound key", ^{
+        it(@"should raise an exception", ^{
+            ^{
+                [injector getInstance:@"NotAnInstance"];
+            } should raise_exception();
+        });
+        
+        context(@"when the key is a protocol", ^{
+            it(@"should include the protocol name in the exception message", ^{
+                ^{
+                    [injector getInstance:@protocol(TestProtocol)];
+                } should raise_exception().with_reason(@"Injector could not getInstance for key (@protocol(TestProtocol)) with args (\n)");
+            });
+        });
     });
 
     describe(@"building an object using a BSInitializer", ^{
@@ -138,6 +148,15 @@ describe(@"BSInjector", ^{
                 it(@"uses the binding for the property's return type", ^{
                     House *house = [injector getInstance:[House class]];
                     expect(house.garage == garage).to(equal(YES));
+                });
+            });
+
+            context(@"when the property is bound to BS_NULL", ^{
+                it(@"injects nil", ^{
+                    [injector bind:@"theDriveway" toInstance:BS_NULL];
+
+                    House *house = [injector getInstance:[House class]];
+                    expect(house.driveway).to(be_nil());
                 });
             });
             
@@ -353,6 +372,25 @@ describe(@"BSInjector", ^{
 
             it(@"injects itself as the property value", ^{
                 mansion.injector should be_same_instance_as(injector);
+            });
+        });
+        
+        context(@"when the object receiving injected property values has a property with nil injection key", ^{
+            it(@"should raise an exception", ^{
+                ^{
+                    ClassWithMultipleProtocolsProperty *objectWithNilInjectionKey = [[ClassWithMultipleProtocolsProperty alloc] init];
+                    [injector injectProperties:objectWithNilInjectionKey];
+                } should raise_exception().with_name(@"BSNilInjectionKeyException");
+            });
+        });
+        
+        context(@"when the object receiving injected property values has a property that returns nil inferred injection key, but has a user specified injection key", ^{
+            it(@"should raise an exception", ^{
+                ^{
+                    ClassWithMultipleProtocolsProperty *objectWithNilInjectionKey = [[ClassWithManuallySpecifiedMultipleProtocolsProperty alloc] init];
+                    [injector bind:@protocol(TestAliasProtocol) toClass:[TestAliasProtocolImpl class]];
+                    [injector injectProperties:objectWithNilInjectionKey];
+                } should_not raise_exception().with_name(@"BSNilInjectionKeyException");
             });
         });
     });

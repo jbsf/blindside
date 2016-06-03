@@ -4,6 +4,8 @@
 @protocol BSBinder;
 @class BSInitializer;
 
+@protocol TestProtocolNonExistent;
+
 @interface State : NSObject
 @end
 
@@ -70,6 +72,16 @@
 @interface TestProtocolImpl : NSObject<TestProtocol>
 @end
 
+@protocol TestProtocol2 <NSObject>
+@end
+
+@protocol TestAliasProtocol <TestProtocol, TestProtocol2>
+@end
+
+@interface TestAliasProtocolImpl : NSObject<TestAliasProtocol>
+@end
+
+
 @interface ClassWithFactoryMethod : NSObject
 @property (nonatomic, copy) NSString *foo;
 @property (nonatomic, copy) NSString *bar;
@@ -86,6 +98,28 @@
 - (instancetype)initWithDependency:(NSString *)dependency NS_DESIGNATED_INITIALIZER;
 @end
 
+@interface ClassWithProtocolInstance : NSObject
+@property (nonatomic, strong) TestProtocolImpl *protocolInstance;
+@end
+
+@interface ClassWithProtocolProperty : NSObject
+@property (nonatomic, strong) id<TestProtocol> protocolProperty;
+@end
+
+@interface ClassWithInvalidProtocolProperty : NSObject
+@property (nonatomic, strong) id<TestProtocolNonExistent> invalidProtocolProperty;
+@end
+
+@interface ClassWithAliasedProtocolsProperty : NSObject
+@property (nonatomic, strong) id<TestAliasProtocol> aliasProtocolProperty;
+@end
+
+@interface ClassWithMultipleProtocolsProperty : NSObject
+@property (nonatomic, strong) id<TestProtocol, TestProtocol2> multipleProtocolsProperty;
+@end
+
+@interface ClassWithManuallySpecifiedMultipleProtocolsProperty : ClassWithMultipleProtocolsProperty
+@end
 
 @class ClassBDependsOnC, ClassCDependsOnA;
 

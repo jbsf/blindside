@@ -5,6 +5,7 @@
 #import "BSNull.h"
 #import "BSPropertySet.h"
 #import "BSProperty.h"
+#import "NSObject+BlindsidePrivate.h"
 
 static NSString *const BSNilArgumentValue = @"BSNilArgumentValue";
 static NSString *const BSTooManyArguments = @"BSTooManyArguments";
@@ -67,7 +68,7 @@ static NSString *const BSTooManyArguments = @"BSTooManyArguments";
 }
 
 - (void)raiseNilValueExceptionForKey:(id)argKey {
-    NSString *argString = [argKey description];
+    NSString *argString = [argKey bsKeyDescription];
     NSString *classString = NSStringFromClass(self.initializer.type);
     [NSException raise:BSNilArgumentValue
                 format:@"No value was found for argument key: %@ for class: %@. This could mean you forgot to \

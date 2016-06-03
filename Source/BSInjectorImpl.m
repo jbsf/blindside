@@ -11,12 +11,14 @@
 #import "BSClassProvider.h"
 #import "BSNull.h"
 #import "NSObject+Blindside.h"
+#import "NSObject+BlindsidePrivate.h"
 #import "BSUtils.h"
 #import <objc/runtime.h>
 
 static NSString *const BSNoProviderException = @"BSNoProviderException";
 static NSString *const BSCyclicDependencyException = @"BSCyclicDependencyException";
 static NSString *const BSInFlightKeysDictKey = @"BSInFlightKeysDictKey";
+static NSString *const BSNilInjectionKeyException = @"BSNilInjectionKeyException";
 
 @interface BSInjectorImpl ()
 
@@ -106,7 +108,7 @@ static NSString *const BSInFlightKeysDictKey = @"BSInFlightKeysDictKey";
     }
 
     if (provider == nil && ![BS_DYNAMIC isEqual:key]) {
-        [NSException raise:BSNoProviderException format:@"Injector could not getInstance for key (%@) with args %@", key, args];
+        [NSException raise:BSNoProviderException format:@"Injector could not getInstance for key (%@) with args %@", [key bsKeyDescription], args];
     }
 
     return [self performWithInFlightKey:key block:^id{
@@ -121,7 +123,12 @@ static NSString *const BSInFlightKeysDictKey = @"BSInFlightKeysDictKey";
     if ([[instance class] respondsToSelector:@selector(bsProperties)]) {
         BSPropertySet *propertySet = [[instance class] performSelector:@selector(bsProperties)];
         for (BSProperty *property in propertySet) {
+            if (!property.injectionKey) {
+                [NSException raise:BSNilInjectionKeyException format:@"Property: %@ on class: %@ returned nil injection key", property.propertyNameString, NSStringFromClass([instance class])];
+            }
             id value = [self getInstance:property.injectionKey];
+            value = (value==[BSNull null]) ? nil : value;
+
             [instance setValue:value forKey:property.propertyNameString];
         }
     }
@@ -169,7 +176,7 @@ static NSString *const BSInFlightKeysDictKey = @"BSInFlightKeysDictKey";
 
 - (id)internalKey:(id)key {
     if ([NSStringFromClass([key class]) isEqualToString:@"Protocol"]) {
-        return [NSString stringWithFormat:@"@protocol(%@)", NSStringFromProtocol(key)];
+        return [key bsKeyDescription];
     }
     return key;
 }
@@ -178,7 +185,7 @@ static NSString *const BSInFlightKeysDictKey = @"BSInFlightKeysDictKey";
 
 - (id)performWithInFlightKey:(id)key block:(id (^)(void))block {
     if ([self isKeyInFlight:key]) {
-        [NSException raise:BSCyclicDependencyException format:@"Cyclic dependency found on key %@. The dependency chain was:\n%@", key, [self cyclicDependencyChainDescription]];
+        [NSException raise:BSCyclicDependencyException format:@"Cyclic dependency found on key %@. The dependency chain was:\n%@", [key bsKeyDescription], [self cyclicDependencyChainDescription]];
     }
 
     [self addInFlightKey:key];

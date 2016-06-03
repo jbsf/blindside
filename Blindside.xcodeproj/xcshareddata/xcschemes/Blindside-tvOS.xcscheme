@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "34E710AA1B9F85210088AB71"
+               BlueprintIdentifier = "343267151BAA2A9C005F2D7A"
                BuildableName = "Blindside.framework"
-               BlueprintName = "Blindside-watchOS"
+               BlueprintName = "Blindside-tvOS"
                ReferencedContainer = "container:Blindside.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34E710AA1B9F85210088AB71"
+            BlueprintIdentifier = "343267151BAA2A9C005F2D7A"
             BuildableName = "Blindside.framework"
-            BlueprintName = "Blindside-watchOS"
+            BlueprintName = "Blindside-tvOS"
             ReferencedContainer = "container:Blindside.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34E710AA1B9F85210088AB71"
+            BlueprintIdentifier = "343267151BAA2A9C005F2D7A"
             BuildableName = "Blindside.framework"
-            BlueprintName = "Blindside-watchOS"
+            BlueprintName = "Blindside-tvOS"
             ReferencedContainer = "container:Blindside.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
