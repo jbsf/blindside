@@ -24,7 +24,7 @@
 }
 
 - (id)provide:(NSArray *)args injector:(id<BSInjector>)injector {
-    return [injector getInstance:self.klass];
+    return [injector getInstance:self.klass withArgArray:args];
 }
 
 @end
