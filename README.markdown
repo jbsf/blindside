@@ -156,13 +156,13 @@ let injector = Blindside.injectorWithModule(module)
 To instantiate your controller with no arguments:
 
 ````swift
-let controller = injector.getInstance(MyViewController.self)
+let controller: MyViewController = injector.getInstance(MyViewController.self) as! MyViewController
 ````
 
 To pass dynamic arguments (those marked with `BS_DYNAMIC`) to your controller, use the newly exposed `-getInstance:withArgArray:` method.
 
 ````swift
-let controller = injector.getInstance(MyViewController.self, withArgArray: [BSNull(), "arg"])
+let controller: MyViewController = injector.getInstance(MyViewController.self, withArgArray: [BSNull(), "arg"]) as! MyViewController
 ````
 
 Describe your class dependencies like this:
