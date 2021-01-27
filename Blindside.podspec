@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/jbsf/blindside"
   s.license      = 'MIT'
   s.author       = { "JB Steadman" => "jbsteadman@gmail.com" }
-  s.source       = { :git => "https://github.com/jbsf/blindside.git", :tag => "v1.3.1" }
+  s.source       = { :git => "https://github.com/lumoslabs/blindside.git", :branch => "master" }
   s.requires_arc = true
 
   s.ios.deployment_target = '5.0'

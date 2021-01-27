@@ -2,7 +2,7 @@
 #import "BSProvider.h"
 
 @interface BSSingleton ()
-@property (nonatomic, strong) id<BSProvider> source;
+@property (atomic, strong) id<BSProvider> source;
 @property (nonatomic, strong) id instance;
 @end
 
